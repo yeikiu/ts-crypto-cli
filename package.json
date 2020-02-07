@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TS kraken.com API client library for NodeJS",
   "keywords": [
     "kraken",
@@ -16,7 +16,6 @@
     "type": "git",
     "url": "https://github.com/yeikiu/ts-kraken-api.git"
   },
-
   "bugs": {
     "url": "https://github.com/yeikiu/ts-kraken-api/issues"
   },
@@ -26,12 +25,13 @@
   "dependencies": {
     "axios": "^0.19.2",
     "debug": "^4.1.1",
-    "got": "^10.3.0",
     "qs": "^6.9.1"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/node": "^13.5.0",
+    "gh-badges": "^2.2.1",
+    "node-jq": "^1.11.0",
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
@@ -41,6 +41,8 @@
     "start": "    yarn build &&     DEBUG=ts-kraken-api:*        node    dist/index.js",
     "start:win": "yarn build && set DEBUG=ts-kraken-api:* &&     node    dist/index.js",
     "watch": "                      DEBUG=ts-kraken-api:*        nodemon src/index.ts",
-    "watch:win": "              set DEBUG=ts-kraken-api:* &&     nodemon src/index.ts"
+    "watch:win": "              set DEBUG=ts-kraken-api:* &&     nodemon src/index.ts",
+    "badges:win": "scripts/generate_badges_win.sh",
+    "publish:win": "yarn badges:win && npm publish"
   }
 }

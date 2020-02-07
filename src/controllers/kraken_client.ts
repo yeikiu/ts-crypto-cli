@@ -1,6 +1,6 @@
 import axios, { AxiosInstance,  AxiosResponse } from 'axios';
 import qs = require('qs');
-import getMessageSignature from './sign_payload';
+import getMessageSignature from '../util/message_signature';
 import { PublicMethod, PrivateMethod } from '../models/api_methods';
 
 const krakenBaseUrl = 'https://api.kraken.com';
