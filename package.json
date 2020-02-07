@@ -42,7 +42,6 @@
     "start:win": "yarn build && set DEBUG=ts-kraken-api:* &&     node    dist/index.js",
     "watch": "                      DEBUG=ts-kraken-api:*        nodemon src/index.ts",
     "watch:win": "              set DEBUG=ts-kraken-api:* &&     nodemon src/index.ts",
-    "badges:win": "scripts/generate_badges_win.sh",
-    "publish:win": "yarn badges:win && npm publish"
+    "badges:win": "scripts/generate_badges_win.sh"
   }
 }
