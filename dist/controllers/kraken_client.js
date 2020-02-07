@@ -13,7 +13,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = require("axios");
 var qs = require("qs");
-var sign_payload_1 = require("./sign_payload");
+var message_signature_1 = require("../util/message_signature");
 var krakenBaseUrl = 'https://api.kraken.com';
 var apiVersion = '0';
 var timeout = 10000;
@@ -47,7 +47,7 @@ privateClient.interceptors.request.use(function (config) {
     var url = config.url;
     var nonce = new Date().getTime() * 1000;
     config.data = __assign(__assign({}, config.data), { nonce: nonce });
-    config.headers['API-Sign'] = sign_payload_1.default("/" + apiVersion + "/private/" + url, config.data);
+    config.headers['API-Sign'] = message_signature_1.default("/" + apiVersion + "/private/" + url, config.data);
     config.data = qs.stringify(config.data);
     return config;
 }, function (error) {
