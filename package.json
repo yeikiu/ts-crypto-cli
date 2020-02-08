@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TS kraken.com API client library for NodeJS",
   "keywords": [
     "kraken",
@@ -30,8 +30,8 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/node": "^13.5.0",
+    "husky": "^4.2.1",
     "nodemon": "^2.0.2",
-    "setup-gh-badges": "^0.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   },
