@@ -1,7 +1,7 @@
+<img src=".ci/npm-version-badge.svg" /> <img src=".ci/npm-dependencies-badge.svg" /> <img src=".ci/npm-devdependencies-badge.svg" />
+
 TS Kraken API
 =============
-
-<img src=".ci\npm-version-badge.svg" /> <img src=".ci\npm-dependencies-badge.svg" /> <img src=".ci\npm-devdependencies-badge.svg" />
 
 > TS kraken.com API client library for NodeJS
 
