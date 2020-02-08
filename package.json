@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "TS kraken.com API client library for NodeJS",
   "keywords": [
     "kraken",
