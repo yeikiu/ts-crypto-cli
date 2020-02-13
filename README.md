@@ -1,9 +1,8 @@
-<img src=".ci/npm-version-badge.svg" /> <img src=".ci/npm-dependencies-badge.svg" /> <img src=".ci/npm-devdependencies-badge.svg" /> <img src=".ci/npm-outdated-dependencies-badge.svg" />
+<img src=".ci_badges/npm-version-badge.svg" /> <img src=".ci_badges/npm-dependencies-badge.svg" /> <img src=".ci_badges/npm-devdependencies-badge.svg" /> <img src=".ci_badges/npm-outdated-dependencies-badge.svg" />
 
-TS Kraken API
-=============
+# TS Kraken API
 
-> TS kraken.com API client library for NodeJS
+> TypeScript kraken.com API client library for NodeJS
 
 This is an asynchronous NodeJS client for the kraken.com API.
 
