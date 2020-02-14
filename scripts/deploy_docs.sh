@@ -3,10 +3,11 @@
 # build docs
 yarn docs
 
-cp .ci_badges docs/.ci_badges
+cp -r .ci_badges docs/.ci_badges
 
 # navigate into the build output directory
 cd docs
+touch .nojekyll #allow URLs starting/ending with _
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
