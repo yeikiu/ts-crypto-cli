@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "TS kraken.com API client library for NodeJS",
   "keywords": [
     "kraken",
@@ -30,18 +30,28 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/node": "^13.7.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-tsdoc": "^0.2.1",
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.2",
     "setup-gh-badges": "^1.0.4",
     "ts-node": "^8.6.2",
+    "typedoc": "^0.16.9",
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "build": "rimraf dist && tsc -p .",
-    "start": "    yarn build &&     DEBUG=ts-kraken-api:*        node    dist/index.js",
-    "start:win": "yarn build && set DEBUG=ts-kraken-api:* &&     node    dist/index.js",
-    "watch": "                      DEBUG=ts-kraken-api:*        nodemon src/index.ts",
-    "watch:win": "              set DEBUG=ts-kraken-api:* &&     nodemon src/index.ts",
-    "badges:win": "node_modules/setup-gh-badges/generate_badges_win.sh"
+    "build": "      rimraf dist && tsc -p .",
+    "lint": "                      tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
+    "start": "      yarn build &&     DEBUG=ts-kraken-api:*        node    dist/index.js",
+    "start:win": "  yarn build && set DEBUG=ts-kraken-api:* &&     node    dist/index.js",
+    "watch": "                        DEBUG=ts-kraken-api:*        nodemon src/index.ts",
+    "watch:win": "                set DEBUG=ts-kraken-api:* &&     nodemon src/index.ts",
+    "badges:win": "      node_modules/setup-gh-badges/generate_badges_win.sh",
+    "docs": "       node node_modules/typedoc/bin/typedoc",
+    "deploy:docs": "scripts/deploy_docs.sh && rimraf docs",
+    "publish": "yarn build && yarn badges:win && yarn deploy:docs && npm publish"
   }
 }

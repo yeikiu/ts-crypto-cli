@@ -13,6 +13,10 @@ It exposes all the API methods found here: https://www.kraken.com/help/api throu
 
 ## Usage
 
+Generated [typedoc](https://www.npmjs.com/package/typedoc) available [here](https://yeikiu.github.io/ts-kraken-api/)
+
+## TLDR;
+
 ### Public method's
 
 ```typescript

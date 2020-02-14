@@ -1,0 +1,25 @@
+{
+    "env": {
+        "es6": true,
+        // "commonjs": true, //for browserify/webpack
+        "browser": true,
+        "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2015 //ES6
+    },
+    "plugins": [
+        "eslint-plugin-tsdoc"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript"
+    ],
+    "rules": {
+        // Custom rules here
+        "tsdoc/syntax": "warn"
+    }
+}
