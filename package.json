@@ -52,6 +52,6 @@
     "badges:win": "      node_modules/setup-gh-badges/generate_badges_win.sh",
     "docs": "       node node_modules/typedoc/bin/typedoc",
     "deploy:docs": "scripts/deploy_docs.sh && rimraf docs",
-    "publish:npm": "yarn build && yarn badges:win && yarn deploy:docs && npm publish"
+    "pre-publish": "yarn build && yarn badges:win && yarn deploy:docs"
   }
 }
