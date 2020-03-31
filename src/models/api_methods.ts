@@ -8,4 +8,4 @@ export type PrivateMethod =
     'Ledgers' | 'QueryLedgers' | 'TradeVolume' | 'AddOrder' |
     'CancelOrder' | 'DepositMethods' | 'DepositAddresses' | 'DepositStatus' |
     'WithdrawInfo' | 'Withdraw' | 'WithdrawStatus' | 'WithdrawCancel' |
-    'GetWebSocketsToken';
+    'GetWebSocketsToken' | 'AddExport' | 'ExportStatus' | 'RetrieveExport' | 'RemoveExport';

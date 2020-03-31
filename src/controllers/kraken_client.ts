@@ -21,16 +21,12 @@ const publicClient: AxiosInstance = axios.create({
 });
 
 publicClient.interceptors.request.use((config) => {
-  const nonce = new Date().getTime() * 1000;
-  config.data = {
-    ...config.data,
-    nonce,
-  };
   config.data = qs.stringify(config.data);
   return config;
 }, (error) =>
-// Do something with request error
-  Promise.reject(error));
+  // Do something with request error
+  Promise.reject(error)
+);
 
 const privateClient: AxiosInstance = axios.create({
   baseURL: `${krakenBaseUrl}/${apiVersion}/private`,
@@ -53,11 +49,12 @@ privateClient.interceptors.request.use((config) => {
   config.data = qs.stringify(config.data);
   return config;
 }, (error) =>
-// Do something with request error
-  Promise.reject(error));
+  // Do something with request error
+  Promise.reject(error)
+);
 
-const publicRequest = (url: PublicMethod, data: any = {}): Promise<AxiosResponse> => publicClient.request({ url, data });
-const privateRequest = (url: PrivateMethod, data: any = {}): Promise<AxiosResponse> => privateClient.request({ url, data });
+const publicRequest = (url: PublicMethod, data: unknown = {}): Promise<AxiosResponse> => publicClient.request({ url, data });
+const privateRequest = (url: PrivateMethod, data: unknown = {}): Promise<AxiosResponse> => privateClient.request({ url, data });
 
 export const KrakenClient = {
   publicRequest,
