@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "1.1.24",
+  "version": "1.1.25",
   "description": "TS kraken.com API client library for NodeJS",
   "keywords": [
     "kraken",
@@ -57,7 +57,7 @@
     "sync-badges": " npx sync-badges",
     "docs": "        npx typedoc",
     "publish:docs": "scripts/deploy_docs.sh && rimraf docs",
-    "publish:npm": " yarn build && yarn sync-badges && yarn publish && yarn publish:docs"
+    "pre-publish:npm": "yarn build && yarn sync-badges && yarn publish:docs"
   },
   "husky": {
     "hooks": {
