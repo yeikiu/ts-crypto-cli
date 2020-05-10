@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  sync_docs_and_badges:
+  sync_badges:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -16,16 +16,52 @@ jobs:
           rm -rf .ci_badges
           yarn add setup-gh-badges
           npx sync-badges
-          rm -rf docs
-          yarn docs
-          cp -r .ci_badges docs/.ci_badges
-          echo "# navigate into the build output directory..."
-          cd docs
-          touch .nojekyll #allow URLs starting/ending with _
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .ci_badges docs
-          git commit -m "[CI:deploy] sync_docs_and_badges job"
+          git add .ci_badges
+          git commit -m "[CI:deploy] sync_badges job"
+
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  build_docs:
+    runs-on: ubuntu-18.04
+    needs: sync_badges
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+      
+      - run: |
+          yarn
+          yarn docs
+          cp -r .ci_badges docs/.ci_badges
+          touch docs/.nojekyll
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: docs_artifact
+          path: docs/**/*
+
+  sync_docs:
+    runs-on: ubuntu-18.04
+    needs: build_docs
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - run: rm -rf ./**/*
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: docs_artifact
+          path: ./
+
+      - run: |
+          git add .
+          git commit -m "[CI:deploy] sync_docs job"
 
       - uses: ad-m/github-push-action@master
         with:
@@ -34,7 +70,7 @@ jobs:
 
   build_and_publish:
     runs-on: ubuntu-18.04
-    needs: sync_docs_and_badges
+    needs: sync_docs
     steps:
       - uses: actions/checkout@v2
         with:
