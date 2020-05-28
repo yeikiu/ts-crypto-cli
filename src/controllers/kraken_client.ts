@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import getMessageSignature from '../util/message_signature';
 import { PublicMethod, PrivateMethod } from '../models/api_methods';
 
-import qs = require('qs');
+import * as qs from 'qs';
 
 const krakenBaseUrl = 'https://api.kraken.com';
 const apiVersion = '0';

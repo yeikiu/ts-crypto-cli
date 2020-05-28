@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "TS kraken.com API client library for NodeJS",
   "keywords": [
     "kraken",
@@ -46,20 +46,10 @@
     "acorn": "^7.1.1"
   },
   "scripts": {
-    "build": "       rimraf dist && tsc -p .",
-    "lint": "                       tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
-    "start": "       yarn build &&     DEBUG=ts-kraken-api:*        node    dist/index.js",
-    "start:win": "   yarn build && set DEBUG=ts-kraken-api:* &&     node    dist/index.js",
-    "watch": "                         DEBUG=ts-kraken-api:*        nodemon src/index.ts",
-    "watch:win": "                 set DEBUG=ts-kraken-api:* &&     nodemon src/index.ts",
-    "sync-badges": " npx sync-badges",
-    "docs": "        npx typedoc",
-    "publish:docs": "scripts/deploy_docs.sh && rimraf docs",
-    "pre-publish:npm": "yarn build && yarn sync-badges && yarn publish:docs"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn sync-badges"
-    }
+    "build": "rimraf dist && tsc -p .",
+    "lint": "tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
+    "start": "yarn build && node dist/index.js",
+    "watch": "nodemon src/index.ts",
+    "publish:docs": "scripts/deploy_docs.sh && rimraf docs"
   }
 }
