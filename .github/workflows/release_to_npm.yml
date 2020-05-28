@@ -40,7 +40,7 @@ jobs:
       
       - run: |
           yarn
-          scripts/deploy_docs.sh
+          yarn docs
           touch docs/.nojekyll
 
       - uses: actions/download-artifact@v2

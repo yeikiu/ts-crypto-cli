@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "TS kraken.com API client library for NodeJS",
   "keywords": [
     "kraken",
@@ -50,6 +50,7 @@
     "lint": "tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
     "start": "yarn build && node dist/index.js",
     "watch": "nodemon src/index.ts",
+    "docs": "npx typedoc",
     "publish:docs": "scripts/deploy_docs.sh && rimraf docs"
   }
 }
