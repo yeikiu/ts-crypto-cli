@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;util/message_signature&quot; | ts-kraken-api</title>
+	<title>&quot;controllers/public_api_request&quot; | ts-kraken-api</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_util_message_signature_.html">&quot;util/message_signature&quot;</a>
+					<a href="_controllers_public_api_request_.html">&quot;controllers/public_api_request&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;util/message_signature&quot;</h1>
+			<h1>External module &quot;controllers/public_api_request&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -70,40 +70,125 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_public_api_request_.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_public_api_request_.html#headers" class="tsd-kind-icon">headers</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_public_api_request_.html#krakenbaseurl" class="tsd-kind-icon">kraken<wbr>Base<wbr>Url</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_public_api_request_.html#method" class="tsd-kind-icon">method</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_public_api_request_.html#publicclient" class="tsd-kind-icon">public<wbr>Client</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_public_api_request_.html#timeout" class="tsd-kind-icon">timeout</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_message_signature_.html#getmessagesignature" class="tsd-kind-icon">get<wbr>Message<wbr>Signature</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_controllers_public_api_request_.html#publicapirequest" class="tsd-kind-icon">public<wbr>Api<wbr>Request</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="apiversion" class="tsd-anchor"></a>
+					<h3>api<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/controllers/public_api_request.ts#L6">controllers/public_api_request.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="headers" class="tsd-anchor"></a>
+					<h3>headers</h3>
+					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>User-Agent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>content-type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/controllers/public_api_request.ts#L6">controllers/public_api_request.ts:6</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>User-<wbr><wbr>Agent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>content-<wbr>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="krakenbaseurl" class="tsd-anchor"></a>
+					<h3>kraken<wbr>Base<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">kraken<wbr>Base<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/controllers/public_api_request.ts#L6">controllers/public_api_request.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="method" class="tsd-anchor"></a>
+					<h3>method</h3>
+					<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"POST"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/controllers/public_api_request.ts#L6">controllers/public_api_request.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="publicclient" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> public<wbr>Client</h3>
+					<div class="tsd-signature tsd-kind-icon">public<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span><span class="tsd-signature-symbol"> = axios.create({baseURL: &#x60;${krakenBaseUrl}/${apiVersion}/public&#x60;,method,headers,timeout,})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/controllers/public_api_request.ts#L8">controllers/public_api_request.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="timeout" class="tsd-anchor"></a>
+					<h3>timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/controllers/public_api_request.ts#L6">controllers/public_api_request.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getmessagesignature" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Message<wbr>Signature</h3>
+					<a name="publicapirequest" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> public<wbr>Api<wbr>Request</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Message<wbr>Signature<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">public<wbr>Api<wbr>Request<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><a href="_models_api_methods_.html#publicmethod" class="tsd-signature-type">PublicMethod</a>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/util/message_signature.ts#L5">util/message_signature.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/2d8c069/src/controllers/public_api_request.ts#L25">controllers/public_api_request.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>path: <span class="tsd-signature-type">any</span></h5>
+									<h5>url: <a href="_models_api_methods_.html#publicmethod" class="tsd-signature-type">PublicMethod</a></h5>
 								</li>
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> data: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -124,7 +209,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_controllers_private_ws_handler_.html">&quot;controllers/private_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_controllers_public_api_request_.html">&quot;controllers/public_<wbr>api_<wbr>request&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -142,15 +227,33 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_util_debug_helper_.html">&quot;util/debug_<wbr>helper&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_util_message_signature_.html">&quot;util/message_<wbr>signature&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_controllers_public_api_request_.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_controllers_public_api_request_.html#headers" class="tsd-kind-icon">headers</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_controllers_public_api_request_.html#krakenbaseurl" class="tsd-kind-icon">kraken<wbr>Base<wbr>Url</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_controllers_public_api_request_.html#method" class="tsd-kind-icon">method</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_controllers_public_api_request_.html#publicclient" class="tsd-kind-icon">public<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_controllers_public_api_request_.html#timeout" class="tsd-kind-icon">timeout</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_message_signature_.html#getmessagesignature" class="tsd-kind-icon">get<wbr>Message<wbr>Signature</a>
+						<a href="_controllers_public_api_request_.html#publicapirequest" class="tsd-kind-icon">public<wbr>Api<wbr>Request</a>
 					</li>
 				</ul>
 			</nav>
