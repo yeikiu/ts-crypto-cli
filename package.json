@@ -1,6 +1,6 @@
 {
   "name": "ts-kraken-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "TS kraken.com API/WS client library for NodeJS",
   "keywords": [
     "kraken",
@@ -34,9 +34,11 @@
     "@types/node": "11.11.0",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-tsdoc": "^0.2.1",
+    "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
     "ts-node": "^8.6.2",
     "typedoc": "^0.16.9",
@@ -50,6 +52,7 @@
     "build": "rimraf dist && tsc -p .",
     "lint": "tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
     "start": "yarn build && node dist/index.js",
+    "watch": "nodemon",
     "docs": "npx typedoc",
     "publish:docs": "scripts/deploy_docs.sh && rimraf docs"
   }

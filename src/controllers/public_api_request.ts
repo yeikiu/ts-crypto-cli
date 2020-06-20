@@ -23,7 +23,7 @@ publicClient.interceptors.request.use(
 )
 
 export const publicApiRequest = async (url: PublicMethod, data: unknown = {}): Promise<any> => {
-    const { error, data: { result } } = await publicClient.request({ url, data })
+    const { data: { result, error }} = await publicClient.request({ url, data })
     if (error?.length) throw new Error(error.join(' | '))
     return result
 }

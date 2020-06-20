@@ -34,7 +34,7 @@ privateClient.interceptors.request.use(
 )
 
 export const privateApiRequest = async (url: PrivateMethod, data: unknown = {}): Promise<any> => {
-    const {  error, data: { result } } = await privateClient.request({ url, data })
+    const { data: { result, error }} = await privateClient.request({ url, data })
     if (error?.length) throw new Error(error.join(' | '))
     return result
 }
