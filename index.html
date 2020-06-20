@@ -81,63 +81,6 @@
 					<h2>Usage</h2>
 				</a>
 				<p>Generated <a href="https://www.npmjs.com/package/typedoc">typedoc</a> available <a href="https://yeikiu.github.io/ts-kraken-api/">here</a></p>
-				<a href="#tldr" id="tldr" style="color: inherit; text-decoration: none;">
-					<h2>TLDR;</h2>
-				</a>
-				<a href="#public-method39s" id="public-method39s" style="color: inherit; text-decoration: none;">
-					<h3>Public method&#39;s</h3>
-				</a>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { publicApiRequest, KrakenPair, getPublicObservableFromWS } <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-kraken-api'</span>;
-
-<span class="hljs-comment">// Get last BTC/USD ticker</span>
-<span class="hljs-keyword">const</span> pair: KrakenPair = <span class="hljs-string">'XXBTZUSD'</span>;
-
-<span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
-  <span class="hljs-keyword">const</span> { pair: pairTicker } = <span class="hljs-keyword">await</span> publicApiRequest(<span class="hljs-params">'Ticker', { pair }</span>);
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-params">{ pairTicker }</span>);
-}</span>)<span class="hljs-params">()</span>;
-
-// <span class="hljs-params">Listen</span> <span class="hljs-params">to</span> <span class="hljs-params">a</span> <span class="hljs-params">WS</span> <span class="hljs-params">ping</span> <span class="hljs-params">subscription</span>
-<span class="hljs-params">const</span> <span class="hljs-params">pingObservable</span>$ = <span class="hljs-params">getPublicObservableFromWS</span>(<span class="hljs-params">
-    { event: "ping" },
-    <span class="hljs-literal">null</span>,
-    (<span class="hljs-params">{ event = <span class="hljs-literal">null</span> }</span>) =&gt; event === 'pong'
-</span>)
-<span class="hljs-params">pingObservable</span>$.<span class="hljs-params">subscribe</span>(<span class="hljs-params">(<span class="hljs-params">pingData: <span class="hljs-built_in">any</span></span>) =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-params">{ pingData }</span>)
-}</span>)</span></code></pre>
-				<a href="#private-method39s" id="private-method39s" style="color: inherit; text-decoration: none;">
-					<h3>Private method&#39;s</h3>
-				</a>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { privateApiRequest } <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-kraken-api'</span>;
-
-<span class="hljs-comment">// environment vars (you can use a .env file)</span>
-process.env.KRAKEN_API_KEY = <span class="hljs-string">'YOUR_API_KEY'</span>;
-process.env.KRAKEN_API_SECRET = <span class="hljs-string">'YOUR_API_SECRET'</span>;
-
-<span class="hljs-comment">// Get current Kraken account Balance</span>
-(<span class="hljs-keyword">async</span> () =&gt; {
-  <span class="hljs-keyword">const</span> balances = <span class="hljs-keyword">await</span> privateApiRequest(<span class="hljs-string">'Balance'</span>);
-  <span class="hljs-built_in">console</span>.log({ balances });
-})();
-
-<span class="hljs-comment">// Listen to a WS openOrders subscription</span>
-<span class="hljs-keyword">const</span> { privateObservable$: openOrdersObservable$, token }= <span class="hljs-keyword">await</span> getPrivateObservableFromWS(
-    <span class="hljs-literal">null</span>,
-    <span class="hljs-string">'subscription'</span>,
-    {
-        event: <span class="hljs-string">"subscribe"</span>,
-        subscription: {
-            name: <span class="hljs-string">"openOrders"</span>,
-        }
-    },
-    <span class="hljs-literal">null</span>,
-    <span class="hljs-function">(<span class="hljs-params">data: <span class="hljs-built_in">any</span>[]</span>) =&gt;</span> <span class="hljs-built_in">Array</span>.isArray(data) &amp;&amp; data.slice(<span class="hljs-number">-1</span>).includes(<span class="hljs-string">'openOrders'</span>)
-)
-
-openOrdersObservable$.subscribe(<span class="hljs-keyword">async</span> ([freshOpenOrders = [],]) =&gt; {
-    <span class="hljs-built_in">console</span>.log({ freshOpenOrders })
-})</code></pre>
 				<a href="#credits" id="credits" style="color: inherit; text-decoration: none;">
 					<h2>Credits</h2>
 				</a>
