@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;util/debug_helper&quot; | ts-crypto-cli</title>
+	<title>&quot;kraken/private_ws_handler&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_util_debug_helper_.html">&quot;util/debug_helper&quot;</a>
+					<a href="_kraken_private_ws_handler_.html">&quot;kraken/private_ws_handler&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;util/debug_helper&quot;</h1>
+			<h1>External module &quot;kraken/private_ws_handler&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -70,26 +70,107 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_util_debug_helper_.html#debug_prefix" class="tsd-kind-icon">DEBUG_<wbr>PREFIX</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_kraken_private_ws_handler_.html#debug" class="tsd-kind-icon">debug</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_kraken_private_ws_handler_.html#krakenprivatews" class="tsd-kind-icon">kraken<wbr>PrivateWS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_kraken_private_ws_handler_.html#logerror" class="tsd-kind-icon">log<wbr>Error</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_kraken_private_ws_handler_.html#getkrakenprivateobservablefromws" class="tsd-kind-icon">get<wbr>Kraken<wbr>Private<wbr>Observable<wbr>FromWS</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_kraken_private_ws_handler_.html#gethwsauthtoken" class="tsd-kind-icon">geth<wbr>WsAuth<wbr>Token</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="debug_prefix" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> DEBUG_<wbr>PREFIX</h3>
-					<div class="tsd-signature tsd-kind-icon">DEBUG_<wbr>PREFIX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"ts-crypto-cli"</span><span class="tsd-signature-symbol"> = &quot;ts-crypto-cli&quot;</span></div>
+					<a name="debug" class="tsd-anchor"></a>
+					<h3>debug</h3>
+					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/util/debug_helper.ts#L5">src/util/debug_helper.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/kraken/private_ws_handler.ts#L7">src/kraken/private_ws_handler.ts:7</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="krakenprivatews" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> kraken<wbr>PrivateWS</h3>
+					<div class="tsd-signature tsd-kind-icon">kraken<wbr>PrivateWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({protocol: &#x27;v1&#x27;,url: &#x27;wss://ws-auth.kraken.com/&#x27;,WebSocketCtor: WebSocket,})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/kraken/private_ws_handler.ts#L9">src/kraken/private_ws_handler.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="logerror" class="tsd-anchor"></a>
+					<h3>log<wbr>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">log<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/kraken/private_ws_handler.ts#L7">src/kraken/private_ws_handler.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="getkrakenprivateobservablefromws" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Kraken<wbr>Private<wbr>Observable<wbr>FromWS</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Kraken<wbr>Private<wbr>Observable<wbr>FromWS<span class="tsd-signature-symbol">(</span>lastToken<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, subscriptionData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, subscriptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, unsubscriptionData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>privateObservable$<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/kraken/private_ws_handler.ts#L27">src/kraken/private_ws_handler.ts:27</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>lastToken: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>subscriptionData: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>subscriptionId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> unsubscriptionData: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>privateObservable$<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="gethwsauthtoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> geth<wbr>WsAuth<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">geth<wbr>WsAuth<wbr>Token<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/kraken/private_ws_handler.ts#L15">src/kraken/private_ws_handler.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -150,7 +231,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_kraken_private_api_request_.html">&quot;kraken/private_<wbr>api_<wbr>request&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_kraken_private_ws_handler_.html">&quot;kraken/private_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -159,7 +240,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_kraken_public_ws_handler_.html">&quot;kraken/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_util_debug_helper_.html">&quot;util/debug_<wbr>helper&quot;</a>
 					</li>
 				</ul>
@@ -167,7 +248,19 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_util_debug_helper_.html#debug_prefix" class="tsd-kind-icon">DEBUG_<wbr>PREFIX</a>
+						<a href="_kraken_private_ws_handler_.html#debug" class="tsd-kind-icon">debug</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_kraken_private_ws_handler_.html#krakenprivatews" class="tsd-kind-icon">kraken<wbr>PrivateWS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_kraken_private_ws_handler_.html#logerror" class="tsd-kind-icon">log<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_kraken_private_ws_handler_.html#getkrakenprivateobservablefromws" class="tsd-kind-icon">get<wbr>Kraken<wbr>Private<wbr>Observable<wbr>FromWS</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_kraken_private_ws_handler_.html#gethwsauthtoken" class="tsd-kind-icon">geth<wbr>WsAuth<wbr>Token</a>
 					</li>
 				</ul>
 			</nav>

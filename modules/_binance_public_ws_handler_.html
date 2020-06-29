@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;controllers/private_ws_handler&quot; | ts-kraken-api</title>
+	<title>&quot;binance/public_ws_handler&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">ts-kraken-api</a>
+					<a href="../index.html" class="title">ts-crypto-cli</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_controllers_private_ws_handler_.html">&quot;controllers/private_ws_handler&quot;</a>
+					<a href="_binance_public_ws_handler_.html">&quot;binance/public_ws_handler&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;controllers/private_ws_handler&quot;</h1>
+			<h1>External module &quot;binance/public_ws_handler&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,16 +73,13 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_private_ws_handler_.html#debug" class="tsd-kind-icon">debug</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_controllers_private_ws_handler_.html#logerror" class="tsd-kind-icon">log<wbr>Error</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_controllers_private_ws_handler_.html#privatews" class="tsd-kind-icon">privateWS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_binance_public_ws_handler_.html#binancepublicws" class="tsd-kind-icon">binance<wbr>PublicWS</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_controllers_private_ws_handler_.html#getprivateobservablefromws" class="tsd-kind-icon">get<wbr>Private<wbr>Observable<wbr>FromWS</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_controllers_private_ws_handler_.html#gethwsauthtoken" class="tsd-kind-icon">geth<wbr>WsAuth<wbr>Token</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_binance_public_ws_handler_.html#getbinancepublicobservablefromws" class="tsd-kind-icon">get<wbr>Binance<wbr>Public<wbr>Observable<wbr>FromWS</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,33 +87,13 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="debug" class="tsd-anchor"></a>
-					<h3>debug</h3>
-					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/controllers/private_ws_handler.ts#L6">controllers/private_ws_handler.ts:6</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="logerror" class="tsd-anchor"></a>
-					<h3>log<wbr>Error</h3>
-					<div class="tsd-signature tsd-kind-icon">log<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/controllers/private_ws_handler.ts#L6">controllers/private_ws_handler.ts:6</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="privatews" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> privateWS</h3>
-					<div class="tsd-signature tsd-kind-icon">privateWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({protocol: &#x27;v1&#x27;,url: &#x27;wss://ws-auth.kraken.com/&#x27;,WebSocketCtor: WebSocket,})</span></div>
+					<a name="binancepublicws" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> binance<wbr>PublicWS</h3>
+					<div class="tsd-signature tsd-kind-icon">binance<wbr>PublicWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({url: &#x60;${baseWsURL}/stream?streams&#x3D;miniTicker&#x60;,WebSocketCtor: WebSocket,})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/controllers/private_ws_handler.ts#L8">controllers/private_ws_handler.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/binance/public_ws_handler.ts#L6">src/binance/public_ws_handler.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -124,54 +101,28 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getprivateobservablefromws" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Private<wbr>Observable<wbr>FromWS</h3>
+					<a name="getbinancepublicobservablefromws" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Binance<wbr>Public<wbr>Observable<wbr>FromWS</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Private<wbr>Observable<wbr>FromWS<span class="tsd-signature-symbol">(</span>lastToken<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tokenPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, subscriptionData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, unsubscriptionData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, filterFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Binance<wbr>Public<wbr>Observable<wbr>FromWS<span class="tsd-signature-symbol">(</span>streamNames<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, unsubscriptionData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/controllers/private_ws_handler.ts#L26">controllers/private_ws_handler.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/binance/public_ws_handler.ts#L11">src/binance/public_ws_handler.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>lastToken: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>tokenPath: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>subscriptionData: <span class="tsd-signature-type">any</span></h5>
+									<h5>streamNames: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> unsubscriptionData: <span class="tsd-signature-type">any</span></h5>
 								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filterFn: <span class="tsd-signature-type">any</span></h5>
-								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="gethwsauthtoken" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> geth<wbr>WsAuth<wbr>Token</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">geth<wbr>WsAuth<wbr>Token<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/controllers/private_ws_handler.ts#L14">controllers/private_ws_handler.ts:14</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -184,53 +135,77 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_config_api_requests_.html">&quot;config/api_<wbr>requests&quot;</a>
+						<a href="_base_axios_config_.html">&quot;base_<wbr>axios_<wbr>config&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_controllers_private_api_request_.html">&quot;controllers/private_<wbr>api_<wbr>request&quot;</a>
+						<a href="_binance_binance_axios_config_.html">&quot;binance/binance_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_message_signature_.html">&quot;binance/message_<wbr>signature&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_private_api_request_.html">&quot;binance/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_public_api_request_.html">&quot;binance/public_<wbr>api_<wbr>request&quot;</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_controllers_private_ws_handler_.html">&quot;controllers/private_<wbr>ws_<wbr>handler&quot;</a>
+						<a href="_binance_public_ws_handler_.html">&quot;binance/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_controllers_public_api_request_.html">&quot;controllers/public_<wbr>api_<wbr>request&quot;</a>
+						<a href="_cli_.html">&quot;cli&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_controllers_public_ws_handler_.html">&quot;controllers/public_<wbr>ws_<wbr>handler&quot;</a>
+						<a href="_hitbtc_hitbtc_axios_config_.html">&quot;hitbtc/hitbtc_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_private_api_request_.html">&quot;hitbtc/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_private_ws_handler_.html">&quot;hitbtc/private_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_public_api_request_.html">&quot;hitbtc/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_public_ws_handler_.html">&quot;hitbtc/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_models_api_methods_.html">&quot;models/api_<wbr>methods&quot;</a>
+						<a href="_kraken_api_endpoints_.html">&quot;kraken/api_<wbr>endpoints&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_models_kraken_pair_.html">&quot;models/kraken_<wbr>pair&quot;</a>
+						<a href="_kraken_kraken_axios_config_.html">&quot;kraken/kraken_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_message_signature_.html">&quot;kraken/message_<wbr>signature&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_private_api_request_.html">&quot;kraken/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_private_ws_handler_.html">&quot;kraken/private_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_public_api_request_.html">&quot;kraken/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_public_ws_handler_.html">&quot;kraken/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_util_debug_helper_.html">&quot;util/debug_<wbr>helper&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_util_message_signature_.html">&quot;util/message_<wbr>signature&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_controllers_private_ws_handler_.html#debug" class="tsd-kind-icon">debug</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_controllers_private_ws_handler_.html#logerror" class="tsd-kind-icon">log<wbr>Error</a>
-					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_controllers_private_ws_handler_.html#privatews" class="tsd-kind-icon">privateWS</a>
+						<a href="_binance_public_ws_handler_.html#binancepublicws" class="tsd-kind-icon">binance<wbr>PublicWS</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_controllers_private_ws_handler_.html#getprivateobservablefromws" class="tsd-kind-icon">get<wbr>Private<wbr>Observable<wbr>FromWS</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_controllers_private_ws_handler_.html#gethwsauthtoken" class="tsd-kind-icon">geth<wbr>WsAuth<wbr>Token</a>
+						<a href="_binance_public_ws_handler_.html#getbinancepublicobservablefromws" class="tsd-kind-icon">get<wbr>Binance<wbr>Public<wbr>Observable<wbr>FromWS</a>
 					</li>
 				</ul>
 			</nav>

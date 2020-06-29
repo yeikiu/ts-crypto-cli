@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;config/api_requests&quot; | ts-kraken-api</title>
+	<title>&quot;hitbtc/public_ws_handler&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">ts-kraken-api</a>
+					<a href="../index.html" class="title">ts-crypto-cli</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_config_api_requests_.html">&quot;config/api_requests&quot;</a>
+					<a href="_hitbtc_public_ws_handler_.html">&quot;hitbtc/public_ws_handler&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;config/api_requests&quot;</h1>
+			<h1>External module &quot;hitbtc/public_ws_handler&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -70,115 +70,64 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_config_api_requests_.html#method" class="tsd-kind-icon">method</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_hitbtc_public_ws_handler_.html#hitbtcws" class="tsd-kind-icon">hitBTCWS</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Object literals</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-object-literal tsd-parent-kind-external-module"><a href="_config_api_requests_.html#apirequestsconfig" class="tsd-kind-icon">api<wbr>Requests<wbr>Config</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_hitbtc_public_ws_handler_.html#gethitbtcpublicobservablefromws" class="tsd-kind-icon">get<wbr>HitBTCPublic<wbr>Observable<wbr>FromWS</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="method" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> method</h3>
-					<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Method</span><span class="tsd-signature-symbol"> = &quot;POST&quot;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="hitbtcws" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> hitBTCWS</h3>
+					<div class="tsd-signature tsd-kind-icon">hitBTCWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({protocol: &#x27;v1&#x27;,url: baseWsURL,WebSocketCtor: WebSocket,})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L3">config/api_requests.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/hitbtc/public_ws_handler.ts#L6">src/hitbtc/public_ws_handler.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Object literals</h2>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
-					<a name="apirequestsconfig" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> api<wbr>Requests<wbr>Config</h3>
-					<div class="tsd-signature tsd-kind-icon">api<wbr>Requests<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L5">config/api_requests.ts:5</a></li>
-						</ul>
-					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="apirequestsconfig.apiversion" class="tsd-anchor"></a>
-						<h3>api<wbr>Version</h3>
-						<div class="tsd-signature tsd-kind-icon">api<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;0&quot;</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L7">config/api_requests.ts:7</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="apirequestsconfig.krakenbaseurl" class="tsd-anchor"></a>
-						<h3>kraken<wbr>Base<wbr>Url</h3>
-						<div class="tsd-signature tsd-kind-icon">kraken<wbr>Base<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://api.kraken.com&quot;</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L6">config/api_requests.ts:6</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="apirequestsconfig.method-1" class="tsd-anchor"></a>
-						<h3>method</h3>
-						<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"POST"</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L9">config/api_requests.ts:9</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="apirequestsconfig.timeout" class="tsd-anchor"></a>
-						<h3>timeout</h3>
-						<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 10000</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L8">config/api_requests.ts:8</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
-						<a name="apirequestsconfig.headers" class="tsd-anchor"></a>
-						<h3>headers</h3>
-						<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L10">config/api_requests.ts:10</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="apirequestsconfig.headers.user_agent" class="tsd-anchor"></a>
-							<h3>User-<wbr><wbr>Agent</h3>
-							<div class="tsd-signature tsd-kind-icon">User-<wbr><wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;ts-kraken-api&quot;</span></div>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="gethitbtcpublicobservablefromws" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>HitBTCPublic<wbr>Observable<wbr>FromWS</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>HitBTCPublic<wbr>Observable<wbr>FromWS<span class="tsd-signature-symbol">(</span>subscriptionData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, subscriptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, unsubscriptionData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L11">config/api_requests.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/hitbtc/public_ws_handler.ts#L12">src/hitbtc/public_ws_handler.ts:12</a></li>
 								</ul>
 							</aside>
-						</section>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="apirequestsconfig.headers.content_type" class="tsd-anchor"></a>
-							<h3>content-<wbr>type</h3>
-							<div class="tsd-signature tsd-kind-icon">content-<wbr>type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;application/x-www-form-urlencoded&quot;</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/config/api_requests.ts#L12">config/api_requests.ts:12</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>subscriptionData: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>subscriptionId: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> unsubscriptionData: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -188,45 +137,78 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_base_axios_config_.html">&quot;base_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_binance_axios_config_.html">&quot;binance/binance_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_message_signature_.html">&quot;binance/message_<wbr>signature&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_private_api_request_.html">&quot;binance/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_public_api_request_.html">&quot;binance/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_public_ws_handler_.html">&quot;binance/public_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_cli_.html">&quot;cli&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_hitbtc_axios_config_.html">&quot;hitbtc/hitbtc_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_private_api_request_.html">&quot;hitbtc/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_private_ws_handler_.html">&quot;hitbtc/private_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_public_api_request_.html">&quot;hitbtc/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_config_api_requests_.html">&quot;config/api_<wbr>requests&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_controllers_private_api_request_.html">&quot;controllers/private_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_controllers_private_ws_handler_.html">&quot;controllers/private_<wbr>ws_<wbr>handler&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_controllers_public_api_request_.html">&quot;controllers/public_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_controllers_public_ws_handler_.html">&quot;controllers/public_<wbr>ws_<wbr>handler&quot;</a>
+						<a href="_hitbtc_public_ws_handler_.html">&quot;hitbtc/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_models_api_methods_.html">&quot;models/api_<wbr>methods&quot;</a>
+						<a href="_kraken_api_endpoints_.html">&quot;kraken/api_<wbr>endpoints&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_models_kraken_pair_.html">&quot;models/kraken_<wbr>pair&quot;</a>
+						<a href="_kraken_kraken_axios_config_.html">&quot;kraken/kraken_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_message_signature_.html">&quot;kraken/message_<wbr>signature&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_private_api_request_.html">&quot;kraken/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_private_ws_handler_.html">&quot;kraken/private_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_public_api_request_.html">&quot;kraken/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_public_ws_handler_.html">&quot;kraken/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_util_debug_helper_.html">&quot;util/debug_<wbr>helper&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_util_message_signature_.html">&quot;util/message_<wbr>signature&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_config_api_requests_.html#method" class="tsd-kind-icon">method</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_hitbtc_public_ws_handler_.html#hitbtcws" class="tsd-kind-icon">hitBTCWS</a>
 					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
-						<a href="_config_api_requests_.html#apirequestsconfig" class="tsd-kind-icon">api<wbr>Requests<wbr>Config</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_hitbtc_public_ws_handler_.html#gethitbtcpublicobservablefromws" class="tsd-kind-icon">get<wbr>HitBTCPublic<wbr>Observable<wbr>FromWS</a>
 					</li>
 				</ul>
 			</nav>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;controllers/public_ws_handler&quot; | ts-kraken-api</title>
+	<title>&quot;kraken/message_signature&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">ts-kraken-api</a>
+					<a href="../index.html" class="title">ts-crypto-cli</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_controllers_public_ws_handler_.html">&quot;controllers/public_ws_handler&quot;</a>
+					<a href="_kraken_message_signature_.html">&quot;kraken/message_signature&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;controllers/public_ws_handler&quot;</h1>
+			<h1>External module &quot;kraken/message_signature&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,61 +71,39 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_controllers_public_ws_handler_.html#publicws" class="tsd-kind-icon">publicWS</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_controllers_public_ws_handler_.html#getpublicobservablefromws" class="tsd-kind-icon">get<wbr>Public<wbr>Observable<wbr>FromWS</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_kraken_message_signature_.html#getkrakenmessagesignature" class="tsd-kind-icon">get<wbr>Kraken<wbr>Message<wbr>Signature</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="publicws" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> publicWS</h3>
-					<div class="tsd-signature tsd-kind-icon">publicWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({protocol: &#x27;v1&#x27;,url: &#x27;wss://ws.kraken.com&#x27;,WebSocketCtor: WebSocket,})</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/controllers/public_ws_handler.ts#L7">controllers/public_ws_handler.ts:7</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getpublicobservablefromws" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Public<wbr>Observable<wbr>FromWS</h3>
+					<a name="getkrakenmessagesignature" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Kraken<wbr>Message<wbr>Signature</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Public<wbr>Observable<wbr>FromWS<span class="tsd-signature-symbol">(</span>subscriptionData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, unsubscriptionData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, filterFn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Kraken<wbr>Message<wbr>Signature<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-kraken-api/blob/e41458d/src/controllers/public_ws_handler.ts#L13">controllers/public_ws_handler.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4379bfa/src/kraken/message_signature.ts#L5">src/kraken/message_signature.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>subscriptionData: <span class="tsd-signature-type">any</span></h5>
+									<h5>path: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> unsubscriptionData: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filterFn: <span class="tsd-signature-type">any</span></h5>
+									<h5>params: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -138,44 +116,74 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_config_api_requests_.html">&quot;config/api_<wbr>requests&quot;</a>
+						<a href="_base_axios_config_.html">&quot;base_<wbr>axios_<wbr>config&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_controllers_private_api_request_.html">&quot;controllers/private_<wbr>api_<wbr>request&quot;</a>
+						<a href="_binance_binance_axios_config_.html">&quot;binance/binance_<wbr>axios_<wbr>config&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_controllers_private_ws_handler_.html">&quot;controllers/private_<wbr>ws_<wbr>handler&quot;</a>
+						<a href="_binance_message_signature_.html">&quot;binance/message_<wbr>signature&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_controllers_public_api_request_.html">&quot;controllers/public_<wbr>api_<wbr>request&quot;</a>
+						<a href="_binance_private_api_request_.html">&quot;binance/private_<wbr>api_<wbr>request&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="_controllers_public_ws_handler_.html">&quot;controllers/public_<wbr>ws_<wbr>handler&quot;</a>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_public_api_request_.html">&quot;binance/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_binance_public_ws_handler_.html">&quot;binance/public_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_cli_.html">&quot;cli&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_hitbtc_axios_config_.html">&quot;hitbtc/hitbtc_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_private_api_request_.html">&quot;hitbtc/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_private_ws_handler_.html">&quot;hitbtc/private_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_public_api_request_.html">&quot;hitbtc/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_hitbtc_public_ws_handler_.html">&quot;hitbtc/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_models_api_methods_.html">&quot;models/api_<wbr>methods&quot;</a>
+						<a href="_kraken_api_endpoints_.html">&quot;kraken/api_<wbr>endpoints&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_models_kraken_pair_.html">&quot;models/kraken_<wbr>pair&quot;</a>
+						<a href="_kraken_kraken_axios_config_.html">&quot;kraken/kraken_<wbr>axios_<wbr>config&quot;</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="_kraken_message_signature_.html">&quot;kraken/message_<wbr>signature&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_private_api_request_.html">&quot;kraken/private_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_private_ws_handler_.html">&quot;kraken/private_<wbr>ws_<wbr>handler&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_public_api_request_.html">&quot;kraken/public_<wbr>api_<wbr>request&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_kraken_public_ws_handler_.html">&quot;kraken/public_<wbr>ws_<wbr>handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_util_debug_helper_.html">&quot;util/debug_<wbr>helper&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_util_message_signature_.html">&quot;util/message_<wbr>signature&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_controllers_public_ws_handler_.html#publicws" class="tsd-kind-icon">publicWS</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_controllers_public_ws_handler_.html#getpublicobservablefromws" class="tsd-kind-icon">get<wbr>Public<wbr>Observable<wbr>FromWS</a>
+						<a href="_kraken_message_signature_.html#getkrakenmessagesignature" class="tsd-kind-icon">get<wbr>Kraken<wbr>Message<wbr>Signature</a>
 					</li>
 				</ul>
 			</nav>
