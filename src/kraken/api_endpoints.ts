@@ -1,11 +1,11 @@
-export type PublicMethod =
+export type PublicEndpoint =
     'Time' | 'Assets' | 'AssetPairs' | 'Ticker' |
-    'Depth' | 'Trades' | 'Spread' | 'OHLC';
+    'Depth' | 'Trades' | 'Spread' | 'OHLC'
 
-export type PrivateMethod =
+export type PrivateEndpoint =
     'Balance' | 'TradeBalance' | 'OpenOrders' | 'ClosedOrders' |
     'QueryOrders' | 'TradesHistory' | 'QueryTrades' | 'OpenPositions' |
     'Ledgers' | 'QueryLedgers' | 'TradeVolume' | 'AddOrder' |
     'CancelOrder' | 'DepositMethods' | 'DepositAddresses' | 'DepositStatus' |
     'WithdrawInfo' | 'Withdraw' | 'WithdrawStatus' | 'WithdrawCancel' |
-    'GetWebSocketsToken' | 'AddExport' | 'ExportStatus' | 'RetrieveExport' | 'RemoveExport';
+    'GetWebSocketsToken' | 'AddExport' | 'ExportStatus' | 'RetrieveExport' | 'RemoveExport'

@@ -2,7 +2,7 @@ import { parse } from 'path'
 import debugLib from 'debug'
 
 /* RECOMMENED TO MATCH PROJECT'S NAME */
-const DEBUG_PREFIX = 'ts-kraken-api'
+const DEBUG_PREFIX = 'ts-crypto-cli'
 
 export default (fileName: string, label = DEBUG_PREFIX): { debug: Function; logError: Function; print: Function } => {
   const filePath = parse(fileName).name

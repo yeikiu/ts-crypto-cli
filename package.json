@@ -1,7 +1,7 @@
 {
-  "name": "ts-kraken-api",
-  "version": "2.0.1",
-  "description": "TS kraken.com API/WS client library for NodeJS",
+  "name": "ts-crypto-cli",
+  "version": "0.1.8",
+  "description": "TS kraken.com API/WS client & library for NodeJS",
   "keywords": [
     "kraken",
     "api",
@@ -14,18 +14,25 @@
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yeikiu/ts-kraken-api.git"
+    "url": "https://github.com/yeikiu/ts-crypto-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/yeikiu/ts-kraken-api/issues"
+    "url": "https://github.com/yeikiu/ts-crypto-cli/issues"
   },
-  "license": "MIT",
+  "license": "CC0-1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "crypto-cli": "./dist/cli.js"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "debug": "^4.1.1",
+    "firstline": "^2.0.2",
+    "moment": "^2.27.0",
+    "node-menu": "^1.3.0",
     "qs": "^6.9.1",
+    "rotating-file-stream": "^2.1.1",
     "rxjs": "^6.5.5",
     "ws": "^7.3.0"
   },
@@ -53,7 +60,6 @@
     "lint": "tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
     "start": "yarn build && node dist/index.js",
     "watch": "nodemon",
-    "docs": "npx typedoc",
-    "publish:docs": "scripts/deploy_docs.sh && rimraf docs"
+    "docs": "npx typedoc"
   }
 }
