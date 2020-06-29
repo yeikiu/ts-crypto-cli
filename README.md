@@ -10,14 +10,14 @@
 # Each REST request/response is recorded to a log file
 TS_CRYPTO_CLI_LOGS_PATH=D:\DESKTOP\ts-crypto-cli_logs
 
-KRAKEN_API_KEY= ...
-KRAKEN_API_SECRET= ...
+KRAKEN_API_KEY=<...>
+KRAKEN_API_SECRET=<...>
 
-HITBTC_API_KEY= ...
-HITBTC_SECRET_KEY= ...
+HITBTC_API_KEY=<...>
+HITBTC_SECRET_KEY=<...>
 
-BINANCE_API_KEY= ...
-BINANCE_SECRET_KEY= ...
+BINANCE_API_KEY=<...>
+BINANCE_SECRET_KEY=<...>
 ```
 
 ## Use it as a library
@@ -82,5 +82,11 @@ export {
 - `yarn global add ts-crypto-cli` (setup globally)
 
 - `npx crypto-cli` (you can pass -v to simply display installed version)
+
+### Inject your keys/secrets to enable private methods
+
+- Powershell (windows) | `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; npx crypto-cli`
+- cmd (windows) | set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & npx crypto-cli
+- Unix/OSx | KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> npx crypto-cli
 
 <img src=".github/menu_demo.png" />
