@@ -1,22 +1,32 @@
 #!/usr/bin/env node
-
 'use strict';
+
+import { readFileSync } from 'fs'
+import { resolve } from 'path'
+import debugHelper from './util/debug_helper'
+const { print, logError } = debugHelper(__filename)
+
+const [,, arg] = process.argv;
+if (/-v.*/.test(arg)) {
+    try {
+      const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString());
+      console.log(`    ${name} v${version} ✔️`);
+    } catch (error) {
+      logError({ error })
+    }
+    process.exit()
+}
 
 import { parse } from 'qs'
 import { krakenPrivateApiRequest } from './kraken/private_api_request'
 import { krakenPublicApiRequest } from './kraken/public_api_request'
 import { PrivateEndpoint, PublicEndpoint } from './kraken/api_endpoints'
-import debugHelper from './util/debug_helper'
-import { readFileSync } from 'fs'
-import { resolve } from 'path'
 import { hitbtcPrivateApiRequest } from './hitbtc/private_api_request'
 import { hitbtcPublicApiRequest } from './hitbtc/public_api_request'
 import { Method } from 'axios'
 import { binancePrivateApiRequest } from './binance/private_api_request'
 import { binancePublicApiRequest } from './binance/public_api_request'
 import * as nodeMenu from 'node-menu'
-
-const { print } = debugHelper(__filename)
 
 type HitBTCBalanceItem = {
   // HitBTC
