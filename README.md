@@ -67,4 +67,4 @@ export {
 
 - `npx crypto-cli` (you can pass -v to simply display installed version)
 
-<img src=".ci_badges/menu_demo.png" />
+<img src=".github/menu_demo.png" />
