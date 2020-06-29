@@ -63,7 +63,8 @@ export {
 
 ## Launch the REPL cli on a shell
 
-- `yarn global add ts-crypto-cli`
-- `npx crypto-cli`
+- `yarn global add ts-crypto-cli` (setup globally)
+
+- `npx crypto-cli` (you can pass -v to simply display installed version)
 
 <img src=".ci_badges/menu_demo.png" />
