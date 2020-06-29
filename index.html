@@ -68,6 +68,78 @@
 				<a href="#ts-crypto-cli" id="ts-crypto-cli" style="color: inherit; text-decoration: none;">
 					<h1>TS Crypto Cli</h1>
 				</a>
+				<blockquote>
+					<p>A handy npm to operate against some of the most known Crypto Exchanges</p>
+				</blockquote>
+				<a href="#use-it-as-a-library" id="use-it-as-a-library" style="color: inherit; text-decoration: none;">
+					<h2>Use it as a library</h2>
+				</a>
+				<ul>
+					<li><code>yarn add ts-crypto-cli</code></li>
+				</ul>
+				<a href="#rest-apis" id="rest-apis" style="color: inherit; text-decoration: none;">
+					<h3>REST APIs</h3>
+				</a>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_public_api_request_.html">Kraken Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_api_request_.html">Kraken Private</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_api_request_.html">HitBTC Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_api_request_.html">HitBTC Private</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_api_request_.html">Binance Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_api_request_.html">Binance Private</a></li>
+				</ul>
+				<a href="#ws-apis" id="ws-apis" style="color: inherit; text-decoration: none;">
+					<h3>WS APIs</h3>
+				</a>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_public_ws_handler_.html">Kraken Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_ws_handler_.html">Kraken Private</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_ws_handler_.html">HitBTC Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_ws_handler_.html">HitBTC Private</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_ws_handler_.html">Binance Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_ws_handler_.html">Binance Private</a></li>
+				</ul>
+				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
+					<h4>Demo</h4>
+				</a>
+				<p>Here is a little handler to perform a 2-steps withdrawal from Kraken in 20 lines of code using the lib.</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { krakenPrivateApiRequest } <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-crypto-cli'</span>;
+
+<span class="hljs-keyword">const</span> krakenWithdrawAsset = <span class="hljs-keyword">async</span> (asset: <span class="hljs-built_in">string</span>, key: <span class="hljs-built_in">string</span>, withdrawAmount: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; =&gt; {
+
+  <span class="hljs-keyword">const</span> withdrawInfo = <span class="hljs-keyword">await</span> krakenPrivateApiRequest({ url: <span class="hljs-string">'WithdrawInfo'</span>, data: {
+      asset,
+      key,
+      amount: withdrawAmount
+  }})
+
+  <span class="hljs-keyword">const</span> { limit } = withdrawInfo
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>(limit) &lt; <span class="hljs-built_in">Number</span>(withdrawAmount)) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Can´t withdraw <span class="hljs-subst">${withdrawAmount}</span> <span class="hljs-subst">${asset}</span>. Max. available <span class="hljs-subst">${limit}</span>`</span>)
+  }
+
+  krakenPrivateApiRequest({ url: <span class="hljs-string">'Withdraw'</span>, data: {
+    asset,
+    key,
+    amount: withdrawAmount
+  }})
+};
+
+<span class="hljs-keyword">export</span> {
+  krakenWithdrawAsset
+}</code></pre>
+				<hr>
+				<a href="#launch-the-repl-cli-on-a-shell" id="launch-the-repl-cli-on-a-shell" style="color: inherit; text-decoration: none;">
+					<h2>Launch the REPL cli on a shell</h2>
+				</a>
+				<ul>
+					<li><p><code>yarn global add ts-crypto-cli</code> (setup globally)</p>
+					</li>
+					<li><p><code>npx crypto-cli</code> (you can pass -v to simply display installed version)</p>
+					</li>
+				</ul>
+				<img src=".ci_badges/menu_demo.png" />
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
