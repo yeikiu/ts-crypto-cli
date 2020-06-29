@@ -85,8 +85,14 @@ export {
 
 ### Inject your keys/secrets to enable private methods
 
-- Powershell (windows) | `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; npx crypto-cli`
-- cmd (windows) | set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & npx crypto-cli
-- Unix/OSx | KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> npx crypto-cli
+### Powershell (windows)
 
-<img src=".github/menu_demo.png" />
+- `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; npx crypto-cli`
+
+### cmd (windows)
+
+- `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & npx crypto-cli`
+
+### Unix/OSx
+
+- `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> npx crypto-cli`
