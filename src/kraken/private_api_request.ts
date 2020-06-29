@@ -4,7 +4,7 @@ import debugHelper from '../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import {krakenAxiosConfig, apiVersion } from './kraken_axios_config'
 
-const { debug, logError } = debugHelper(__filename)
+const { print, logError } = debugHelper(__filename)
 
 const privateApiClient: AxiosInstance = axios.create(krakenAxiosConfig)
 privateApiClient.defaults.baseURL = `${privateApiClient.defaults.baseURL}/private`
@@ -30,6 +30,6 @@ export const krakenPrivateApiRequest = async ({ url, data }: AxiosRequestConfig)
         logError(errorStr)
         throw new Error(errorStr)
     }
-    debug({ krakenPrivateResponse })
+    print({ krakenPrivateResponse })
     return krakenPrivateResponse
 }

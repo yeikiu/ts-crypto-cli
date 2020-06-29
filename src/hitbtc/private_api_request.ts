@@ -3,7 +3,7 @@ import debugHelper from '../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import {hitbtcAxiosConfig} from './hitbtc_axios_config'
 
-const { debug } = debugHelper(__filename)
+const { print } = debugHelper(__filename)
 
 const privateApiClient: AxiosInstance = axios.create(hitbtcAxiosConfig)
 privateApiClient.defaults.headers.Authorization = 'Basic ' + Buffer.from(`${process.env.HITBTC_API_KEY}:${process.env.HITBTC_SECRET_KEY}`).toString('base64')
@@ -12,6 +12,6 @@ privateApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxi
 
 export const hitbtcPrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
     const { data: hitBTCresponse } = await privateApiClient.request({ url, method, params, data })
-    debug({ hitBTCresponse })
+    print({ hitBTCresponse })
     return hitBTCresponse
 }

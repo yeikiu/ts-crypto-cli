@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+'use strict';
+
 import { parse } from 'qs'
 import { krakenPrivateApiRequest } from './kraken/private_api_request'
 import { krakenPublicApiRequest } from './kraken/public_api_request'
@@ -65,7 +69,7 @@ const handleUserInput = (input: string, exchange: 'kraken' | 'hitbtc' | 'binance
   }
 }
 
-  nodeMenu
+nodeMenu
   .customHeader(() => {
     process.stdout.write(`                              <<<<<<     TS-CRYPTO-CLI v${version}     >>>>>>\n\n`);
   })
