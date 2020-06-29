@@ -8,12 +8,11 @@ const krakenPublicWS = webSocket({
     WebSocketCtor: WebSocket,
 })
 
-const getKrakenPublicObservableFromWS = (subscriptionData: any, unsubscriptionData?: any): Observable<any> => {
-    const { subscription: { name }} = subscriptionData
+const getKrakenPublicObservableFromWS = (subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Observable<any> => {
     const publicObservable$ = krakenPublicWS.multiplex(
         () => subscriptionData, 
         () => unsubscriptionData,
-        (responseArr: any) => Array.isArray(responseArr) && responseArr.some(v => v === name)
+        filterFn
     )
     return publicObservable$
 }

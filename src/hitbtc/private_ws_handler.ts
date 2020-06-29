@@ -6,6 +6,7 @@ const { debug, logError } = debugHelper(__filename)
 
 const authData = {
     method: "login",
+    id: "authRequest",
     params: {
         algo: "BASIC",
         pKey: process.env.HITBTC_API_KEY,
@@ -13,8 +14,8 @@ const authData = {
     }
 }
 
-export const getHitBTCPrivateObservableFromWS = (subscriptionData: any, subscriptionId: string | number, unsubscriptionData?: any): Observable<any> => {
-    const auth$ = getHitBTCPublicObservableFromWS(authData, "authRequest")
+export const getHitBTCPrivateObservableFromWS = (subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Observable<any> => {
+    const auth$ = getHitBTCPublicObservableFromWS(authData, ({ id }) => id === "authRequest")
     const authSubscription = auth$.subscribe(({ result, error }) => {
         authSubscription.unsubscribe()
         debug({ result, error })
@@ -23,10 +24,11 @@ export const getHitBTCPrivateObservableFromWS = (subscriptionData: any, subscrip
             throw new Error(error)
         }
         if (result !== true) throw new Error('HitBTC WS auth error')
+        
     }, (authError) => {
         logError({ authError })
         throw new Error(authError)
     })
 
-    return getHitBTCPublicObservableFromWS(subscriptionData, subscriptionId, unsubscriptionData)
+    return getHitBTCPublicObservableFromWS(subscriptionData, filterFn, unsubscriptionData)
 }

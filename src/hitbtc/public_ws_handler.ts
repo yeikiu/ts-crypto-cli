@@ -9,15 +9,11 @@ const hitBTCWS = webSocket({
     WebSocketCtor: WebSocket,
 })
 
-const getHitBTCPublicObservableFromWS = (subscriptionData: any, subscriptionId: string | number, unsubscriptionData?: any): Observable<any> => {
-    subscriptionData = {
-        ...subscriptionData,
-        id: subscriptionId
-    }
+const getHitBTCPublicObservableFromWS = (subscriptionData: any, filterFn?: (data: unknown) => boolean, unsubscriptionData?: any): Observable<any> => {
     const publicObservable$ = hitBTCWS.multiplex(
         () => subscriptionData, 
         () => unsubscriptionData,
-        ({ id }) => id === subscriptionId
+        filterFn
     )
     return publicObservable$
 }

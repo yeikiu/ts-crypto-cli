@@ -24,7 +24,7 @@ const gethWsAuthToken = async (): Promise<string> => {
     }
 }
 
-const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionData: any, subscriptionId: number, unsubscriptionData?: any): Promise<{ privateObservable$: Observable<any>; token: string }> => {
+const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Promise<{ privateObservable$: Observable<any>; token: string }> => {
     const token = lastToken || await gethWsAuthToken()
 
     const subscriptionDataWithToken = subscriptionData.subscription ? {
@@ -33,17 +33,15 @@ const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionD
             ...subscriptionData.subscription,
             token
         },
-        reqid: subscriptionId
     } : {
         ...subscriptionData,
         token,
-        reqid: subscriptionId
     }
 
     const privateObservable$ = krakenPrivateWS.multiplex(
         () => (subscriptionDataWithToken),
         () => (unsubscriptionData),
-        ({ reqid }) => reqid === subscriptionId
+        filterFn
     )
     return {
         privateObservable$,

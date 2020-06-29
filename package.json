@@ -1,6 +1,6 @@
 {
   "name": "ts-crypto-cli",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "TS kraken.com API/WS client & library for NodeJS",
   "keywords": [
     "kraken",

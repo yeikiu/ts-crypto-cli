@@ -4,20 +4,20 @@ import { baseWsURL } from './binance_axios_config'
 import { Observable } from 'rxjs/internal/Observable'
 
 const binancePublicWS = webSocket({
-    url: `${baseWsURL}/stream?streams=miniTicker`,
+    url: `${baseWsURL}/stream`,
     WebSocketCtor: WebSocket,
 })
 
-const getBinancePublicObservableFromWS = (streamNames: string[], unsubscriptionData?: any): Observable<any> => {
+const getBinancePublicObservableFromWS = (streamNames: string[], filterFn: (data: unknown) => boolean = ({ stream = '' }): boolean => streamNames.includes(stream), unsubscriptionData?: any): Observable<any> => {
     const subscriptionData = {
         method: "SUBSCRIBE",
         params: streamNames,
-        id: 123
+        id: new Date().getTime()
     }
     const publicObservable$ = binancePublicWS.multiplex(
         () => subscriptionData, 
         () => unsubscriptionData,
-        ({ stream = '' }): boolean => streamNames.includes(stream)
+        filterFn
     )
     return publicObservable$
 }
