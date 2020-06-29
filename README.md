@@ -4,6 +4,22 @@
 
 > A handy npm to operate against some of the most known Crypto Exchanges
 
+## Environment Variables
+
+```
+# Each REST request/response is recorded to a log file
+TS_CRYPTO_CLI_LOGS_PATH=D:\DESKTOP\ts-crypto-cli_logs
+
+KRAKEN_API_KEY= ...
+KRAKEN_API_SECRET= ...
+
+HITBTC_API_KEY= ...
+HITBTC_SECRET_KEY= ...
+
+BINANCE_API_KEY= ...
+BINANCE_SECRET_KEY= ...
+```
+
 ## Use it as a library
 
 - `yarn add ts-crypto-cli`
@@ -24,7 +40,7 @@
 - [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_ws_handler_.html)
 - [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_ws_handler_.html)
 - [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_ws_handler_.html)
-- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_ws_handler_.html)
+- Binance Private (TODO, WIP)
 
 #### Demo
 
