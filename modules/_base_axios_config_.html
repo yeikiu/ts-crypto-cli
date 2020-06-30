@@ -76,7 +76,6 @@
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_base_axios_config_.html#ts_crypto_cli_logs_path" class="tsd-kind-icon">TS_<wbr>CRYPTO_<wbr>CLI_<wbr>LOGS_<wbr>PATH</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_base_axios_config_.html#debug" class="tsd-kind-icon">debug</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_base_axios_config_.html#dirpath" class="tsd-kind-icon">dir<wbr>Path</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_base_axios_config_.html#firstoutputfile" class="tsd-kind-icon">first<wbr>Output<wbr>File</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_base_axios_config_.html#logerror" class="tsd-kind-icon">log<wbr>Error</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_base_axios_config_.html#stream" class="tsd-kind-icon">stream</a></li>
 							</ul>
@@ -108,7 +107,7 @@
 					<div class="tsd-signature tsd-kind-icon">TS_<wbr>CRYPTO_<wbr>CLI_<wbr>LOGS_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = resolve(__dirname, &#x27;..&#x27;, &#x27;.logs&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L26">src/base_axios_config.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L20">src/base_axios_config.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -118,7 +117,7 @@
 					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L9">src/base_axios_config.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L10">src/base_axios_config.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -128,17 +127,7 @@
 					<div class="tsd-signature tsd-kind-icon">dir<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = resolve(TS_CRYPTO_CLI_LOGS_PATH)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L27">src/base_axios_config.ts:27</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="firstoutputfile" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> first<wbr>Output<wbr>File</h3>
-					<div class="tsd-signature tsd-kind-icon">first<wbr>Output<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = resolve(dirPath, calculateFileName(new Date(), 1))</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L36">src/base_axios_config.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L21">src/base_axios_config.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -148,7 +137,7 @@
 					<div class="tsd-signature tsd-kind-icon">log<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L9">src/base_axios_config.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L10">src/base_axios_config.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -158,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">stream<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RotatingFileStream</span><span class="tsd-signature-symbol"> = createStream(calculateFileName, {size: &quot;100M&quot;, // rotate every 10 MegaBytes writteninterval: &quot;1d&quot;, // rotate dailypath: dirPath,immutable: true,// compress: &quot;gzip&quot; // compress rotated files})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L28">src/base_axios_config.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L42">src/base_axios_config.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -175,7 +164,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L62">src/base_axios_config.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L68">src/base_axios_config.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -198,7 +187,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L44">src/base_axios_config.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L50">src/base_axios_config.ts:50</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -221,7 +210,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L69">src/base_axios_config.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L75">src/base_axios_config.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -244,7 +233,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L56">src/base_axios_config.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L62">src/base_axios_config.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -267,7 +256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L12">src/base_axios_config.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L24">src/base_axios_config.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -292,7 +281,7 @@
 					<div class="tsd-signature tsd-kind-icon">base<wbr>Axios<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L18">src/base_axios_config.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L12">src/base_axios_config.ts:12</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -301,7 +290,7 @@
 						<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 10000</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L19">src/base_axios_config.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L13">src/base_axios_config.ts:13</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -311,7 +300,7 @@
 						<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L20">src/base_axios_config.ts:20</a></li>
+								<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L14">src/base_axios_config.ts:14</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -320,7 +309,7 @@
 							<div class="tsd-signature tsd-kind-icon">User-<wbr><wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;ts-crypto-cli&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L21">src/base_axios_config.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L15">src/base_axios_config.ts:15</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -330,7 +319,7 @@
 							<div class="tsd-signature tsd-kind-icon">content-<wbr>type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;application/x-www-form-urlencoded&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7da1308/src/base_axios_config.ts#L22">src/base_axios_config.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/5d3b9c3/src/base_axios_config.ts#L16">src/base_axios_config.ts:16</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -419,9 +408,6 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_base_axios_config_.html#dirpath" class="tsd-kind-icon">dir<wbr>Path</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_base_axios_config_.html#firstoutputfile" class="tsd-kind-icon">first<wbr>Output<wbr>File</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_base_axios_config_.html#logerror" class="tsd-kind-icon">log<wbr>Error</a>
