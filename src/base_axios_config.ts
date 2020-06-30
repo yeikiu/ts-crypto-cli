@@ -1,13 +1,11 @@
 import { createStream } from 'rotating-file-stream'
-import { resolve, join } from 'path'
+import { resolve } from 'path'
 import * as moment from 'moment'
 import { stringify } from 'qs'
-import * as firstline from 'firstline'
 import debugHelper from './util/debug_helper'
 import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
-import { writeFileSync } from 'fs'
 
-const { debug, logError } = debugHelper(__filename)
+const { logError } = debugHelper(__filename)
 
 const baseAxiosConfig = {
     timeout: 10000,
@@ -23,20 +21,8 @@ const dirPath = resolve(TS_CRYPTO_CLI_LOGS_PATH)
 // Rotating filenames
 const calculateFileName = (date: Date, index: number): string => {
     const fileName = `ts-crypto-cli_${moment().format('YYYY_DD_MMM')}`
-
     if (!date) return `${fileName}.csv`
-
-    const finalLogName = `${fileName}_${index}.csv`
-
-    const finalLogPath = join(dirPath, finalLogName)
-    firstline(finalLogPath).then(() => {
-        debug(`Using existing log file series @ ${finalLogPath} ... _<N>.csv`)
-    }).catch(() => {
-        writeFileSync(finalLogPath, 'time; method; endpoint; params; data; status; status_text; error_code')
-        debug(`Log file created @ ${finalLogPath}`)
-    })
-
-    return finalLogName
+    return `${fileName}_${index}.csv`
 }
 
 const stream = createStream(calculateFileName, {
