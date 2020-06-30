@@ -8,7 +8,7 @@ import { getBinanceMessageSignature } from './message_signature'
 const { print } = debugHelper(__filename)
 
 const privateApiClient: AxiosInstance = axios.create(binanceAxiosConfig)
-privateApiClient.defaults.headers['X-MBX-APIKEY'] = process.env.BINANCE_API_KEY
+privateApiClient.defaults.headers['X-MBX-APIKEY'] = process.env.BINANCE_API_KEY || ''
 privateApiClient.interceptors.request.use((config: AxiosRequestConfig) => {
 
     const timestamp = moment().valueOf()

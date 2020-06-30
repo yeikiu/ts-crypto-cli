@@ -8,7 +8,7 @@ const { print, logError } = debugHelper(__filename)
 
 const privateApiClient: AxiosInstance = axios.create(krakenAxiosConfig)
 privateApiClient.defaults.baseURL = `${privateApiClient.defaults.baseURL}/private`
-privateApiClient.defaults.headers['API-Key'] = process.env.KRAKEN_API_KEY
+privateApiClient.defaults.headers['API-Key'] = process.env.KRAKEN_API_KEY || ''
 privateApiClient.interceptors.request.use((config) => {
         const { url } = config
         const nonce = new Date().getTime() * 1000
