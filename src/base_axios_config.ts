@@ -1,19 +1,13 @@
 import { createStream } from 'rotating-file-stream'
-import { resolve } from 'path'
+import { resolve, join } from 'path'
 import * as moment from 'moment'
 import { stringify } from 'qs'
 import * as firstline from 'firstline'
 import debugHelper from './util/debug_helper'
 import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
+import { writeFileSync } from 'fs'
 
 const { debug, logError } = debugHelper(__filename)
-
-// Rotating filenames
-const calculateFileName = (date: Date, index: number): string => {
-    const fileNamePrefix = `ts-crypto-cli_${moment().format('YYYY_DD_MMM')}`
-    if (!date) return `${fileNamePrefix}.csv`
-    return `${fileNamePrefix}_${index}.csv`
-}
 
 const baseAxiosConfig = {
     timeout: 10000,
@@ -25,6 +19,26 @@ const baseAxiosConfig = {
 
 const { TS_CRYPTO_CLI_LOGS_PATH = resolve(__dirname, '..', '.logs') } = process.env
 const dirPath = resolve(TS_CRYPTO_CLI_LOGS_PATH)
+
+// Rotating filenames
+const calculateFileName = (date: Date, index: number): string => {
+    const fileName = `ts-crypto-cli_${moment().format('YYYY_DD_MMM')}`
+
+    if (!date) return `${fileName}.csv`
+
+    const finalLogName = `${fileName}_${index}.csv`
+
+    const finalLogPath = join(dirPath, finalLogName)
+    firstline(finalLogPath).then(() => {
+        debug(`Using existing log file series @ ${finalLogPath} ... _<N>.csv`)
+    }).catch(() => {
+        writeFileSync(finalLogPath, 'time; method; endpoint; params; data; status; status_text; error_code')
+        debug(`Log file created @ ${finalLogPath}`)
+    })
+
+    return finalLogName
+}
+
 const stream = createStream(calculateFileName, {
     size: "100M", // rotate every 10 MegaBytes written
     interval: "1d", // rotate daily
@@ -32,14 +46,6 @@ const stream = createStream(calculateFileName, {
     immutable: true,
     // compress: "gzip" // compress rotated files
 });
-
-const firstOutputFile = resolve(dirPath, calculateFileName(new Date(), 1))
-firstline(firstOutputFile).then(() => {
-    debug(`Using existing log series @ ${firstOutputFile} ... _<N>.csv`)
-}).catch(() => {
-    stream.write(`time; method; endpoint; params; data; status; status_text; error_code`)
-    debug(`Output log file created @ ${firstOutputFile}`)
-})
 
 const baseAxiosRequestInterceptor = (config: AxiosRequestConfig): AxiosRequestConfig => {
     if (['PUT', 'POST', 'PATCH'].includes(config.method.toUpperCase())) {
