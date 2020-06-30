@@ -83,6 +83,8 @@ export {
 
 - `npx crypto-cli` (you can pass -v to simply display installed version)
 
+<img src=".github/menu_demo.png" />
+
 ### Inject your keys/secrets to enable private methods
 
 #### Powershell (windows)
