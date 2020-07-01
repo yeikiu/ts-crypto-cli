@@ -10,7 +10,7 @@ const authData = {
     params: {
         algo: "BASIC",
         pKey: process.env.HITBTC_API_KEY,
-        sKey: process.env.HITBTC_SECRET_KEY
+        sKey: process.env.HITBTC_API_SECRET
     }
 }
 
@@ -24,7 +24,7 @@ export const getHitBTCPrivateObservableFromWS = (subscriptionData: any, filterFn
             throw new Error(error)
         }
         if (result !== true) throw new Error('HitBTC WS auth error')
-        
+
     }, (authError) => {
         logError({ authError })
         throw new Error(authError)

@@ -1,28 +1,31 @@
 import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor } from '../base_axios_config'
-import {getKrakenMessageSignature} from './message_signature'
+import { getKrakenMessageSignature } from './message_signature'
 import debugHelper from '../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
-import {krakenAxiosConfig, apiVersion } from './kraken_axios_config'
+import { krakenAxiosConfig, apiVersion } from './kraken_axios_config'
 import { PrivateEndpoint } from './api_endpoints'
 
 const { print, logError } = debugHelper(__filename)
 
-const privateApiClient: AxiosInstance = axios.create(krakenAxiosConfig)
-privateApiClient.defaults.baseURL = `${privateApiClient.defaults.baseURL}/private`
-privateApiClient.defaults.headers['API-Key'] = process.env.KRAKEN_API_KEY || ''
-privateApiClient.interceptors.request.use((config) => {
+const createKrakenPrivateApiClient = (apikey = process.env.KRAKEN_API_KEY || '', apiSecret = process.env.KRAKEN_API_SECRET || ''): AxiosInstance => {
+    const privateApiClient: AxiosInstance = axios.create(krakenAxiosConfig)
+    privateApiClient.defaults.baseURL = `${privateApiClient.defaults.baseURL}/private`
+    privateApiClient.defaults.headers['API-Key'] = apikey
+    privateApiClient.interceptors.request.use((config) => {
         const { url } = config
         const nonce = new Date().getTime() * 1000
         config.data = {
             ...config.data,
             nonce
         }
-        config.headers['API-Sign'] = getKrakenMessageSignature(`/${apiVersion}/private/${url}`, config.data)
+        config.headers['API-Sign'] = getKrakenMessageSignature(`/${apiVersion}/private/${url}`, config.data, apiSecret)
         return baseAxiosRequestInterceptor(config)
     },
-    baseAxiosRequestErrorInterceptor
-)
-privateApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
+        baseAxiosRequestErrorInterceptor
+    )
+    privateApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
+    return privateApiClient
+}
 
 interface KrakenPrivateRequestConfig extends AxiosRequestConfig {
     method?: 'POST' | 'post';
@@ -30,8 +33,9 @@ interface KrakenPrivateRequestConfig extends AxiosRequestConfig {
     data?: any;
 }
 
-export const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig): Promise<any> => {
-    const { data: { result: krakenPrivateResponse, error }} = await privateApiClient.request({ url, data })
+const defaultClient = createKrakenPrivateApiClient()
+const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig): Promise<any> => {
+    const { data: { result: krakenPrivateResponse, error } } = await defaultClient.request({ url, data })
     if (error?.length) {
         const errorStr = error.join(' | ')
         logError(errorStr)
@@ -39,4 +43,9 @@ export const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateReques
     }
     print({ krakenPrivateResponse })
     return krakenPrivateResponse
+}
+
+export {
+    createKrakenPrivateApiClient,
+    krakenPrivateApiRequest
 }

@@ -7,39 +7,48 @@ import { getBinanceMessageSignature } from './message_signature'
 
 const { print } = debugHelper(__filename)
 
-const privateApiClient: AxiosInstance = axios.create(binanceAxiosConfig)
-privateApiClient.defaults.headers['X-MBX-APIKEY'] = process.env.BINANCE_API_KEY || ''
-privateApiClient.interceptors.request.use((config: AxiosRequestConfig) => {
+const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_KEY || '', apiSecret = process.env.BINANCE_API_SECRET || ''): AxiosInstance => {
+    const privateApiClient: AxiosInstance = axios.create(binanceAxiosConfig)
+    privateApiClient.defaults.headers['X-MBX-APIKEY'] = apikey
+    privateApiClient.interceptors.request.use((config: AxiosRequestConfig) => {
 
-    const timestamp = moment().valueOf()
-    // Sign payload
-    config.data = {
-        ...config.data,
-        timestamp,
-    }
-    const dataSignature = getBinanceMessageSignature(config.data)
-    config.data = {
-        ...config.data,
-        signature: dataSignature,
-    }
-    // Sign params
-    config.params = {
-        ...config.params,
-        timestamp,
-    }
-    const paramsSignature = getBinanceMessageSignature(config.params)
-    config.params = {
-        ...config.params,
-        signature: paramsSignature,
-    }
+        const timestamp = moment().valueOf()
+        // Sign payload
+        config.data = {
+            ...config.data,
+            timestamp,
+        }
+        const dataSignature = getBinanceMessageSignature(config.data, apiSecret)
+        config.data = {
+            ...config.data,
+            signature: dataSignature,
+        }
+        // Sign params
+        config.params = {
+            ...config.params,
+            timestamp,
+        }
+        const paramsSignature = getBinanceMessageSignature(config.params, apiSecret)
+        config.params = {
+            ...config.params,
+            signature: paramsSignature,
+        }
 
-    return baseAxiosRequestInterceptor(config)
+        return baseAxiosRequestInterceptor(config)
 
-}, baseAxiosRequestErrorInterceptor)
-privateApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
+    }, baseAxiosRequestErrorInterceptor)
+    privateApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
+    return privateApiClient
+}
 
-export const binancePrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
-    const { data: hitBTCresponse } = await privateApiClient.request({ url, method, params, data })
+const defaultClient = createBinancePrivateApiClient()
+const binancePrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
+    const { data: hitBTCresponse } = await defaultClient.request({ url, method, params, data })
     print({ hitBTCresponse })
     return hitBTCresponse
+}
+
+export {
+    createBinancePrivateApiClient,
+    binancePrivateApiRequest
 }

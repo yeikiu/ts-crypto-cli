@@ -14,10 +14,10 @@ KRAKEN_API_KEY=<...>
 KRAKEN_API_SECRET=<...>
 
 HITBTC_API_KEY=<...>
-HITBTC_SECRET_KEY=<...>
+HITBTC_API_SECRET=<...>
 
 BINANCE_API_KEY=<...>
-BINANCE_SECRET_KEY=<...>
+BINANCE_API_SECRET=<...>
 ```
 
 ## Use it as a library
