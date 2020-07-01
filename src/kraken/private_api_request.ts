@@ -5,7 +5,7 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { krakenAxiosConfig, apiVersion } from './kraken_axios_config'
 import { PrivateEndpoint } from './api_endpoints'
 
-const { print, logError } = debugHelper(__filename)
+const { debug, logError } = debugHelper(__filename)
 
 const createKrakenPrivateApiClient = (apikey = process.env.KRAKEN_API_KEY || '', apiSecret = process.env.KRAKEN_API_SECRET || ''): AxiosInstance => {
     const privateApiClient: AxiosInstance = axios.create(krakenAxiosConfig)
@@ -41,7 +41,7 @@ const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig
         logError(errorStr)
         throw new Error(errorStr)
     }
-    print({ krakenPrivateResponse })
+    debug({ krakenPrivateResponse })
     return krakenPrivateResponse
 }
 

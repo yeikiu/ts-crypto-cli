@@ -48,13 +48,13 @@ const filterBalances = (balancesArr: StandardBalanceItem[]): void => {
   print({ balances })
 }
 
-const handleUserInput = (input: string, exchange: 'kraken' | 'hitbtc' | 'binance', pOp: 'public' | 'private'): void => {
+const handleUserInput = async (input: string, exchange: 'kraken' | 'hitbtc' | 'binance', pOp: 'public' | 'private'): Promise<void> => {
   if (exchange === 'kraken') {
     const [endpoint, rawParams] = input.split(';')
     if (pOp === 'public') {
-      krakenPublicApiRequest({ url: endpoint as PublicEndpoint, data: parse(rawParams) })
+      print(await krakenPublicApiRequest({ url: endpoint as PublicEndpoint, data: parse(rawParams) }))
     } else {
-      krakenPrivateApiRequest({ url: endpoint as PrivateEndpoint, data: parse(rawParams) })
+      print(await krakenPrivateApiRequest({ url: endpoint as PrivateEndpoint, data: parse(rawParams) }))
     }
     return
   }
@@ -63,17 +63,17 @@ const handleUserInput = (input: string, exchange: 'kraken' | 'hitbtc' | 'binance
   switch (exchange) {
     case 'binance':
       if (pOp === 'public') {
-        binancePublicApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams })
+        print(await binancePublicApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams }))
       } else {
-        binancePrivateApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams })
+        print(await binancePrivateApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams }))
       }
       return
     case 'hitbtc':
       if (pOp === 'public') {
         const dataOrParams = parse(rawParams)
-        hitbtcPublicApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams })
+        print(await hitbtcPublicApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams }))
       } else {
-        hitbtcPrivateApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams })
+        print(await hitbtcPrivateApiRequest({ url: endpoint, method: method as Method, data: dataOrParams, params: dataOrParams }))
       }
       return
   }
@@ -87,9 +87,9 @@ nodeMenu
   .addDelimiter('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    Kraken API | https://www.kraken.com/features/api#general-usage\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
   .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'kraken', 'public') }, null, [{ name: '<endpoint>;<query>', type: 'string' }])
   .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'kraken', 'private') }, null, [{ name: '<endpoint>;<query>', type: 'string' }])
-  .addItem('Show Balances', () => { krakenPrivateApiRequest({ url: 'Balance' }) })
-  .addItem('BUY @ market', (pair: string, volume: number) => { krakenPrivateApiRequest({ url: 'AddOrder', data: { pair, type: 'buy', ordertype: 'market', volume } }) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
-  .addItem('SELL @ market', (pair: string, volume: number) => { krakenPrivateApiRequest({ url: 'AddOrder', data: { pair, type: 'sell', ordertype: 'market', volume } }) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
+  .addItem('Show Balances', async () => { print(await krakenPrivateApiRequest({ url: 'Balance' })) })
+  .addItem('BUY @ market', async (pair: string, volume: number) => {  print(await krakenPrivateApiRequest({ url: 'AddOrder', data: { pair, type: 'buy', ordertype: 'market', volume } })) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
+  .addItem('SELL @ market', async (pair: string, volume: number) => {  print(await krakenPrivateApiRequest({ url: 'AddOrder', data: { pair, type: 'sell', ordertype: 'market', volume } })) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
 
   .addDelimiter(' ', 1)
   .addDelimiter('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    HitBTC API | https://api.hitbtc.com/#rest-api-reference\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
@@ -97,16 +97,16 @@ nodeMenu
   .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'hitbtc', 'private') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
   .addItem('Show ACCOUNT Balances', async () => { filterBalances(await hitbtcPrivateApiRequest({ url: 'account/balance' })) })
   .addItem('Show TRADING Balances', async () => { filterBalances(await hitbtcPrivateApiRequest({ url: 'trading/balance' })) })
-  .addItem('BUY @ market', (symbol: string, quantity: number) => { hitbtcPrivateApiRequest({ url: 'order', method: 'POST', data: { symbol, side: 'buy', type: 'market', quantity } }) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
-  .addItem('SELL @ market', (symbol: string, quantity: number) => { hitbtcPrivateApiRequest({ url: 'order', method: 'POST', data: { symbol, side: 'sell', type: 'market', quantity } }) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
+  .addItem('BUY @ market',  async (symbol: string, quantity: number) => { print(await hitbtcPrivateApiRequest({ url: 'order', method: 'POST', data: { symbol, side: 'buy', type: 'market', quantity } })) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
+  .addItem('SELL @ market',  async (symbol: string, quantity: number) => { print(await hitbtcPrivateApiRequest({ url: 'order', method: 'POST', data: { symbol, side: 'sell', type: 'market', quantity } })) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
 
   .addDelimiter(' ', 1)
   .addDelimiter('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    Binance API | https://binance-docs.github.io/apidocs/spot/en/#general-api-information\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
   .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'binance', 'public') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
   .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'binance', 'private') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
   .addItem('Show Balances', async () => { filterBalances((await binancePrivateApiRequest({ url: 'api/v3/account' })).balances) })
-  .addItem('BUY @ market', (symbol: string, quantity: number) => { binancePrivateApiRequest({ url: 'api/v3/order', method: 'POST', data: { symbol, side: 'buy', type: 'market', quantity } }) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
-  .addItem('SELL @ market', (symbol: string, quantity: number) => { binancePrivateApiRequest({ url: 'api/v3/order', method: 'POST', data: { symbol, side: 'sell', type: 'market', quantity } }) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
+  .addItem('BUY @ market',  async (symbol: string, quantity: number) => { print(await binancePrivateApiRequest({ url: 'api/v3/order', method: 'POST', data: { symbol, side: 'buy', type: 'market', quantity } })) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
+  .addItem('SELL @ market',  async (symbol: string, quantity: number) => { print(await binancePrivateApiRequest({ url: 'api/v3/order', method: 'POST', data: { symbol, side: 'sell', type: 'market', quantity } })) }, null, [{ name: 'pair', type: 'string' }, { name: 'amount', type: 'numeric' }])
 
   .addDelimiter(' ', 1)
   .addDelimiter('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    Extras/Config\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)

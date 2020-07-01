@@ -42,6 +42,15 @@ BINANCE_API_SECRET=<...>
 - [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_ws_handler_.html)
 - Binance Private (TODO, WIP)
 
+### Handling multiple API credentials
+
+You can handle different API keys/secrets under the same exchange. Generate the new API client instances with the following methods:
+
+- [`createKrakenPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_api_request_.html#createkrakenprivateapiclient)
+- [`createHitBTCPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_api_request_.html#createhitbtcprivateapiclient)
+- [`createBinancePrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_api_request_.html#createbinanceprivateapiclient)
+
+
 #### Demo
 
 Here is a little handler to perform a 2-steps withdrawal from Kraken in 20 lines of code using the lib.
