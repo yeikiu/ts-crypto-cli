@@ -3,6 +3,7 @@ import {getKrakenMessageSignature} from './message_signature'
 import debugHelper from '../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import {krakenAxiosConfig, apiVersion } from './kraken_axios_config'
+import { PrivateEndpoint } from './api_endpoints'
 
 const { print, logError } = debugHelper(__filename)
 
@@ -23,7 +24,13 @@ privateApiClient.interceptors.request.use((config) => {
 )
 privateApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
 
-export const krakenPrivateApiRequest = async ({ url, data }: AxiosRequestConfig): Promise<any> => {
+interface KrakenPrivateRequestConfig extends AxiosRequestConfig {
+    method?: 'POST' | 'post';
+    url: PrivateEndpoint;
+    data?: any;
+}
+
+export const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig): Promise<any> => {
     const { data: { result: krakenPrivateResponse, error }} = await privateApiClient.request({ url, data })
     if (error?.length) {
         const errorStr = error.join(' | ')
