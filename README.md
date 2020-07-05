@@ -88,22 +88,26 @@ export {
 
 ## Launch the REPL cli on a shell
 
-- `yarn global add ts-crypto-cli` (setup globally)
-
-- `npx crypto-cli` (you can pass -v to simply display installed version)
-
 <img src=".github/menu_demo.png" />
+
+### With a .env file
+
+> Update the .env file with your own credentials and run
+
+- `yarn start:env`
 
 ### Inject your keys/secrets to enable private methods
 
+> This method is more secure as you don´t persist the KEYS on the file
+
 #### Powershell (windows)
 
-- `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; npx crypto-cli`
+- `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; yarn start`
 
 #### cmd (windows)
 
-- `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & npx crypto-cli`
+- `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & yarn start`
 
 #### Unix/OSx
 
-- `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> npx crypto-cli`
+- `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> yarn start`
