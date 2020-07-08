@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;kraken/message_signature&quot; | ts-crypto-cli</title>
+	<title>&quot;util/filter_balances&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_kraken_message_signature_.html">&quot;kraken/message_signature&quot;</a>
+					<a href="_util_filter_balances_.html">&quot;util/filter_balances&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;kraken/message_signature&quot;</h1>
+			<h1>External module &quot;util/filter_balances&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -70,43 +70,119 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_util_filter_balances_.html#binancebalanceitem" class="tsd-kind-icon">Binance<wbr>Balance<wbr>Item</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_util_filter_balances_.html#hitbtcbalanceitem" class="tsd-kind-icon">HitBTCBalance<wbr>Item</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_util_filter_balances_.html#standardbalanceitem" class="tsd-kind-icon">Standard<wbr>Balance<wbr>Item</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_util_filter_balances_.html#print" class="tsd-kind-icon">print</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_kraken_message_signature_.html#getkrakenmessagesignature" class="tsd-kind-icon">get<wbr>Kraken<wbr>Message<wbr>Signature</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_filter_balances_.html#filterbalances" class="tsd-kind-icon">filter<wbr>Balances</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="binancebalanceitem" class="tsd-anchor"></a>
+					<h3>Binance<wbr>Balance<wbr>Item</h3>
+					<div class="tsd-signature tsd-kind-icon">Binance<wbr>Balance<wbr>Item<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>asset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>free<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/8e2a590/src/util/filter_balances.ts#L9">src/util/filter_balances.ts:9</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>asset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>free<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="hitbtcbalanceitem" class="tsd-anchor"></a>
+					<h3>HitBTCBalance<wbr>Item</h3>
+					<div class="tsd-signature tsd-kind-icon">HitBTCBalance<wbr>Item<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>available<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>currency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/8e2a590/src/util/filter_balances.ts#L4">src/util/filter_balances.ts:4</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>available<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>currency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="standardbalanceitem" class="tsd-anchor"></a>
+					<h3>Standard<wbr>Balance<wbr>Item</h3>
+					<div class="tsd-signature tsd-kind-icon">Standard<wbr>Balance<wbr>Item<span class="tsd-signature-symbol">:</span> <a href="_util_filter_balances_.html#hitbtcbalanceitem" class="tsd-signature-type">HitBTCBalanceItem</a><span class="tsd-signature-symbol"> &amp; </span><a href="_util_filter_balances_.html#binancebalanceitem" class="tsd-signature-type">BinanceBalanceItem</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/8e2a590/src/util/filter_balances.ts#L14">src/util/filter_balances.ts:14</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="print" class="tsd-anchor"></a>
+					<h3>print</h3>
+					<div class="tsd-signature tsd-kind-icon">print<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/8e2a590/src/util/filter_balances.ts#L2">src/util/filter_balances.ts:2</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getkrakenmessagesignature" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Kraken<wbr>Message<wbr>Signature</h3>
+					<a name="filterbalances" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> filter<wbr>Balances</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Kraken<wbr>Message<wbr>Signature<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, privateKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Balances<span class="tsd-signature-symbol">(</span>balancesArr<span class="tsd-signature-symbol">: </span><a href="_util_filter_balances_.html#standardbalanceitem" class="tsd-signature-type">StandardBalanceItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_util_filter_balances_.html#standardbalanceitem" class="tsd-signature-type">StandardBalanceItem</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/acf77f5/src/kraken/message_signature.ts#L5">src/kraken/message_signature.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/8e2a590/src/util/filter_balances.ts#L16">src/util/filter_balances.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>path: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>privateKey: <span class="tsd-signature-type">string</span></h5>
+									<h5>balancesArr: <a href="_util_filter_balances_.html#standardbalanceitem" class="tsd-signature-type">StandardBalanceItem</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_util_filter_balances_.html#standardbalanceitem" class="tsd-signature-type">StandardBalanceItem</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -118,75 +194,27 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_base_axios_config_.html">&quot;base_<wbr>axios_<wbr>config&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_binance_binance_axios_config_.html">&quot;binance/binance_<wbr>axios_<wbr>config&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_binance_message_signature_.html">&quot;binance/message_<wbr>signature&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_binance_private_api_request_.html">&quot;binance/private_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_binance_public_api_request_.html">&quot;binance/public_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_binance_public_ws_handler_.html">&quot;binance/public_<wbr>ws_<wbr>handler&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_cli_.html">&quot;cli&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hitbtc_hitbtc_axios_config_.html">&quot;hitbtc/hitbtc_<wbr>axios_<wbr>config&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hitbtc_private_api_request_.html">&quot;hitbtc/private_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hitbtc_private_ws_handler_.html">&quot;hitbtc/private_<wbr>ws_<wbr>handler&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hitbtc_public_api_request_.html">&quot;hitbtc/public_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_hitbtc_public_ws_handler_.html">&quot;hitbtc/public_<wbr>ws_<wbr>handler&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">&quot;index&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_kraken_api_endpoints_.html">&quot;kraken/api_<wbr>endpoints&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_kraken_kraken_axios_config_.html">&quot;kraken/kraken_<wbr>axios_<wbr>config&quot;</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_kraken_message_signature_.html">&quot;kraken/message_<wbr>signature&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_kraken_private_api_request_.html">&quot;kraken/private_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_kraken_private_ws_handler_.html">&quot;kraken/private_<wbr>ws_<wbr>handler&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_kraken_public_api_request_.html">&quot;kraken/public_<wbr>api_<wbr>request&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_kraken_public_ws_handler_.html">&quot;kraken/public_<wbr>ws_<wbr>handler&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_util_debug_helper_.html">&quot;util/debug_<wbr>helper&quot;</a>
+						<a href="_util_filter_balances_.html">&quot;util/filter_<wbr>balances&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_util_filter_balances_.html#binancebalanceitem" class="tsd-kind-icon">Binance<wbr>Balance<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_util_filter_balances_.html#hitbtcbalanceitem" class="tsd-kind-icon">HitBTCBalance<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_util_filter_balances_.html#standardbalanceitem" class="tsd-kind-icon">Standard<wbr>Balance<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_util_filter_balances_.html#print" class="tsd-kind-icon">print</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_kraken_message_signature_.html#getkrakenmessagesignature" class="tsd-kind-icon">get<wbr>Kraken<wbr>Message<wbr>Signature</a>
+						<a href="_util_filter_balances_.html#filterbalances" class="tsd-kind-icon">filter<wbr>Balances</a>
 					</li>
 				</ul>
 			</nav>
