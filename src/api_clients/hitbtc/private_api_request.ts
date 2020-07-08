@@ -1,5 +1,5 @@
-import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor } from '../base_axios_config'
-import debugHelper from '../util/debug_helper'
+import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor } from '../../base_axios_config'
+import debugHelper from '../../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { hitbtcAxiosConfig } from './hitbtc_axios_config'
 

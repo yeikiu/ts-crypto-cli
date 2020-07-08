@@ -1,12 +1,12 @@
-import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor } from '../base_axios_config'
-import debugHelper from '../util/debug_helper'
+import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor } from '../../base_axios_config'
+import debugHelper from '../../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { hitbtcAxiosConfig } from './hitbtc_axios_config'
 
 const { debug } = debugHelper(__filename)
 
 const publicApiClient: AxiosInstance = axios.create(hitbtcAxiosConfig)
-publicApiClient.defaults.baseURL = `${publicApiClient.defaults.baseURL}/public/`
+publicApiClient.defaults.baseURL = `${publicApiClient.defaults.baseURL}public/`
 publicApiClient.interceptors.request.use(baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor)
 publicApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
 

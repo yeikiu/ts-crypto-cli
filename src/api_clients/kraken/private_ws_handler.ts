@@ -1,7 +1,7 @@
 import * as WebSocket from 'ws'
 import { webSocket } from "rxjs/webSocket"
 import { krakenPrivateApiRequest } from './private_api_request'
-import debugHelper from '../util/debug_helper'
+import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 
 const { debug, logError } = debugHelper(__filename)

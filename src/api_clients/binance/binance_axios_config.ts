@@ -1,4 +1,4 @@
-import { baseAxiosConfig } from '../base_axios_config'
+import { baseAxiosConfig } from '../../base_axios_config'
 import { AxiosRequestConfig } from 'axios'
 
 export const baseWsURL = 'wss://stream.binance.com:9443'

@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from 'axios'
-import { baseAxiosConfig } from '../base_axios_config'
+import { baseAxiosConfig } from '../../base_axios_config'
 import { PublicEndpoint, PrivateEndpoint } from './api_endpoints'
 
 export interface KrakenPublicAxiosRequest extends AxiosRequestConfig {

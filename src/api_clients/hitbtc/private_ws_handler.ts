@@ -1,4 +1,4 @@
-import debugHelper from '../util/debug_helper'
+import debugHelper from '../../util/debug_helper'
 import { getHitBTCPublicObservableFromWS } from './public_ws_handler'
 import { Observable } from 'rxjs/internal/Observable'
 

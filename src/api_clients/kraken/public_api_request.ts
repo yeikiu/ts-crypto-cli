@@ -1,6 +1,6 @@
-import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor } from '../base_axios_config'
+import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor } from '../../base_axios_config'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
-import debugHelper from '../util/debug_helper'
+import debugHelper from '../../util/debug_helper'
 import { krakenAxiosConfig } from './kraken_axios_config'
 import { PublicEndpoint } from './api_endpoints'
 
