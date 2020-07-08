@@ -7,7 +7,7 @@ import { getBinanceMessageSignature } from './message_signature'
 
 const { debug } = debugHelper(__filename)
 
-const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_KEY || '', apiSecret = process.env.BINANCE_API_SECRET || ''): AxiosInstance => {
+export const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_KEY || '', apiSecret = process.env.BINANCE_API_SECRET || ''): AxiosInstance => {
     const privateApiClient: AxiosInstance = axios.create(binanceAxiosConfig)
     privateApiClient.defaults.headers['X-MBX-APIKEY'] = apikey
     privateApiClient.interceptors.request.use((config: AxiosRequestConfig) => {
@@ -42,13 +42,8 @@ const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_KEY || '
 }
 
 const defaultClient = createBinancePrivateApiClient()
-const binancePrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
+export const binancePrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
     const { data: hitBTCresponse } = await defaultClient.request({ url, method, params, data })
     debug({ hitBTCresponse })
     return hitBTCresponse
-}
-
-export {
-    createBinancePrivateApiClient,
-    binancePrivateApiRequest
 }

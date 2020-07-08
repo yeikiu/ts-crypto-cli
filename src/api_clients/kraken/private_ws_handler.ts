@@ -6,13 +6,13 @@ import { Observable } from 'rxjs/internal/Observable'
 
 const { debug, logError } = debugHelper(__filename)
 
-const krakenPrivateWS = webSocket({
+export const krakenPrivateWS = webSocket({
     protocol: 'v1',
     url: 'wss://ws-auth.kraken.com/',
     WebSocketCtor: WebSocket,
 })
 
-const gethWsAuthToken = async (): Promise<string> => {
+export const gethWsAuthToken = async (): Promise<string> => {
     try {
         const { token } = await krakenPrivateApiRequest({ url: 'GetWebSocketsToken' })
         debug({ token })
@@ -24,7 +24,7 @@ const gethWsAuthToken = async (): Promise<string> => {
     }
 }
 
-const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Promise<{ privateObservable$: Observable<any>; token: string }> => {
+export const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Promise<{ privateObservable$: Observable<any>; token: string }> => {
     const token = lastToken || await gethWsAuthToken()
 
     const subscriptionDataWithToken = subscriptionData.subscription ? {
@@ -47,10 +47,4 @@ const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionD
         privateObservable$,
         token
     }
-}
-
-export {
-    krakenPrivateWS,
-    gethWsAuthToken,
-    getKrakenPrivateObservableFromWS,
 }

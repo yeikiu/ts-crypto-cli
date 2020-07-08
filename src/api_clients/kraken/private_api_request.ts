@@ -7,7 +7,7 @@ import { PrivateEndpoint } from './api_endpoints'
 
 const { debug, logError } = debugHelper(__filename)
 
-const createKrakenPrivateApiClient = (apikey = process.env.KRAKEN_API_KEY || '', apiSecret = process.env.KRAKEN_API_SECRET || ''): AxiosInstance => {
+export const createKrakenPrivateApiClient = (apikey = process.env.KRAKEN_API_KEY || '', apiSecret = process.env.KRAKEN_API_SECRET || ''): AxiosInstance => {
     const privateApiClient: AxiosInstance = axios.create(krakenAxiosConfig)
     privateApiClient.defaults.baseURL = `${privateApiClient.defaults.baseURL}/private`
     privateApiClient.defaults.headers['API-Key'] = apikey
@@ -34,7 +34,7 @@ interface KrakenPrivateRequestConfig extends AxiosRequestConfig {
 }
 
 const defaultClient = createKrakenPrivateApiClient()
-const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig): Promise<any> => {
+export const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig): Promise<any> => {
     const { data: { result: krakenPrivateResponse, error } } = await defaultClient.request({ url, data })
     if (error?.length) {
         const errorStr = error.join(' | ')
@@ -43,9 +43,4 @@ const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig
     }
     debug({ krakenPrivateResponse })
     return krakenPrivateResponse
-}
-
-export {
-    createKrakenPrivateApiClient,
-    krakenPrivateApiRequest
 }
