@@ -15,8 +15,8 @@ const baseAxiosConfig = {
     }
 }
 
-const { TS_CRYPTO_CLI_LOGS_PATH = resolve(__dirname, '..', '.logs') } = process.env
-const dirPath = resolve(TS_CRYPTO_CLI_LOGS_PATH)
+const { TS_CRYPTO_CLI_LOGS_PATH } = process.env
+const dirPath = TS_CRYPTO_CLI_LOGS_PATH ? resolve(TS_CRYPTO_CLI_LOGS_PATH) : null
 
 // Rotating filenames
 const calculateFileName = (date: Date, index: number): string => {
@@ -25,13 +25,13 @@ const calculateFileName = (date: Date, index: number): string => {
     return `${fileName}_${index}.csv`
 }
 
-const stream = createStream(calculateFileName, {
+const stream = dirPath ? createStream(calculateFileName, {
     size: "100M", // rotate every 10 MegaBytes written
     interval: "1M", // rotate monthly
     path: dirPath,
     immutable: true,
     // compress: "gzip" // compress rotated files
-});
+}) : null;
 
 const baseAxiosRequestInterceptor = (config: AxiosRequestConfig): AxiosRequestConfig => {
     if (['PUT', 'POST', 'PATCH'].includes(config.method.toUpperCase())) {
@@ -41,26 +41,26 @@ const baseAxiosRequestInterceptor = (config: AxiosRequestConfig): AxiosRequestCo
         delete config.data
     }
     const { method, baseURL, url, params = '-', data = '-' } = config
-    stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${data}; -; -; -`)
+    if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${data}; -; -; -`)
     return config
 }
 
 const baseAxiosResponseInterceptor = (response: AxiosResponse): AxiosResponse => {
     const { config: { method, baseURL, url, params = '-' }, status, statusText = '-', data = '-' } = response
-    stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${typeof data}; ${status}; ${statusText}; -`)
+    if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${typeof data}; ${status}; ${statusText}; -`)
     return response
 }
 
 const baseAxiosRequestErrorInterceptor = (axiosRequestError: AxiosError): void => {
     const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status, statusText = '-' } } = axiosRequestError
-    stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${JSON.stringify(data)}; ${status}; ${statusText}; ${code}`)
+    if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${JSON.stringify(data)}; ${status}; ${statusText}; ${code}`)
     logError({ axiosRequestError })
     throw axiosRequestError
 }
 
 const baseAxiosResponseErrorInterceptor = (axiosResponseError: AxiosError): void => {
     const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status, statusText = '-' } } = axiosResponseError
-    stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${typeof data}; ${status}; ${statusText}; ${code}`)
+    if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${typeof data}; ${status}; ${statusText}; ${code}`)
     logError({ axiosResponseError })
     throw axiosResponseError
 }

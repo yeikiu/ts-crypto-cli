@@ -7,7 +7,7 @@
 ## Environment Variables
 
 ```
-# Each REST request/response is recorded to a log file
+# Each REST request/response will be recorded to a log file if you set this path
 TS_CRYPTO_CLI_LOGS_PATH=D:\DESKTOP\ts-crypto-cli_logs
 
 KRAKEN_API_KEY=<...>
