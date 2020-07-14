@@ -40,25 +40,25 @@ const baseAxiosRequestInterceptor = (config: AxiosRequestConfig): AxiosRequestCo
     } else {
         delete config.data
     }
-    const { method, baseURL, url, params = '-', data = '-' } = config
+    const { method, baseURL, url, params = '-', data = '-' } = config || {}
     if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${data}; -; -; -`)
     return config
 }
 
 const baseAxiosResponseInterceptor = (response: AxiosResponse): AxiosResponse => {
-    const { config: { method, baseURL, url, params = '-' }, status = null, statusText = '-', data = '-' } = response
+    const { config: { method, baseURL, url, params = '-' }, status = null, statusText = '-', data = '-' } = response || {}
     if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${typeof data}; ${status}; ${statusText}; -`)
     return response
 }
 
 const baseAxiosRequestErrorInterceptor = (axiosRequestError: AxiosError): void => {
-    const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status = null, statusText = '-' } = {} } = axiosRequestError
+    const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status = null, statusText = '-' } = {} } = axiosRequestError || {}
     if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${JSON.stringify(data)}; ${status}; ${statusText}; ${code}`)
     logError({ axiosRequestError })
 }
 
 const baseAxiosResponseErrorInterceptor = (axiosResponseError: AxiosError): void => {
-    const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status = null, statusText = '-' } = {} } = axiosResponseError
+    const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status = null, statusText = '-' } = {} } = axiosResponseError || {}
     if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${typeof data}; ${status}; ${statusText}; ${code}`)
     logError({ axiosResponseError })
 }
