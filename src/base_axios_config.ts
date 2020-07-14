@@ -55,12 +55,14 @@ const baseAxiosRequestErrorInterceptor = (axiosRequestError: AxiosError): void =
     const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status = null, statusText = '-' } = {} } = axiosRequestError || {}
     if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${JSON.stringify(data)}; ${status}; ${statusText}; ${code}`)
     logError({ axiosRequestError })
+    throw axiosRequestError
 }
 
 const baseAxiosResponseErrorInterceptor = (axiosResponseError: AxiosError): void => {
     const { config: { method, baseURL, url, params = '-', data = '-' }, code = '-', response: { status = null, statusText = '-' } = {} } = axiosResponseError || {}
     if (stream) stream.write(`\n${moment().utc().format('DD MMM YYYY HH:mm:ss')}; ${method.toUpperCase()}; ${baseURL}${baseURL.endsWith('/') || url.startsWith('/') ? '' : '/'}${url}; ${params}; ${typeof data}; ${status}; ${statusText}; ${code}`)
     logError({ axiosResponseError })
+    throw axiosResponseError
 }
 
 export {
