@@ -98,7 +98,7 @@ export {
 
 ### Inject your keys/secrets to enable private methods
 
-> This method is more secure as you don´t persist the KEYS on the file
+> This method is more secure as you won´t persist the KEYS to a file
 
 #### Powershell (windows)
 
