@@ -21,11 +21,6 @@ if (/\s-v(?:\s|$)/.test(argsStr)) {
     }
     process.exit()
 }
-const [,path] = argsStr.match(/\s-dotenv=(.+?)(?:\s|$)/) || [null, null]
-if (path) {
-  dotenv.config({ path })
-  print(`.env loaded from ${path} ✔️`)
-}
 
 import { krakenPrivateApiRequest } from './api_clients/kraken/private_api_request'
 import { hitbtcPrivateApiRequest } from './api_clients/hitbtc/private_api_request'
