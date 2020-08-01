@@ -17,8 +17,10 @@ if (/\s-v.*/.test(arg)) {
     }
     process.exit()
 }
-if (/\s-dotenv.*/.test(arg)) {
-  require('dotenv').config()
+const [,path] = arg.match(/\s-dotenv=(.+?)(?:\s|$)/)
+if (path) {
+  require('dotenv').config({ path })
+  print(`.env loaded from ${path} ✔️`)
 }
 
 import { krakenPrivateApiRequest } from './api_clients/kraken/private_api_request'
