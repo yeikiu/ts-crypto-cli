@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 'use strict';
+import * as dotenv from "dotenv";
+dotenv.config();
 
 import { readFileSync } from 'fs'
 import { resolve } from 'path'
@@ -9,7 +11,6 @@ const { print, logError } = debugHelper(__filename)
 
 const [,,arg1, arg2] = process.argv
 const argsStr = [arg1, arg2].join(' ')
-print({ argsStr })
 
 if (/\s-v(?:\s|$)/.test(argsStr)) {
     try {
@@ -22,7 +23,7 @@ if (/\s-v(?:\s|$)/.test(argsStr)) {
 }
 const [,path] = argsStr.match(/\s-dotenv=(.+?)(?:\s|$)/) || [null, null]
 if (path) {
-  require('dotenv').config({ path })
+  dotenv.config({ path })
   print(`.env loaded from ${path} ✔️`)
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "ts-crypto-cli",
-  "version": "0.3.22",
+  "version": "0.3.24",
   "description": "A handy npm to operate against some of the most known Crypto Exchanges",
   "keywords": [
     "kraken",
@@ -59,7 +59,6 @@
     "build": "rimraf dist && tsc -p .",
     "lint": "tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
     "start": "yarn build && node dist/cli.js",
-    "start:dotenv": "yarn build && node -r dotenv/config dist/cli.js",
     "watch": "nodemon",
     "docs": "npx typedoc"
   }

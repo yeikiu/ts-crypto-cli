@@ -94,7 +94,13 @@ export {
 
 > Update the .env file with your own credentials and run
 
+- `npx ts-crypto-cli`
+
+OR
+
 - `npx ts-crypto-cli -dotenv dotenv_config_path=/custom/path/to/your/env/vars`
+
+if your .env file is not under current `pwd`
 
 ### Inject your keys/secrets to enable private methods
 
