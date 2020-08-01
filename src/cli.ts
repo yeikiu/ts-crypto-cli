@@ -7,8 +7,11 @@ import { resolve } from 'path'
 import debugHelper from './util/debug_helper'
 const { print, logError } = debugHelper(__filename)
 
-const [,, arg] = process.argv;
-if (/\s-v.*/.test(arg)) {
+const [,,arg1, arg2] = process.argv
+const argsStr = [arg1, arg2].join(' ')
+print({ argsStr })
+
+if (/\s-v(?:\s|$)/.test(argsStr)) {
     try {
       const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString());
       console.log(`    ${name} v${version} ✔️`);
@@ -17,7 +20,7 @@ if (/\s-v.*/.test(arg)) {
     }
     process.exit()
 }
-const [,path] = arg.match(/\s-dotenv=(.+?)(?:\s|$)/)
+const [,path] = argsStr.match(/\s-dotenv=(.+?)(?:\s|$)/) || [null, null]
 if (path) {
   require('dotenv').config({ path })
   print(`.env loaded from ${path} ✔️`)
