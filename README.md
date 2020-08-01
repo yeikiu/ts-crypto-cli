@@ -94,7 +94,7 @@ export {
 
 > Update the .env file with your own credentials and run
 
-- `yarn start:env`
+- `yarn start:dotenv`
 
 ### Inject your keys/secrets to enable private methods
 

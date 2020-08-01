@@ -5,19 +5,18 @@ import { readFileSync } from 'fs'
 import { resolve } from 'path'
 
 import debugHelper from './util/debug_helper'
-const { print } = debugHelper(__filename)
+const { print, logError } = debugHelper(__filename)
 
-// TODO: generate cli for shell 
-// const [,, arg] = process.argv;
-// if (/-v.*/.test(arg)) {
-//     try {
-//       const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString());
-//       console.log(`    ${name} v${version} ✔️`);
-//     } catch (error) {
-//       logError({ error })
-//     }
-//     process.exit()
-// }
+const [,, arg] = process.argv;
+if (/-v.*/.test(arg)) {
+    try {
+      const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString());
+      console.log(`    ${name} v${version} ✔️`);
+    } catch (error) {
+      logError({ error })
+    }
+    process.exit()
+}
 
 import { krakenPrivateApiRequest } from './api_clients/kraken/private_api_request'
 import { hitbtcPrivateApiRequest } from './api_clients/hitbtc/private_api_request'
