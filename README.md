@@ -94,7 +94,7 @@ export {
 
 > Update the .env file with your own credentials and run
 
-- `yarn start:dotenv`
+- `npx ts-crypto-cli -dotenv dotenv_config_path=/custom/path/to/your/env/vars`
 
 ### Inject your keys/secrets to enable private methods
 
@@ -102,12 +102,12 @@ export {
 
 #### Powershell (windows)
 
-- `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; yarn start`
+- `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; npx ts-crypto-cli`
 
 #### cmd (windows)
 
-- `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & yarn start`
+- `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & npx ts-crypto-cli`
 
 #### Unix/OSx
 
-- `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> yarn start`
+- `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> npx ts-crypto-cli`

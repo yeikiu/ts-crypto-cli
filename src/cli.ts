@@ -8,7 +8,7 @@ import debugHelper from './util/debug_helper'
 const { print, logError } = debugHelper(__filename)
 
 const [,, arg] = process.argv;
-if (/-v.*/.test(arg)) {
+if (/\s-v.*/.test(arg)) {
     try {
       const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString());
       console.log(`    ${name} v${version} ✔️`);
@@ -16,6 +16,9 @@ if (/-v.*/.test(arg)) {
       logError({ error })
     }
     process.exit()
+}
+if (/\s-dotenv.*/.test(arg)) {
+  require('dotenv').config()
 }
 
 import { krakenPrivateApiRequest } from './api_clients/kraken/private_api_request'
