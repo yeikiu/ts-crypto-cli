@@ -1,22 +1,26 @@
-import debugHelper from './../util/debug_helper'
-const { print } = debugHelper(__filename)
-
 type HitBTCBalanceItem = {
-  // HitBTC
-  currency: string;
-  available: string;
+    currency: string;
+    available: string;
 }
 type BinanceBalanceItem = {
-  // binance
-  asset: string;
-  free: string;
+    asset: string;
+    free: string;
 }
-type StandardBalanceItem = HitBTCBalanceItem & BinanceBalanceItem
+type KrakenBalanceItems = { [asset: string]: string }
 
-const filterBalances = (balancesArr: StandardBalanceItem[]): StandardBalanceItem[] => {
-  const balances = balancesArr.filter(({ available, free }) => Number(available || free) > 0)
-  print({ balances })
-  return balances
+export type StandardBalanceItem = {
+    asset: string;
+    balance: string;
 }
 
-export default filterBalances
+export const filterBalances = (balancesArr: (HitBTCBalanceItem & BinanceBalanceItem)[], outputFilterFn = ({ balance }: StandardBalanceItem): boolean => Number(balance) > 0): StandardBalanceItem[] => balancesArr
+        .map(({ asset, currency, available, free }) => ({
+            asset: asset || currency,
+            balance: available || free
+        })).filter(outputFilterFn)
+
+export const filterKrakenBalances = (krakenBalancesObj: KrakenBalanceItems, outputFilterFn = ({ balance }: StandardBalanceItem): boolean => Number(balance) > 0): StandardBalanceItem[] => Object.keys(krakenBalancesObj)
+    .map(asset => ({
+        asset,
+        balance: krakenBalancesObj[asset]
+    })).filter(outputFilterFn)

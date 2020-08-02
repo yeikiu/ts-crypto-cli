@@ -40,7 +40,7 @@ BINANCE_API_SECRET=<...>
 - [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_ws_handler_.html)
 - [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_ws_handler_.html)
 - [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_ws_handler_.html)
-- Binance Private (TODO, WIP)
+- Binance Private (TODO, WIP...)
 
 ### Handling multiple API credentials
 

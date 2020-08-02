@@ -1,6 +1,11 @@
-export type stdOHLC = {
-    open: number;
-    high: number;
-    low: number;
-    close: number;
+import { Moment } from "moment";
+
+export type standardOHLC = {
+    exchange: 'kraken' | 'binance' | 'hitbtc';
+    utcMoment: Moment;
+    open: string;
+    high: string;
+    low: string;
+    close: string;
+    volume: string;
 }
