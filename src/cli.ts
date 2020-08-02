@@ -22,18 +22,21 @@ if (/\s-v(?:\s|$)/.test(argsStr)) {
     process.exit()
 }
 
+import * as nodeMenu from 'node-menu'
+
 import { krakenPrivateApiRequest } from './api_clients/kraken/private_api_request'
 import { hitbtcPrivateApiRequest } from './api_clients/hitbtc/private_api_request'
 import { binancePrivateApiRequest } from './api_clients/binance/private_api_request'
-import * as nodeMenu from 'node-menu'
-import { filterKrakenBalances, filterBalances } from './util/filter_balances';
-import handleUserInput from './util/handle_user_input';
 
-import { getHitBTCPriceTicker } from './services/hitbtc/get_hitbtc_price_ticker';
 import { getBinancePriceTicker } from './services/binance/get_binance_price_ticker';
+import { getBinanceOHLCCandles } from "./services/binance/get_binance_ohlc_candles";
 import { getKrakenPriceTicker } from './services/kraken/get_kraken_price_ticker';
 import { getKrakenOHLCCandles } from "./services/kraken/get_kraken_ohlc_candles";
-import { getHitBTCOHLCCandles, getBinanceOHLCCandles } from ".";
+import { getHitBTCPriceTicker } from './services/hitbtc/get_hitbtc_price_ticker';
+import { getHitBTCOHLCCandles } from "./services/hitbtc/get_hitbtc_ohlc_candles";
+
+import { filterKrakenBalances, filterHitBTCBalances, filterBinanceBalances } from './util/filter_balances';
+import handleUserInput from './util/handle_user_input';
 
 const pkgPath = resolve(__dirname, '..', 'package.json');
 const { version } = JSON.parse(readFileSync(pkgPath).toString())
@@ -58,8 +61,8 @@ nodeMenu
   .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'hitbtc', 'private') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
   .addItem('Get OHLC candles', async (symbol: string) => { print(await getHitBTCOHLCCandles(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Get price ticker', async (symbol: string) => { print(await getHitBTCPriceTicker(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
-  .addItem('Show ACCOUNT Balances', async () => { print(filterBalances(await hitbtcPrivateApiRequest({ url: 'account/balance' }))) })
-  .addItem('Show TRADING Balances', async () => { print(filterBalances(await hitbtcPrivateApiRequest({ url: 'trading/balance' }))) })
+  .addItem('Show ACCOUNT Balances', async () => { print(filterHitBTCBalances(await hitbtcPrivateApiRequest({ url: 'account/balance' }))) })
+  .addItem('Show TRADING Balances', async () => { print(filterHitBTCBalances(await hitbtcPrivateApiRequest({ url: 'trading/balance' }))) })
   .addItem('BUY @ market',  async (symbol: string, quantity: number) => { print(await hitbtcPrivateApiRequest({ url: 'order', method: 'POST', data: { symbol, side: 'buy', type: 'market', quantity } })) }, null, [{ name: '<pair>', type: 'string' }, { name: '<amount>', type: 'numeric' }])
   .addItem('SELL @ market',  async (symbol: string, quantity: number) => { print(await hitbtcPrivateApiRequest({ url: 'order', method: 'POST', data: { symbol, side: 'sell', type: 'market', quantity } })) }, null, [{ name: '<pair>', type: 'string' }, { name: '<amount>', type: 'numeric' }])
 
@@ -69,7 +72,7 @@ nodeMenu
   .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'binance', 'private') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
   .addItem('Get OHLC candles', async (symbol: string) => { print(await getBinanceOHLCCandles(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Get price ticker', async (symbol: string) => { print(await getBinancePriceTicker(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
-  .addItem('Show Balances', async () => { print(filterBalances((await binancePrivateApiRequest({ url: 'api/v3/account' })).balances)) })
+  .addItem('Show Balances', async () => { print(filterBinanceBalances((await binancePrivateApiRequest({ url: 'api/v3/account' })).balances)) })
   .addItem('BUY @ market',  async (symbol: string, quantity: number) => { print(await binancePrivateApiRequest({ url: 'api/v3/order', method: 'POST', data: { symbol, side: 'buy', type: 'market', quantity } })) }, null, [{ name: '<pair>', type: 'string' }, { name: '<amount>', type: 'numeric' }])
   .addItem('SELL @ market',  async (symbol: string, quantity: number) => { print(await binancePrivateApiRequest({ url: 'api/v3/order', method: 'POST', data: { symbol, side: 'sell', type: 'market', quantity } })) }, null, [{ name: '<pair>', type: 'string' }, { name: '<amount>', type: 'numeric' }])
 

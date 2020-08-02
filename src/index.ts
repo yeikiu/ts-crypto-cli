@@ -20,3 +20,6 @@ export * from './services/binance/get_binance_price_ticker'
 export * from './services/binance/get_binance_ohlc_candles'
 
 export * from './types/standard_ohlc'
+export * from './types/standard_ticker'
+
+export * from './util/filter_balances'
