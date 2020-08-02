@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;services/binance/get_last_ohlc_candle&quot; | ts-crypto-cli</title>
+	<title>&quot;services/kraken/get_kraken_ohlc_candles&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_services_binance_get_last_ohlc_candle_.html">&quot;services/binance/get_last_ohlc_candle&quot;</a>
+					<a href="_services_kraken_get_kraken_ohlc_candles_.html">&quot;services/kraken/get_kraken_ohlc_candles&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;services/binance/get_last_ohlc_candle&quot;</h1>
+			<h1>External module &quot;services/kraken/get_kraken_ohlc_candles&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_services_binance_get_last_ohlc_candle_.html#getbinancelastohlccandle" class="tsd-kind-icon">get<wbr>Binance<wbr>LastOHLCCandle</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_services_kraken_get_kraken_ohlc_candles_.html#getkrakenohlccandles" class="tsd-kind-icon">get<wbr>KrakenOHLCCandles</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,28 +82,28 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getbinancelastohlccandle" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Binance<wbr>LastOHLCCandle</h3>
+					<a name="getkrakenohlccandles" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>KrakenOHLCCandles</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Binance<wbr>LastOHLCCandle<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, interval<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_standard_ohlc_.html#stdohlc" class="tsd-signature-type">stdOHLC</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>KrakenOHLCCandles<span class="tsd-signature-symbol">(</span>pair<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, interval<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_standard_ohlc_.html#standardohlc" class="tsd-signature-type">standardOHLC</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/e0a64bc/src/services/binance/get_last_ohlc_candle.ts#L4">src/services/binance/get_last_ohlc_candle.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/40f3b46/src/services/kraken/get_kraken_ohlc_candles.ts#L9">src/services/kraken/get_kraken_ohlc_candles.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>symbol: <span class="tsd-signature-type">string</span></h5>
+									<h5>pair: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> interval: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;1m&quot;</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> interval: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_standard_ohlc_.html#stdohlc" class="tsd-signature-type">stdOHLC</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_standard_ohlc_.html#standardohlc" class="tsd-signature-type">standardOHLC</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -116,14 +116,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_services_binance_get_last_ohlc_candle_.html">&quot;services/binance/get_<wbr>last_<wbr>ohlc_<wbr>candle&quot;</a>
+						<a href="_services_kraken_get_kraken_ohlc_candles_.html">&quot;services/kraken/get_<wbr>kraken_<wbr>ohlc_<wbr>candles&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_services_binance_get_last_ohlc_candle_.html#getbinancelastohlccandle" class="tsd-kind-icon">get<wbr>Binance<wbr>LastOHLCCandle</a>
+						<a href="_services_kraken_get_kraken_ohlc_candles_.html#getkrakenohlccandles" class="tsd-kind-icon">get<wbr>KrakenOHLCCandles</a>
 					</li>
 				</ul>
 			</nav>
