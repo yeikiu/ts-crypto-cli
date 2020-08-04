@@ -13,27 +13,31 @@ export const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_K
     privateApiClient.interceptors.request.use((config: AxiosRequestConfig) => {
 
         const timestamp = moment().valueOf()
-        // Sign payload
-        config.data = {
-            ...config.data,
-            timestamp,
-        }
-        const dataSignature = getBinanceMessageSignature(config.data, apiSecret)
-        config.data = {
-            ...config.data,
-            signature: dataSignature,
-        }
-        // Sign params
-        config.params = {
-            ...config.params,
-            timestamp,
-        }
-        const paramsSignature = getBinanceMessageSignature(config.params, apiSecret)
-        config.params = {
-            ...config.params,
-            signature: paramsSignature,
+        // Sign payload if any
+        if (config.data) {
+            config.data = {
+                ...config.data,
+                timestamp,
+            }
+            const dataSignature = getBinanceMessageSignature(config.data, apiSecret)
+            config.data = {
+                ...config.data,
+                signature: dataSignature,
+            }
         }
 
+        // Sign params if any
+        if (config.params) {
+            config.params = {
+                ...config.params,
+                timestamp,
+            }
+            const paramsSignature = getBinanceMessageSignature(config.params, apiSecret)
+            config.params = {
+                ...config.params,
+                signature: paramsSignature,
+            }
+        }
         return baseAxiosRequestInterceptor(config)
 
     }, baseAxiosRequestErrorInterceptor)
@@ -43,7 +47,7 @@ export const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_K
 
 const defaultClient = createBinancePrivateApiClient()
 export const binancePrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
-    const { data: hitBTCresponse } = await defaultClient.request({ url, method, params, data })
-    debug({ hitBTCresponse })
-    return hitBTCresponse
+    const { data: binanceresponse } = await defaultClient.request({ url, method, params, data })
+    debug({ binanceresponse })
+    return binanceresponse
 }

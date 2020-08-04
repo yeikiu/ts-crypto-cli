@@ -28,8 +28,10 @@ BINANCE_API_SECRET=<...>
 
 - [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_public_api_request_.html)
 - [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_api_request_.html)
+---
 - [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_api_request_.html)
 - [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_api_request_.html)
+---
 - [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_api_request_.html)
 - [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_api_request_.html)
 
@@ -37,10 +39,12 @@ BINANCE_API_SECRET=<...>
 
 - [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_public_ws_handler_.html)
 - [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_ws_handler_.html)
+---
 - [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_ws_handler_.html)
 - [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_ws_handler_.html)
+---
 - [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_ws_handler_.html)
-- Binance Private (TODO, WIP...)
+- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_ws_handler_.html)
 
 ### Handling multiple API credentials
 

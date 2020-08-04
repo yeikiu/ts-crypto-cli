@@ -16,6 +16,7 @@ export * from './services/hitbtc/get_hitbtc_ohlc_candles'
 export * from './api_clients/binance/public_api_request'
 export * from './api_clients/binance/private_api_request'
 export * from './api_clients/binance/public_ws_handler'
+export * from './api_clients/binance/private_ws_handler'
 export * from './services/binance/get_binance_price_ticker'
 export * from './services/binance/get_binance_ohlc_candles'
 
