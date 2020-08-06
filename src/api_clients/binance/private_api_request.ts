@@ -26,18 +26,16 @@ export const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_K
             }
         }
 
-        // Sign params if any
-        if (config.params) {
-            config.params = {
-                ...config.params,
-                timestamp,
-            }
-            const paramsSignature = getBinanceMessageSignature(config.params, apiSecret)
-            config.params = {
-                ...config.params,
-                signature: paramsSignature,
-            }
+        config.params = {
+            ...config.params,
+            timestamp,
         }
+        const paramsSignature = getBinanceMessageSignature(config.params, apiSecret)
+        config.params = {
+            ...config.params,
+            signature: paramsSignature,
+        }
+
         return baseAxiosRequestInterceptor(config)
 
     }, baseAxiosRequestErrorInterceptor)
