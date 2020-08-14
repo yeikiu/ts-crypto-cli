@@ -1,7 +1,7 @@
 {
   "name": "ts-crypto-cli",
-  "version": "0.4.3",
-  "description": "A handy npm to operate against some of the most known Crypto Exchanges",
+  "version": "0.5.0",
+  "description": "A handy npm cli to operate against some of the most known Crypto Exchanges",
   "keywords": [
     "kraken",
     "api",
@@ -22,9 +22,7 @@
   "license": "CC0-1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "bin": {
-    "ts-crypto-cli": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "axios": "^0.19.2",
     "debug": "^4.1.1",
@@ -37,7 +35,6 @@
     "ws": "^7.3.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/node": "11.11.0",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",

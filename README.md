@@ -96,7 +96,7 @@ export {
 
 ### With a .env file
 
-> Update the .env file under current `pwd` with your own credentials and run
+> Create a .env file under current working directory with your own API credentials and run
 
 - `npx ts-crypto-cli`
 
