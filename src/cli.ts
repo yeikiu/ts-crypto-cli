@@ -8,19 +8,15 @@ import { readFileSync } from 'fs'
 import { resolve } from 'path'
 
 import debugHelper from './util/debug_helper'
-const { print, logError } = debugHelper(__filename)
+const { print } = debugHelper(__filename)
 
 const [,arg1, arg2] = process.argv
 const argsStr = [arg1, arg2].join(' ')
+const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString())
 
-if (/\s-v(?:\s|$)/.test(argsStr)) {
-    try {
-      const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString())
-      console.log(`    ${name} v${version} ✔️`)
-    } catch (error) {
-      logError({ error })
-    }
-    process.exit()
+if (/\s-v\s*$/.test(argsStr)) {
+  console.log(`    ${name} v${version} ✔️`)
+  process.exit()
 }
 
 import * as nodeMenu from 'node-menu'
@@ -38,9 +34,6 @@ import { getHitBTCOHLCCandles } from './services/hitbtc/get_hitbtc_ohlc_candles'
 
 import { filterKrakenBalances, filterHitBTCBalances, filterBinanceBalances } from './util/filter_balances'
 import handleUserInput from './util/handle_user_input'
-
-const pkgPath = resolve(__dirname, '..', 'package.json')
-const { version } = JSON.parse(readFileSync(pkgPath).toString())
 
 nodeMenu
   .customHeader(() => {
