@@ -14,7 +14,7 @@ jobs:
       
       - run: |
           rm -rf .ci_badges
-          npm i setup-gh-badges
+          npm i setup-gh-badges -g
           npx sync-badges
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
