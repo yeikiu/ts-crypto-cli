@@ -22,7 +22,7 @@ BINANCE_API_SECRET=<...>
 
 ## Use it as a library
 
-- `yarn add ts-crypto-cli`
+- `npm i ts-crypto-cli`
 
 ### REST APIs
 
