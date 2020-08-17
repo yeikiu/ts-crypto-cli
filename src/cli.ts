@@ -15,7 +15,7 @@ const argsStr = [arg1, arg2].join(' ')
 const { name, version } = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json')).toString())
 
 if (/\s-v\s*$/.test(argsStr)) {
-  console.log(`    ${name} v${version} ✔️`)
+  console.log(`    ${name} v${version}    ✔️`)
   process.exit()
 }
 
