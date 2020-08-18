@@ -2,7 +2,7 @@ import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxio
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import debugHelper from '../../util/debug_helper'
 import { krakenAxiosConfig } from './kraken_axios_config'
-import { PublicEndpoint } from './api_endpoints'
+import { PublicEndpoint } from '../../types/kraken_api_endpoints'
 
 const { debug, logError } = debugHelper(__filename)
 

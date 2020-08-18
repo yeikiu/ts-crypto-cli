@@ -1,4 +1,4 @@
-export * from './api_clients/kraken/api_endpoints'
+export * from './types/kraken_api_endpoints'
 export * from './api_clients/kraken/public_api_request'
 export * from './api_clients/kraken/private_api_request'
 export * from './api_clients/kraken/public_ws_handler'

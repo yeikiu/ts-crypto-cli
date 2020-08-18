@@ -3,7 +3,7 @@ import { getKrakenMessageSignature } from './message_signature'
 import debugHelper from '../../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { krakenAxiosConfig, apiVersion } from './kraken_axios_config'
-import { PrivateEndpoint } from './api_endpoints'
+import { PrivateEndpoint } from '../../types/kraken_api_endpoints'
 
 const { debug, logError } = debugHelper(__filename)
 
