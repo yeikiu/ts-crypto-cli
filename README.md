@@ -26,25 +26,25 @@ BINANCE_API_SECRET=<...>
 
 ### REST APIs
 
-- [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_public_api_request_.html)
-- [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_api_request_.html)
+- [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_api_request_.html)
+- [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_api_request_.html)
 ---
-- [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_api_request_.html)
-- [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_api_request_.html)
+- [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_api_request_.html)
+- [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_api_request_.html)
 ---
-- [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_api_request_.html)
-- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_api_request_.html)
+- [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_api_request_.html)
+- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_api_request_.html)
 
 ### WS APIs
 
-- [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_public_ws_handler_.html)
-- [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_ws_handler_.html)
+- [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_ws_handler_.html)
+- [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_ws_handler_.html)
 ---
-- [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_public_ws_handler_.html)
-- [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_ws_handler_.html)
+- [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_ws_handler_.html)
+- [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_ws_handler_.html)
 ---
-- [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_public_ws_handler_.html)
-- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_ws_handler_.html)
+- [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_ws_handler_.html)
+- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_ws_handler_.html)
 
 ### Handling multiple API credentials
 
