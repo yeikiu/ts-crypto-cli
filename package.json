@@ -56,7 +56,6 @@
     "build": "rimraf dist && tsc -p .",
     "lint": "tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
     "start": "npm run build && node dist/cli.js",
-    "watch": "nodemon",
-    "docs": "npx typedoc"
+    "watch": "nodemon"
   }
 }
