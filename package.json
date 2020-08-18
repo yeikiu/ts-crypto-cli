@@ -1,6 +1,6 @@
 {
   "name": "ts-crypto-cli",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "description": "A handy npm cli to operate against some of the most known Crypto Exchanges",
   "keywords": [
     "kraken",
