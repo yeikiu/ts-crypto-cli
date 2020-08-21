@@ -21,9 +21,9 @@ if (/\s-v\s*$/.test(argsStr)) {
 
 import * as nodeMenu from 'node-menu'
 
-import { krakenPrivateApiRequest } from './api_clients/kraken/private_api_request'
-import { hitbtcPrivateApiRequest } from './api_clients/hitbtc/private_api_request'
-import { binancePrivateApiRequest } from './api_clients/binance/private_api_request'
+import { krakenPrivateApiRequest, updateKrakenDefaultClient } from './api_clients/kraken/private_api_request'
+import { hitbtcPrivateApiRequest, updateHitBTCDefaultClient } from './api_clients/hitbtc/private_api_request'
+import { binancePrivateApiRequest, updateBinanceDefaultClient } from './api_clients/binance/private_api_request'
 
 import { getBinancePriceTicker } from './services/binance/get_binance_price_ticker'
 import { getBinanceOHLCCandles } from './services/binance/get_binance_ohlc_candles'
@@ -41,8 +41,10 @@ nodeMenu
   })
 
   .addDelimiter('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    Kraken API | https://www.kraken.com/features/api#general-usage\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
-  .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'kraken', 'public') }, null, [{ name: '<endpoint><query>', type: 'string' }])
-  .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'kraken', 'private') }, null, [{ name: '<endpoint><query>', type: 'string' }])
+  .addItem('Load Kraken API credentials', (apiKey: string, apiSecret: string) => { process.env.KRAKEN_API_KEY = apiKey; process.env.KRAKEN_API_SECRET = apiSecret; updateKrakenDefaultClient(apiKey, apiSecret) }, null, [{ name: 'API Key', type: 'string' }, { name: 'API Secret', type: 'string' }])
+  .addItem('Show Kraken API credentials in use', async () => { print({apiKey: process.env.KRAKEN_API_KEY, apiSecret: process.env.KRAKEN_API_SECRET}) })
+  .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'kraken', 'public') }, null, [{ name: '<endpoint>;<query>', type: 'string' }])
+  .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'kraken', 'private') }, null, [{ name: '<endpoint>;<query>', type: 'string' }])
   .addItem('Get OHLC candles', async (symbol: string) => { print(await getKrakenOHLCCandles(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Get price ticker', async (symbol: string) => { print(await getKrakenPriceTicker(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Show Balances', async () => { print(filterKrakenBalances(await krakenPrivateApiRequest({ url: 'Balance' }))) })
@@ -51,8 +53,10 @@ nodeMenu
 
   .addDelimiter(' ', 1)
   .addDelimiter('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    HitBTC API | https://api.hitbtc.com/#rest-api-reference\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
-  .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'hitbtc', 'public') }, null, [{ name: '<endpoint><method><query>', type: 'string' }])
-  .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'hitbtc', 'private') }, null, [{ name: '<endpoint><method><query>', type: 'string' }])
+  .addItem('Load HitBTC API credentials', (apiKey: string, apiSecret: string) => { process.env.HITBTC_API_KEY = apiKey; process.env.HITBTC_API_SECRET = apiSecret; updateHitBTCDefaultClient(apiKey, apiSecret) }, null, [{ name: 'API Key', type: 'string' }, { name: 'API Secret', type: 'string' }])
+  .addItem('Show HitBTC API credentials in use', async () => { print({apiKey: process.env.HITBTC_API_KEY, apiSecret: process.env.HITBTC_API_SECRET}) })
+  .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'hitbtc', 'public') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
+  .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'hitbtc', 'private') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
   .addItem('Get OHLC candles', async (symbol: string) => { print(await getHitBTCOHLCCandles(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Get price ticker', async (symbol: string) => { print(await getHitBTCPriceTicker(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Show ACCOUNT Balances', async () => { print(filterHitBTCBalances(await hitbtcPrivateApiRequest({ url: 'account/balance' }))) })
@@ -62,8 +66,10 @@ nodeMenu
 
   .addDelimiter(' ', 1)
   .addDelimiter('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    Binance API | https://binance-docs.github.io/apidocs/spot/en/#general-api-information\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
-  .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'binance', 'public') }, null, [{ name: '<endpoint><method><query>', type: 'string' }])
-  .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'binance', 'private') }, null, [{ name: '<endpoint><method><query>', type: 'string' }])
+  .addItem('Load Binance API credentials', (apiKey: string, apiSecret: string) => { process.env.BINANCE_API_KEY = apiKey; process.env.BINANCE_API_SECRET = apiSecret; updateBinanceDefaultClient(apiKey, apiSecret) }, null, [{ name: 'API Key', type: 'string' }, { name: 'API Secret', type: 'string' }])
+  .addItem('Show Binance API credentials in use', async () => { print({apiKey: process.env.BINANCE_API_KEY, apiSecret: process.env.BINANCE_API_SECRET}) })
+  .addItem('PUBLIC API request', (input: string) => { handleUserInput(input, 'binance', 'public') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
+  .addItem('PRIVATE API request', (input: string) => { handleUserInput(input, 'binance', 'private') }, null, [{ name: '<endpoint>;<method>;<query>', type: 'string' }])
   .addItem('Get OHLC candles', async (symbol: string) => { print(await getBinanceOHLCCandles(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Get price ticker', async (symbol: string) => { print(await getBinancePriceTicker(symbol)) }, null, [{ name: '<symbol>', type: 'string' }])
   .addItem('Show Balances', async () => { print(filterBinanceBalances((await binancePrivateApiRequest({ url: 'api/v3/account' })).balances)) })
