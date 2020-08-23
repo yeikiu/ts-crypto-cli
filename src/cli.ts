@@ -64,14 +64,14 @@ nodeMenu
   // HITBTC
   // 
   .addDelimiter('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    HitBTC API | https://api.hitbtc.com/#rest-api-reference \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
-  .addItem('PUBLIC API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'hitbtc', 'public', params) }, null, [{ name: 'endpoint params"  -->  i.e.  10 "GET currency currencies=BTC,USD', type: 'string' }])
+  .addItem('PUBLIC API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'hitbtc', 'public', params) }, null, [{ name: 'method endpoint params"  -->  i.e.  10 "GET currency currencies=BTC,USD', type: 'string' }])
   
   .addItem('Get last OHLC candle', async (symbol: string) => { print((await getHitBTCOHLCCandles(symbol))[0]) }, null, [{ name: 'symbol"  -->  i.e.  11 "BTCUSD', type: 'string' }])
   
   .addItem('Get price ticker', async (symbol: string) => { print(await getHitBTCPriceTicker(symbol)) }, null, [{ name: 'symbol"  -->  i.e.  12 "BTCUSD', type: 'string' }])
   
   .addDelimiter(' ', 1)
-  .addItem('PRIVATE API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'hitbtc', 'private', params) }, null, [{ name: 'endpoint params"  -->  i.e.  13 "GET account/transactions currency=BTC', type: 'string' }])
+  .addItem('PRIVATE API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'hitbtc', 'private', params) }, null, [{ name: 'method endpoint params"  -->  i.e.  13 "GET account/transactions currency=BTC', type: 'string' }])
   
   .addItem('Load HitBTC API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.HITBTC_API_KEY = k; process.env.HITBTC_API_SECRET = s; updateHitBTCDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  14 "YOUR-KEY YOUR-SECRET', type: 'string' }])
   .addItem('Show HitBTC API credentials in use', () => { print({apiKey: process.env.HITBTC_API_KEY, apiSecret: process.env.HITBTC_API_SECRET}) })
@@ -86,13 +86,13 @@ nodeMenu
   // BINANCE
   // 
   .addDelimiter('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n#    Binance API | https://binance-docs.github.io/apidocs/spot/en/#general-api-information \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', 2)
-  .addItem('PUBLIC API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'binance', 'public', params) }, null, [{ name: 'endpoint params"  -->  i.e.  20 "GET api/v3/avgPrice symbol=BTCUSDT', type: 'string' }])
+  .addItem('PUBLIC API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'binance', 'public', params) }, null, [{ name: 'method endpoint params"  -->  i.e.  20 "GET api/v3/avgPrice symbol=BTCUSDT', type: 'string' }])
   
   .addItem('Get last OHLC candle', async (symbol: string) => { print((await getBinanceOHLCCandles(symbol))[0]) }, null, [{ name: 'symbol"  -->  i.e.  21 "BTCUSDT', type: 'string' }])
   .addItem('Get price ticker', async (symbol: string) => { print(await getBinancePriceTicker(symbol)) }, null, [{ name: 'symbol"  -->  i.e.  22 "BTCUSDT', type: 'string' }])
   
   .addDelimiter(' ', 1)
-  .addItem('PRIVATE API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'binance', 'private', params) }, null, [{ name: 'endpoint params"  -->  i.e.  23 "GET api/v3/allOrders symbol=BTCUSDT&limit=100', type: 'string' }])
+  .addItem('PRIVATE API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'binance', 'private', params) }, null, [{ name: 'method endpoint params"  -->  i.e.  23 "GET api/v3/allOrders symbol=BTCUSDT&limit=100', type: 'string' }])
   
   .addItem('Load Binance API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.BINANCE_API_KEY = k; process.env.BINANCE_API_SECRET = s; updateBinanceDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  24 "YOUR-KEY YOUR-SECRET', type: 'string' }])
   .addItem('Show Binance API credentials in use', () => { print({apiKey: process.env.BINANCE_API_KEY, apiSecret: process.env.BINANCE_API_SECRET}) })
