@@ -2,7 +2,7 @@ import debugHelper from '../../util/debug_helper'
 import { getHitBTCPublicObservableFromWS } from './public_ws_handler'
 import { Observable } from 'rxjs/internal/Observable'
 
-const { debug, logError } = debugHelper(__filename)
+const { logError } = debugHelper(__filename)
 
 const authData = {
     method: "login",
@@ -18,7 +18,7 @@ export const getHitBTCPrivateObservableFromWS = (subscriptionData: any, filterFn
     const auth$ = getHitBTCPublicObservableFromWS(authData, ({ id }) => id === "authRequest")
     const authSubscription = auth$.subscribe(({ result, error }) => {
         authSubscription.unsubscribe()
-        debug({ result, error })
+        // debug({ result, error })
         if (error) {
             logError({ error })
             throw new Error(error)

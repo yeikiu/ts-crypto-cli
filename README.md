@@ -7,8 +7,8 @@
 ## Environment Variables
 
 ```
-# Each REST request/response will be recorded to a log file if you set this path
-TS_CRYPTO_CLI_LOGS_PATH=D:\DESKTOP\ts-crypto-cli_logs
+# Each REST request/response can be optionally recorded to a log file if you set a path here
+TS_CRYPTO_CLI_LOGS_PATH=./logs
 
 KRAKEN_API_KEY=<...>
 KRAKEN_API_SECRET=<...>
@@ -110,8 +110,8 @@ export {
 
 #### cmd (windows)
 
-- `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> $ etc... & npx ts-crypto-cli`
+- `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> & etc... & npx ts-crypto-cli`
 
 #### Unix/OSx
 
-- `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> npx ts-crypto-cli`
+- `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> etc.. npx ts-crypto-cli`

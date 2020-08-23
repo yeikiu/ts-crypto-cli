@@ -5,7 +5,7 @@ import { binanceAxiosConfig } from './binance_axios_config'
 import * as moment from 'moment'
 import { getBinanceMessageSignature } from './message_signature'
 
-const { debug } = debugHelper(__filename)
+// const { debug } = debugHelper(__filename)
 
 export const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_KEY || '', apiSecret = process.env.BINANCE_API_SECRET || ''): AxiosInstance => {
     const privateApiClient: AxiosInstance = axios.create(binanceAxiosConfig)
@@ -46,7 +46,7 @@ export const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_K
 let defaultClient = createBinancePrivateApiClient()
 export const binancePrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
     const { data: binanceresponse } = await defaultClient.request({ url, method, params, data })
-    debug({ binanceresponse })
+    // debug({ binanceresponse })
     return binanceresponse
 }
 

@@ -4,7 +4,7 @@ import { krakenPrivateApiRequest } from './private_api_request'
 import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 
-const { debug, logError } = debugHelper(__filename)
+const { logError } = debugHelper(__filename)
 
 export const krakenPrivateWS = webSocket({
     protocol: 'v1',
@@ -15,7 +15,7 @@ export const krakenPrivateWS = webSocket({
 export const gethWsAuthToken = async (): Promise<string> => {
     try {
         const { token } = await krakenPrivateApiRequest({ url: 'GetWebSocketsToken' })
-        debug({ token })
+        // debug({ token })
         return token
         
     } catch({ code, message }) {

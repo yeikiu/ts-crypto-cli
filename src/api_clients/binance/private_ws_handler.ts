@@ -5,12 +5,12 @@ import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 import { baseWsURL } from './binance_axios_config'
 
-const { debug, logError } = debugHelper(__filename)
+const { logError } = debugHelper(__filename)
 
 export const gethWsListenToken = async (): Promise<string> => {
     try {
         const { listenKey } = await binancePrivateApiRequest({ url: 'api/v3/userDataStream', method: 'POST' })
-        debug({ listenKey })
+        // debug({ listenKey })
         return listenKey
         
     } catch({ code, message }) {
