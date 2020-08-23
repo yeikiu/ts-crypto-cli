@@ -4,6 +4,8 @@
 
 > A handy npm to operate against some of the most known Crypto Exchanges
 
+<img src=".github/menu_demo.png" />
+
 ## Environment Variables
 
 ```
@@ -91,8 +93,6 @@ export {
 ---
 
 ## Launch the REPL cli on a shell
-
-<img src=".github/menu_demo.png" />
 
 ### With a .env file
 
