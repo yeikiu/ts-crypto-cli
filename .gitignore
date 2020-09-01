@@ -4,5 +4,3 @@ dist
 docs
 .env*
 .logs
-package-lock.json
-yarn.lock
