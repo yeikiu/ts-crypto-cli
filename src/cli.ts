@@ -52,7 +52,7 @@ nodeMenu
   .addDelimiter(' ', 1)
   .addItem('PRIVATE API request', (input: string) => { const [endpoint, params] = input.split(' '); handleUserInput(endpoint, 'POST', 'kraken', 'private', params) }, null, [{ name: 'endpoint params"  -->  i.e.  4 "DepositMethods asset=XBT', type: 'string' }])
   
-  .addItem('Load Kraken API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.KRAKEN_API_KEY = k; process.env.KRAKEN_API_SECRET = s; updateKrakenDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  5 "YOUR-KEY YOUR-SECRET', type: 'string' }])
+  .addItem('Load Kraken API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.KRAKEN_API_KEY = k; process.env.KRAKEN_API_SECRET = s; updateKrakenDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  5 "KRAKEN-API-KEY KRAKEN-API-SECRET', type: 'string' }])
   .addItem('Show Kraken API credentials in use', () => { print({apiKey: process.env.KRAKEN_API_KEY, apiSecret: process.env.KRAKEN_API_SECRET}) })
   
   .addItem('Show Balances', async () => { print(filterKrakenBalances(await krakenPrivateApiRequest({ url: 'Balance' }))) })
@@ -73,7 +73,7 @@ nodeMenu
   .addDelimiter(' ', 1)
   .addItem('PRIVATE API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'hitbtc', 'private', params) }, null, [{ name: 'method endpoint params"  -->  i.e.  13 "GET account/transactions currency=BTC', type: 'string' }])
   
-  .addItem('Load HitBTC API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.HITBTC_API_KEY = k; process.env.HITBTC_API_SECRET = s; updateHitBTCDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  14 "YOUR-KEY YOUR-SECRET', type: 'string' }])
+  .addItem('Load HitBTC API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.HITBTC_API_KEY = k; process.env.HITBTC_API_SECRET = s; updateHitBTCDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  14 "HITBTC-API-KEY HITBTC-API-SECRET', type: 'string' }])
   .addItem('Show HitBTC API credentials in use', () => { print({apiKey: process.env.HITBTC_API_KEY, apiSecret: process.env.HITBTC_API_SECRET}) })
   
   .addItem('Show ACCOUNT Balances', async () => { print(filterHitBTCBalances(await hitbtcPrivateApiRequest({ url: 'account/balance' }))) })
@@ -94,7 +94,7 @@ nodeMenu
   .addDelimiter(' ', 1)
   .addItem('PRIVATE API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'binance', 'private', params) }, null, [{ name: 'method endpoint params"  -->  i.e.  23 "GET api/v3/allOrders symbol=BTCUSDT&limit=100', type: 'string' }])
   
-  .addItem('Load Binance API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.BINANCE_API_KEY = k; process.env.BINANCE_API_SECRET = s; updateBinanceDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  24 "YOUR-KEY YOUR-SECRET', type: 'string' }])
+  .addItem('Load Binance API credentials', (input: string) => { const [k, s] = input.split(' '); process.env.BINANCE_API_KEY = k; process.env.BINANCE_API_SECRET = s; updateBinanceDefaultClient(k, s) }, null, [{ name: 'API Key API Secret  -->  i.e.  24 "BINANCE-API-KEY BINANCE-API-SECRET', type: 'string' }])
   .addItem('Show Binance API credentials in use', () => { print({apiKey: process.env.BINANCE_API_KEY, apiSecret: process.env.BINANCE_API_SECRET}) })
   
   .addItem('Show Balances', async () => { print(filterBinanceBalances((await binancePrivateApiRequest({ url: 'api/v3/account' })).balances)) })

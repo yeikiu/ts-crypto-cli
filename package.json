@@ -1,6 +1,6 @@
 {
   "name": "ts-crypto-cli",
-  "version": "0.5.16",
+  "version": "0.6.0",
   "description": "A handy npm cli to operate against some of the most known Crypto Exchanges",
   "keywords": [
     "kraken",
@@ -45,17 +45,36 @@
     "rimraf": "^3.0.2",
     "ts-node": "^8.6.2",
     "typedoc": "^0.16.9",
-    "typescript": "^3.7.5"
+    "typescript": "^4.0.2"
   },
   "resolutions": {
     "minimist": "^1.2.3",
     "acorn": "^7.1.1",
     "lodash": "4.17.19"
   },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "eslint-plugin-tsdoc"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/typescript"
+    ],
+    "rules": {
+      "tsdoc/syntax": "warn"
+    }
+  },
   "scripts": {
     "build": "rimraf dist && tsc -p .",
     "lint": "tsc -p . --noEmit && eslint \"src/**/*.{js,ts}\" --quiet --fix",
     "start": "npm run build && node dist/cli.js",
-    "watch": "nodemon"
+    "watch": "nodemon",
+    "audit": "npx yarn audit"
   }
 }
