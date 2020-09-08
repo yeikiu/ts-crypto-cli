@@ -1,14 +1,20 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import * as WebSocket from 'ws'
 import { webSocket } from "rxjs/webSocket"
 import { baseWsURL } from './binance_axios_config'
 import { Observable } from 'rxjs/internal/Observable'
+import { Subject } from 'rxjs/internal/Subject'
 
-export const binancePublicWS = webSocket({
+const onBinancePublicWSOpened = new Subject()
+const onBinancePublicWSClosed = new Subject()
+const binancePublicWS = webSocket({
     url: `${baseWsURL}/stream`,
     WebSocketCtor: WebSocket,
+    openObserver: onBinancePublicWSOpened,
+    closeObserver: onBinancePublicWSClosed
 })
 
-export const getBinancePublicObservableFromWS = (streamNames: string[], filterFn: (data: unknown) => boolean = ({ stream = '' }): boolean => streamNames.includes(stream), unsubscriptionData?: any): Observable<any> => {
+const getBinancePublicObservableFromWS = (streamNames: string[], filterFn: (data: unknown) => boolean = ({ stream = '' }): boolean => streamNames.includes(stream), unsubscriptionData?: any): Observable<any> => {
     const subscriptionData = {
         method: "SUBSCRIBE",
         params: streamNames,
@@ -20,4 +26,10 @@ export const getBinancePublicObservableFromWS = (streamNames: string[], filterFn
         filterFn
     )
     return publicObservable$
+}
+
+export {
+    getBinancePublicObservableFromWS,
+    onBinancePublicWSOpened,
+    onBinancePublicWSClosed
 }

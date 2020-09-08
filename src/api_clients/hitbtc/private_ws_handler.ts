@@ -18,7 +18,6 @@ export const getHitBTCPrivateObservableFromWS = (subscriptionData: any, filterFn
     const auth$ = getHitBTCPublicObservableFromWS(authData, ({ id }) => id === "authRequest")
     const authSubscription = auth$.subscribe(({ result, error }) => {
         authSubscription.unsubscribe()
-        // debug({ result, error })
         if (error) {
             logError({ error })
             throw new Error(error)

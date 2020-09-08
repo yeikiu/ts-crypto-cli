@@ -4,6 +4,7 @@ import { binancePrivateApiRequest } from './private_api_request'
 import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 import { baseWsURL } from './binance_axios_config'
+import { Subject } from 'rxjs/internal/Subject'
 
 const { logError } = debugHelper(__filename)
 
@@ -27,7 +28,7 @@ export const getBinancePrivateObservableFromWS = async (
     streamNames: BinanceUserDataEvent[] = allBinanceUserDataEvents,
     filterFn: (data: unknown) => boolean = ({ e }): boolean => allBinanceUserDataEvents.includes(e),
     unsubscriptionData?: any
-): Promise<{ privateObservable$: Observable<any>; token: string }> => {
+): Promise<{ privateObservable$: Observable<any>; token: string; onBinancePrivateWSOpened: Observable<any>; onBinancePrivateWSClosed: Observable<any>  }> => {
 
     const token = lastToken || await gethWsListenToken()
 
@@ -37,9 +38,13 @@ export const getBinancePrivateObservableFromWS = async (
         id: new Date().getTime()
     }
 
+    const onBinancePrivateWSOpened = new Subject()
+    const onBinancePrivateWSClosed = new Subject()
     const binancePrivateWS = webSocket({
         url: `${baseWsURL}/ws/${token}`,
         WebSocketCtor: WebSocket,
+        openObserver: onBinancePrivateWSOpened,
+        closeObserver: onBinancePrivateWSClosed
     })
 
     const privateObservable$ = binancePrivateWS.multiplex(
@@ -49,6 +54,8 @@ export const getBinancePrivateObservableFromWS = async (
     )
     return {
         privateObservable$,
-        token
+        token,
+        onBinancePrivateWSOpened,
+        onBinancePrivateWSClosed
     }
 }
