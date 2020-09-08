@@ -73,7 +73,9 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_api_clients_binance_public_ws_handler_.html#binancepublicws" class="tsd-kind-icon">binance<wbr>PublicWS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_api_clients_binance_public_ws_handler_.html#binancepublicws" class="tsd-kind-icon">binance<wbr>PublicWS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_api_clients_binance_public_ws_handler_.html#onbinancepublicwsclosed" class="tsd-kind-icon">on<wbr>Binance<wbr>PublicWSClosed</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_api_clients_binance_public_ws_handler_.html#onbinancepublicwsopened" class="tsd-kind-icon">on<wbr>Binance<wbr>PublicWSOpened</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -87,13 +89,33 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="binancepublicws" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> binance<wbr>PublicWS</h3>
-					<div class="tsd-signature tsd-kind-icon">binance<wbr>PublicWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({url: &#x60;${baseWsURL}/stream&#x60;,WebSocketCtor: WebSocket,})</span></div>
+					<div class="tsd-signature tsd-kind-icon">binance<wbr>PublicWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({url: &#x60;${baseWsURL}/stream&#x60;,WebSocketCtor: WebSocket,openObserver: onBinancePublicWSOpened,closeObserver: onBinancePublicWSClosed})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7e02ac6/src/api_clients/binance/public_ws_handler.ts#L6">src/api_clients/binance/public_ws_handler.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/binance/public_ws_handler.ts#L10">src/api_clients/binance/public_ws_handler.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="onbinancepublicwsclosed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> on<wbr>Binance<wbr>PublicWSClosed</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Binance<wbr>PublicWSClosed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Subject()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/binance/public_ws_handler.ts#L9">src/api_clients/binance/public_ws_handler.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="onbinancepublicwsopened" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> on<wbr>Binance<wbr>PublicWSOpened</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Binance<wbr>PublicWSOpened<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Subject()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/binance/public_ws_handler.ts#L8">src/api_clients/binance/public_ws_handler.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -110,7 +132,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7e02ac6/src/api_clients/binance/public_ws_handler.ts#L11">src/api_clients/binance/public_ws_handler.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/binance/public_ws_handler.ts#L17">src/api_clients/binance/public_ws_handler.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -162,8 +184,14 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_api_clients_binance_public_ws_handler_.html#binancepublicws" class="tsd-kind-icon">binance<wbr>PublicWS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_api_clients_binance_public_ws_handler_.html#onbinancepublicwsclosed" class="tsd-kind-icon">on<wbr>Binance<wbr>PublicWSClosed</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_api_clients_binance_public_ws_handler_.html#onbinancepublicwsopened" class="tsd-kind-icon">on<wbr>Binance<wbr>PublicWSOpened</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_api_clients_binance_public_ws_handler_.html#getbinancepublicobservablefromws" class="tsd-kind-icon">get<wbr>Binance<wbr>Public<wbr>Observable<wbr>FromWS</a>

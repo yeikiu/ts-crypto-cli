@@ -73,7 +73,9 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_api_clients_kraken_public_ws_handler_.html#krakenpublicws" class="tsd-kind-icon">kraken<wbr>PublicWS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_api_clients_kraken_public_ws_handler_.html#krakenpublicws" class="tsd-kind-icon">kraken<wbr>PublicWS</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_api_clients_kraken_public_ws_handler_.html#onkrakenpublicwsclosed" class="tsd-kind-icon">on<wbr>Kraken<wbr>PublicWSClosed</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_api_clients_kraken_public_ws_handler_.html#onkrakenpublicwsopened" class="tsd-kind-icon">on<wbr>Kraken<wbr>PublicWSOpened</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -87,13 +89,33 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="krakenpublicws" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> kraken<wbr>PublicWS</h3>
-					<div class="tsd-signature tsd-kind-icon">kraken<wbr>PublicWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({protocol: &#x27;v1&#x27;,url: &#x27;wss://ws.kraken.com&#x27;,WebSocketCtor: WebSocket,})</span></div>
+					<div class="tsd-signature tsd-kind-icon">kraken<wbr>PublicWS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketSubject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = webSocket({protocol: &#x27;v1&#x27;,url: &#x27;wss://ws.kraken.com&#x27;,WebSocketCtor: WebSocket,openObserver: onKrakenPublicWSOpened,closeObserver: onKrakenPublicWSClosed})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7e02ac6/src/api_clients/kraken/public_ws_handler.ts#L5">src/api_clients/kraken/public_ws_handler.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/kraken/public_ws_handler.ts#L8">src/api_clients/kraken/public_ws_handler.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="onkrakenpublicwsclosed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> on<wbr>Kraken<wbr>PublicWSClosed</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Kraken<wbr>PublicWSClosed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Subject()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/kraken/public_ws_handler.ts#L7">src/api_clients/kraken/public_ws_handler.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="onkrakenpublicwsopened" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> on<wbr>Kraken<wbr>PublicWSOpened</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Kraken<wbr>PublicWSOpened<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Subject()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/kraken/public_ws_handler.ts#L6">src/api_clients/kraken/public_ws_handler.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -110,7 +132,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/7e02ac6/src/api_clients/kraken/public_ws_handler.ts#L11">src/api_clients/kraken/public_ws_handler.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/4660945/src/api_clients/kraken/public_ws_handler.ts#L16">src/api_clients/kraken/public_ws_handler.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -162,8 +184,14 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_api_clients_kraken_public_ws_handler_.html#krakenpublicws" class="tsd-kind-icon">kraken<wbr>PublicWS</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_api_clients_kraken_public_ws_handler_.html#onkrakenpublicwsclosed" class="tsd-kind-icon">on<wbr>Kraken<wbr>PublicWSClosed</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_api_clients_kraken_public_ws_handler_.html#onkrakenpublicwsopened" class="tsd-kind-icon">on<wbr>Kraken<wbr>PublicWSOpened</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_api_clients_kraken_public_ws_handler_.html#getkrakenpublicobservablefromws" class="tsd-kind-icon">get<wbr>Kraken<wbr>Public<wbr>Observable<wbr>FromWS</a>
