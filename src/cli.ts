@@ -67,7 +67,6 @@ nodeMenu
   .addItem('PUBLIC API request', (input: string) => { const [method, endpoint, params] = input.split(' '); handleUserInput(endpoint, method as Method, 'hitbtc', 'public', params) }, null, [{ name: 'method endpoint params"  -->  i.e.  10 "GET currency currencies=BTC,USD', type: 'string' }])
   
   .addItem('Get last OHLC candle', async (symbol: string) => { print((await getHitBTCOHLCCandles(symbol))[0]) }, null, [{ name: 'symbol"  -->  i.e.  11 "BTCUSD', type: 'string' }])
-  
   .addItem('Get price ticker', async (symbol: string) => { print(await getHitBTCPriceTicker(symbol)) }, null, [{ name: 'symbol"  -->  i.e.  12 "BTCUSD', type: 'string' }])
   
   .addDelimiter(' ', 1)
