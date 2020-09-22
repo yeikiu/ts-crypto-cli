@@ -20,8 +20,8 @@ export const gethWsListenToken = async (): Promise<string> => {
     }
 }
 
-type BinanceUserDataEvent = 'balanceUpdate' | 'outboundAccountInfo' | 'executionReport'
-const allBinanceUserDataEvents: BinanceUserDataEvent[] = ['balanceUpdate', 'outboundAccountInfo', 'executionReport']
+type BinanceUserDataEvent = 'balanceUpdate' | 'outboundAccountPosition' | 'executionReport'
+const allBinanceUserDataEvents: BinanceUserDataEvent[] = ['balanceUpdate', 'outboundAccountPosition', 'executionReport']
 
 export const getBinancePrivateObservableFromWS = async (
     lastToken?: string,
