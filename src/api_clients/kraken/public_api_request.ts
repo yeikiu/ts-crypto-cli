@@ -4,7 +4,7 @@ import debugHelper from '../../util/debug_helper'
 import { krakenAxiosConfig } from './kraken_axios_config'
 import { PublicEndpoint } from '../../types/kraken_api_endpoints'
 
-const { logError } = debugHelper(__filename)
+const { logError, debug } = debugHelper(__filename)
 
 const publicApiClient: AxiosInstance = axios.create(krakenAxiosConfig)
 publicApiClient.defaults.baseURL = `${publicApiClient.defaults.baseURL}/public`
@@ -24,6 +24,6 @@ export const krakenPublicApiRequest = async ({ url, data }: KrakenPublicRequestC
         logError(errorStr)
         throw new Error(errorStr)
     }
-    // debug({ krakenPublicResponse })
+    debug({ krakenPublicResponse })
     return krakenPublicResponse
 }

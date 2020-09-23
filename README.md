@@ -20,6 +20,9 @@ HITBTC_API_SECRET=<...>
 
 BINANCE_API_KEY=<...>
 BINANCE_API_SECRET=<...>
+
+# DEV only
+# DEBUG=ts-crypto-cli:*
 ```
 
 ## Use it as a library

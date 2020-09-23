@@ -3,7 +3,7 @@ import debugHelper from '../../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { hitbtcAxiosConfig } from './hitbtc_axios_config'
 
-// const { debug } = debugHelper(__filename)
+const { debug } = debugHelper(__filename)
 
 const publicApiClient: AxiosInstance = axios.create(hitbtcAxiosConfig)
 publicApiClient.defaults.baseURL = `${publicApiClient.defaults.baseURL}public/`
@@ -12,6 +12,6 @@ publicApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxio
 
 export const hitbtcPublicApiRequest = async ({ url, method, params, data }: AxiosRequestConfig): Promise<any> => {
     const { data: hitbtcPublicResponse } = await publicApiClient.request({ url, method, params, data })
-    // debug({ hitbtcPublicResponse })
+    debug({ hitbtcPublicResponse })
     return hitbtcPublicResponse
 }

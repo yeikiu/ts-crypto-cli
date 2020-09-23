@@ -3,7 +3,7 @@ import debugHelper from '../../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { binanceAxiosConfig } from './binance_axios_config'
 
-// const { debug } = debugHelper(__filename)
+const { debug } = debugHelper(__filename)
 
 const publicApiClient: AxiosInstance = axios.create(binanceAxiosConfig)
 publicApiClient.interceptors.request.use(baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor)
@@ -11,6 +11,6 @@ publicApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxio
 
 export const binancePublicApiRequest = async ({ url, method, params, data }: AxiosRequestConfig): Promise<any> => {
     const { data: binancePublicResponse } = await publicApiClient.request({ url, method, params, data })
-    // debug({ binancePublicResponse })
+    debug({ binancePublicResponse })
     return binancePublicResponse
 }
