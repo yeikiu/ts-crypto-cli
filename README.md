@@ -122,6 +122,6 @@ BINANCE_API_SECRET=<...>
 
 You can use different API keys/secrets against the same exchange. Generate the new API client instances with one of the following methods:
 
-- [`createKrakenPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_api_request_.html#createkrakenprivateapiclient)
-- [`createHitBTCPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_api_request_.html#createhitbtcprivateapiclient)
-- [`createBinancePrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_api_request_.html#createbinanceprivateapiclient)
+- [`createKrakenPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_api_request_.html#createkrakenprivateapiclient)
+- [`createHitBTCPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_api_request_.html#createhitbtcprivateapiclient)
+- [`createBinancePrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_api_request_.html#createbinanceprivateapiclient)
