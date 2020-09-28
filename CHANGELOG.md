@@ -1,27 +1,24 @@
 # ts-crypto-cli
 
-## Unreleased (develop)
+> All major changes will be added to this file top-to-bottom
 
-### 0.8.0
+- ### v0.8.0
 
-#### features:
+    - #### features:
 
-- Added methods to easily get different prices streams
+        - Added methods to easily get different prices streams
 
-    * `getKrakenTickerStream(pair: string): Observable<StandardTicker>`
-    * `getBinanceTickerStream(pair: string): Observable<StandardTicker>`
-    * `getHitBTCTickerStream(pair: string): Observable<StandardTicker>`
+            * `getKrakenTickerStream(pair: string): Observable<StandardTicker>`
+            * `getBinanceTickerStream(pair: string): Observable<StandardTicker>`
+            * `getHitBTCTickerStream(pair: string): Observable<StandardTicker>`
 
-#### refactor:
+    - #### refactor:
 
-- Moment.js replaced for Vanilla UTC Date timestamps
+        - Moment.js replaced for Vanilla UTC Date timestamps
 
----
 
-## Released (master)
+- ### v0.7.5
 
-### 0.7.5
+    - #### chore:
 
-#### chore:
-
-- started tracking changes
+        - started tracking changes
