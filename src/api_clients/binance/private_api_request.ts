@@ -2,7 +2,6 @@ import { baseAxiosRequestInterceptor, baseAxiosRequestErrorInterceptor, baseAxio
 import debugHelper from '../../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { binanceAxiosConfig } from './binance_axios_config'
-import * as moment from 'moment'
 import { getBinanceMessageSignature } from './message_signature'
 
 const { debug } = debugHelper(__filename)
@@ -12,7 +11,7 @@ export const createBinancePrivateApiClient = (apikey = process.env.BINANCE_API_K
     privateApiClient.defaults.headers['X-MBX-APIKEY'] = apikey
     privateApiClient.interceptors.request.use((config: AxiosRequestConfig) => {
 
-        const timestamp = moment().valueOf()
+        const timestamp = new Date().getTime()
         // Sign payload if any
         if (config.data) {
             config.data = {

@@ -1,8 +1,7 @@
-import { Moment } from "moment";
-
-export type standardOHLC = {
+export type StandardOHLC = {
     exchange: 'kraken' | 'binance' | 'hitbtc';
-    utcMoment: Moment;
+    utcTimestamp: number;
+    pair: string;
     open: string;
     high: string;
     low: string;

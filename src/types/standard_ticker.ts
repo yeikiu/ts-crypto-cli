@@ -1,8 +1,6 @@
-import { Moment } from "moment";
-
-export type standardTicker = {
-    utcMoment: Moment;
+export type StandardTicker = {
     exchange: 'kraken' | 'binance' | 'hitbtc';
+    utcTimestamp: number;
     pair: string;
     price: string;
 }
