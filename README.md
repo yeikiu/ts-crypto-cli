@@ -97,9 +97,7 @@ BINANCE_API_SECRET=<...>
 
 - `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> etc.. npx ts-crypto-cli`
 
-<br />
 ---
-<br />
 
 # Documentation
 
