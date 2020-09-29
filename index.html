@@ -71,78 +71,22 @@
 				<blockquote>
 					<p>A handy npm to operate against some of the most known Crypto Exchanges</p>
 				</blockquote>
-				<img src=".github/menu_demo.png" />
-				<a href="#environment-variables" id="environment-variables" style="color: inherit; text-decoration: none;">
-					<h2>Environment Variables</h2>
+				<a href="#tldr" id="tldr" style="color: inherit; text-decoration: none;">
+					<h1>TLDR;</h1>
 				</a>
-				<pre><code><span class="hljs-comment"># Each REST request/response can be optionally recorded to a log file if you set a path here</span>
-<span class="hljs-attr">TS_CRYPTO_CLI_LOGS_PATH</span>=./logs
-
-<span class="hljs-attr">KRAKEN_API_KEY</span>=&lt;...&gt;
-<span class="hljs-attr">KRAKEN_API_SECRET</span>=&lt;...&gt;
-
-<span class="hljs-attr">HITBTC_API_KEY</span>=&lt;...&gt;
-<span class="hljs-attr">HITBTC_API_SECRET</span>=&lt;...&gt;
-
-<span class="hljs-attr">BINANCE_API_KEY</span>=&lt;...&gt;
-<span class="hljs-attr">BINANCE_API_SECRET</span>=&lt;...&gt;
-
-<span class="hljs-comment"># DEV only</span>
-<span class="hljs-comment"># DEBUG=ts-crypto-cli:*</span></code></pre>
-				<a href="#use-it-as-a-library" id="use-it-as-a-library" style="color: inherit; text-decoration: none;">
-					<h2>Use it as a library</h2>
+				<a href="#option-1---use-it-as-a-library" id="option-1---use-it-as-a-library" style="color: inherit; text-decoration: none;">
+					<h2>Option 1 - Use it as a library</h2>
 				</a>
 				<ul>
 					<li><code>npm i ts-crypto-cli</code></li>
 				</ul>
-				<a href="#rest-apis" id="rest-apis" style="color: inherit; text-decoration: none;">
-					<h3>REST APIs</h3>
+				<a href="#library-usage-demo" id="library-usage-demo" style="color: inherit; text-decoration: none;">
+					<h4>Library usage demo</h4>
 				</a>
-				<ul>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_api_request_.html">Kraken Public</a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_api_request_.html">Kraken Private</a></li>
-				</ul>
-				<hr>
-				<ul>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_api_request_.html">HitBTC Public</a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_api_request_.html">HitBTC Private</a></li>
-				</ul>
-				<hr>
-				<ul>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_api_request_.html">Binance Public</a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_api_request_.html">Binance Private</a></li>
-				</ul>
-				<a href="#ws-apis" id="ws-apis" style="color: inherit; text-decoration: none;">
-					<h3>WS APIs</h3>
-				</a>
-				<ul>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_ws_handler_.html">Kraken Public</a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_ws_handler_.html">Kraken Private</a></li>
-				</ul>
-				<hr>
-				<ul>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_ws_handler_.html">HitBTC Public</a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_ws_handler_.html">HitBTC Private</a></li>
-				</ul>
-				<hr>
-				<ul>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_ws_handler_.html">Binance Public</a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_ws_handler_.html">Binance Private</a></li>
-				</ul>
-				<a href="#handling-multiple-api-credentials" id="handling-multiple-api-credentials" style="color: inherit; text-decoration: none;">
-					<h3>Handling multiple API credentials</h3>
-				</a>
-				<p>You can handle different API keys/secrets under the same exchange. Generate the new API client instances with the following methods:</p>
-				<ul>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_kraken_private_api_request_.html#createkrakenprivateapiclient"><code>createKrakenPrivateApiClient</code></a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_hitbtc_private_api_request_.html#createhitbtcprivateapiclient"><code>createHitBTCPrivateApiClient</code></a></li>
-					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_binance_private_api_request_.html#createbinanceprivateapiclient"><code>createBinancePrivateApiClient</code></a></li>
-				</ul>
-				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
-					<h4>Demo</h4>
-				</a>
-				<p>Here is a little handler to perform a 2-steps withdrawal from Kraken in 20 lines of code using the lib.</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { krakenPrivateApiRequest } <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-crypto-cli'</span>;
+				<blockquote>
+					<p>Here is a little handler to perform a 2-steps withdrawal from Kraken in 20 lines of code using the lib.</p>
+				</blockquote>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { krakenPrivateApiRequest } <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-crypto-cli'</span>
 
 <span class="hljs-keyword">const</span> krakenWithdrawAsset = <span class="hljs-keyword">async</span> (asset: <span class="hljs-built_in">string</span>, key: <span class="hljs-built_in">string</span>, withdrawAmount: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; =&gt; {
 
@@ -163,17 +107,17 @@
     key,
     amount: withdrawAmount
   }})
-};
+}
 
 <span class="hljs-keyword">export</span> {
   krakenWithdrawAsset
 }</code></pre>
-				<hr>
-				<a href="#launch-the-repl-cli-on-a-shell" id="launch-the-repl-cli-on-a-shell" style="color: inherit; text-decoration: none;">
-					<h2>Launch the REPL cli on a shell</h2>
+				<a href="#option-2---launch-the-repl-cli-on-a-shell" id="option-2---launch-the-repl-cli-on-a-shell" style="color: inherit; text-decoration: none;">
+					<h2>Option 2 - Launch the REPL cli on a shell</h2>
 				</a>
-				<a href="#with-a-env-file" id="with-a-env-file" style="color: inherit; text-decoration: none;">
-					<h3>With a .env file</h3>
+				<img src=".github/menu_demo.png" />
+				<a href="#option-21---provide-a-env-file" id="option-21---provide-a-env-file" style="color: inherit; text-decoration: none;">
+					<h3>Option 2.1 - Provide a .env file</h3>
 				</a>
 				<blockquote>
 					<p>Create a .env file under current working directory with your own API credentials and run</p>
@@ -181,11 +125,32 @@
 				<ul>
 					<li><code>npx ts-crypto-cli</code></li>
 				</ul>
-				<a href="#inject-your-keyssecrets-to-enable-private-methods" id="inject-your-keyssecrets-to-enable-private-methods" style="color: inherit; text-decoration: none;">
-					<h3>Inject your keys/secrets to enable private methods</h3>
+				<a href="#environment-variables" id="environment-variables" style="color: inherit; text-decoration: none;">
+					<h4>Environment Variables</h4>
+				</a>
+				<pre><code><span class="hljs-comment">##</span>
+<span class="hljs-comment"># Each REST request/response can be optionally recorded to a log file if you set a path here</span>
+<span class="hljs-comment">##</span>
+<span class="hljs-comment">#TS_CRYPTO_CLI_LOGS_PATH=./ts_crypto_cli_logs</span>
+
+<span class="hljs-attr">KRAKEN_API_KEY</span>=&lt;...&gt;
+<span class="hljs-attr">KRAKEN_API_SECRET</span>=&lt;...&gt;
+
+<span class="hljs-attr">HITBTC_API_KEY</span>=&lt;...&gt;
+<span class="hljs-attr">HITBTC_API_SECRET</span>=&lt;...&gt;
+
+<span class="hljs-attr">BINANCE_API_KEY</span>=&lt;...&gt;
+<span class="hljs-attr">BINANCE_API_SECRET</span>=&lt;...&gt;
+
+<span class="hljs-comment">##</span>
+<span class="hljs-comment"># DEV only</span>
+<span class="hljs-comment">##</span>
+<span class="hljs-comment">#DEBUG=ts-crypto-cli:*</span></code></pre>
+				<a href="#option-22---inject-your-keyssecrets-to-enable-private-methods" id="option-22---inject-your-keyssecrets-to-enable-private-methods" style="color: inherit; text-decoration: none;">
+					<h3>Option 2.2 - Inject your keys/secrets to enable private methods</h3>
 				</a>
 				<blockquote>
-					<p>This method is more secure as you won´t persist the KEYS to a file</p>
+					<p>This method is more secure as you won&#39;t need to persist the KEYS to a file</p>
 				</blockquote>
 				<a href="#powershell-windows" id="powershell-windows" style="color: inherit; text-decoration: none;">
 					<h4>Powershell (windows)</h4>
@@ -204,6 +169,52 @@
 				</a>
 				<ul>
 					<li><code>KRAKEN_API_KEY=&lt;...&gt; KRAKEN_API_SECRET=&lt;...&gt; HITBTC_API_KEY=&lt;...&gt; etc.. npx ts-crypto-cli</code></li>
+				</ul>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h1>Documentation</h1>
+				</a>
+				<a href="#rest-apis" id="rest-apis" style="color: inherit; text-decoration: none;">
+					<h2>REST APIs</h2>
+				</a>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_api_request_.html">Kraken Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_api_request_.html">Kraken Private</a></li>
+				</ul>
+				<hr>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_api_request_.html">HitBTC Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_api_request_.html">HitBTC Private</a></li>
+				</ul>
+				<hr>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_api_request_.html">Binance Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_api_request_.html">Binance Private</a></li>
+				</ul>
+				<a href="#ws-apis" id="ws-apis" style="color: inherit; text-decoration: none;">
+					<h2>WS APIs</h2>
+				</a>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_ws_handler_.html">Kraken Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_ws_handler_.html">Kraken Private</a></li>
+				</ul>
+				<hr>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_ws_handler_.html">HitBTC Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_ws_handler_.html">HitBTC Private</a></li>
+				</ul>
+				<hr>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_ws_handler_.html">Binance Public</a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_ws_handler_.html">Binance Private</a></li>
+				</ul>
+				<a href="#handling-multiple-api-credentials" id="handling-multiple-api-credentials" style="color: inherit; text-decoration: none;">
+					<h2>Handling multiple API credentials</h2>
+				</a>
+				<p>You can use different API keys/secrets against the same exchange. Generate the new API client instances with one of the following methods:</p>
+				<ul>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_api_request_.html#createkrakenprivateapiclient"><code>createKrakenPrivateApiClient</code></a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_api_request_.html#createhitbtcprivateapiclient"><code>createHitBTCPrivateApiClient</code></a></li>
+					<li><a href="https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_api_request_.html#createbinanceprivateapiclient"><code>createBinancePrivateApiClient</code></a></li>
 				</ul>
 			</div>
 		</div>
@@ -290,6 +301,15 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_services_kraken_get_kraken_price_ticker_.html">&quot;services/kraken/get_<wbr>kraken_<wbr>price_<wbr>ticker&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_streams_binance_get_binance_ticker_stream_.html">&quot;streams/binance/get_<wbr>binance_<wbr>ticker_<wbr>stream&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_streams_hitbtc_get_hitbtc_ticker_stream_.html">&quot;streams/hitbtc/get_<wbr>hitbtc_<wbr>ticker_<wbr>stream&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_streams_kraken_get_kraken_ticker_stream_.html">&quot;streams/kraken/get_<wbr>kraken_<wbr>ticker_<wbr>stream&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_types_kraken_api_endpoints_.html">&quot;types/kraken_<wbr>api_<wbr>endpoints&quot;</a>
