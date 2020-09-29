@@ -9,10 +9,10 @@ export const getKrakenOHLCCandles = async (pair: string, interval = 1): Promise<
     const candles = await krakenPublicApiRequest({ url: 'OHLC', data: { pair, interval }})
     const [pairKey,] = Object.keys(candles)
     candles[pairKey].reverse()
-    
-    return candles[pairKey].map(([ open, high, low, close,, volume ]) => ({
+
+    return candles[pairKey].map(([ utcTsInSeconds, open, high, low, close,, volume ]) => ({
         exchange: 'kraken',
-        utcTimestamp: new Date().getTime(),
+        utcTimestamp: Number(utcTsInSeconds) * 1000,
         pair,
         open,
         high,

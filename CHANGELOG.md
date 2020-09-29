@@ -2,7 +2,7 @@
 
 > All major changes will be added to this file top-to-bottom
 
-- ### v0.8.0
+- ### v0.8.3
 
     - #### features:
 

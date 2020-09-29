@@ -4,6 +4,10 @@
 
 > A handy npm to operate against some of the most known Crypto Exchanges
 
+## npm Interactive Playground Demos
+
+- [getKrakenOHLCCandles](https://runkit.com/5f72835d91520c001a83748f/5f72882842ccce001a5c6283)
+- [getKrakenTickerStream](https://runkit.com/5f72835d91520c001a83748f/5f72835d0e2604001a217667)
 
 # TLDR;
 
