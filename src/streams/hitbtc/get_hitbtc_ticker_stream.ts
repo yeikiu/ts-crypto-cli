@@ -22,4 +22,6 @@ const getHitBTCTickerStream = (pair: string): Observable<StandardTicker> => {
     )
 }
 
-export default getHitBTCTickerStream
+export {
+    getHitBTCTickerStream
+}

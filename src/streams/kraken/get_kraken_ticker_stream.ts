@@ -22,4 +22,6 @@ const getKrakenTickerStream = (pair: string): Observable<StandardTicker> => {
     )
 }
 
-export default getKrakenTickerStream
+export {
+    getKrakenTickerStream
+}

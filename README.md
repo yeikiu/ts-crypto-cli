@@ -18,24 +18,24 @@
 ```typescript
 import { krakenPrivateApiRequest } from 'ts-crypto-cli'
 
-const krakenWithdrawAsset = async (asset: string, key: string, withdrawAmount: number): Promise<void> => {
+const krakenWithdrawAsset = async (asset: string, key: string, amount: number): Promise<void> => {
 
   const withdrawInfo = await krakenPrivateApiRequest({ url: 'WithdrawInfo', data: {
       asset,
       key,
-      amount: withdrawAmount
+      amount,
   }})
 
   const { limit } = withdrawInfo
 
-  if (Number(limit) < Number(withdrawAmount)) {
-    throw new Error(`Can´t withdraw ${withdrawAmount} ${asset}. Max. available ${limit}`)
+  if (Number(limit) < Number(amount)) {
+    throw new Error(`Can´t withdraw ${amount} ${asset}. Max. available ${limit}`)
   }
 
   krakenPrivateApiRequest({ url: 'Withdraw', data: {
     asset,
     key,
-    amount: withdrawAmount
+    amount,
   }})
 }
 
@@ -47,6 +47,8 @@ export {
 ## Option 2 - Launch the REPL cli on a shell
 
 <img src=".github/menu_demo.png" />
+
+---
 
 ### Option 2.1 - Provide a .env file
 
@@ -77,6 +79,8 @@ BINANCE_API_SECRET=<...>
 #DEBUG=ts-crypto-cli:*
 ```
 
+---
+
 ### Option 2.2 - Inject your keys/secrets to enable private methods
 
 > This method is more secure as you won't need to persist the KEYS to a file
@@ -93,6 +97,9 @@ BINANCE_API_SECRET=<...>
 
 - `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> etc.. npx ts-crypto-cli`
 
+<br />
+---
+<br />
 
 # Documentation
 

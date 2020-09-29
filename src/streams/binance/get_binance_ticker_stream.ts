@@ -16,4 +16,6 @@ const getBinanceTickerStream = (pair: string): Observable<StandardTicker> => {
     )
 }
 
-export default getBinanceTickerStream
+export {
+    getBinanceTickerStream
+}
