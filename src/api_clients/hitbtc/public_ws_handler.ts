@@ -1,4 +1,4 @@
-import * as WebSocket from 'ws'
+import WebSocket from 'ws'
 import { webSocket } from "rxjs/webSocket"
 import { baseWsURL } from './hitbtc_axios_config'
 import { Observable } from 'rxjs/internal/Observable'

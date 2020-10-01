@@ -2,6 +2,13 @@
 
 > All major changes will be added to this file top-to-bottom
 
+- ### v0.8.5
+
+    - #### features:
+
+        - Added optional `InjectedApiKeys` to methods for easier multi-account interaction
+
+
 - ### v0.8.3
 
     - #### features:

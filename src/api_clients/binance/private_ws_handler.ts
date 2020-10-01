@@ -1,16 +1,17 @@
-import * as WebSocket from 'ws'
+import WebSocket from 'ws'
 import { webSocket } from "rxjs/webSocket"
 import { binancePrivateApiRequest } from './private_api_request'
 import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 import { baseWsURL } from './binance_axios_config'
 import { Subject } from 'rxjs/internal/Subject'
+import { InjectedApiKeys } from '../../types/injected_api_keys'
 
 const { logError, debug } = debugHelper(__filename)
 
-export const gethWsListenToken = async (): Promise<string> => {
+export const gethWsListenToken = async (injectedApiKeys?: InjectedApiKeys): Promise<string> => {
     try {
-        const { listenKey } = await binancePrivateApiRequest({ url: 'api/v3/userDataStream', method: 'POST' })
+        const { listenKey } = await binancePrivateApiRequest({ url: 'api/v3/userDataStream', method: 'POST' }, injectedApiKeys)
         debug({ listenKey })
         return listenKey
         
@@ -27,10 +28,11 @@ export const getBinancePrivateObservableFromWS = async (
     lastToken?: string,
     streamNames: BinanceUserDataEvent[] = allBinanceUserDataEvents,
     filterFn: (data: unknown) => boolean = ({ e }): boolean => allBinanceUserDataEvents.includes(e),
-    unsubscriptionData?: any
+    unsubscriptionData?: any,
+    injectedApiKeys?: InjectedApiKeys,
 ): Promise<{ privateObservable$: Observable<any>; token: string; onBinancePrivateWSOpened: Observable<any>; onBinancePrivateWSClosed: Observable<any>  }> => {
 
-    const token = lastToken || await gethWsListenToken()
+    const token = lastToken || await gethWsListenToken(injectedApiKeys)
 
     const subscriptionData = {
         method: "SUBSCRIBE",

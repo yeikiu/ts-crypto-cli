@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict'
 
-import * as dotenv from 'dotenv'
+import dotenv from 'dotenv'
 dotenv.config()
 
 import { readFileSync } from 'fs'
@@ -19,7 +19,7 @@ if (/\s-v\s*$/.test(argsStr)) {
   process.exit()
 }
 
-import * as nodeMenu from 'node-menu'
+import nodeMenu from 'node-menu'
 
 import { krakenPrivateApiRequest, updateKrakenDefaultClient } from './api_clients/kraken/private_api_request'
 import { hitbtcPrivateApiRequest, updateHitBTCDefaultClient } from './api_clients/hitbtc/private_api_request'

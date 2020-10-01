@@ -4,6 +4,7 @@ import debugHelper from '../../util/debug_helper'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { krakenAxiosConfig, apiVersion } from './kraken_axios_config'
 import { PrivateEndpoint } from '../../types/kraken_api_endpoints'
+import { InjectedApiKeys } from '../../types/injected_api_keys'
 
 const { logError, debug } = debugHelper(__filename)
 
@@ -34,8 +35,9 @@ interface KrakenPrivateRequestConfig extends AxiosRequestConfig {
 }
 
 let defaultClient = createKrakenPrivateApiClient()
-export const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig): Promise<any> => {
-    const { data: { result: krakenPrivateResponse, error } } = await defaultClient.request({ url, data })
+export const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig, injectedApiKeys?: InjectedApiKeys): Promise<any> => {
+    const apiClient = injectedApiKeys ? createKrakenPrivateApiClient(injectedApiKeys.apiKey, injectedApiKeys.apiSecret) : defaultClient
+    const { data: { result: krakenPrivateResponse, error } } = await apiClient.request({ url, data })
     if (error?.length) {
         const errorStr = error.join(' | ')
         logError(errorStr)

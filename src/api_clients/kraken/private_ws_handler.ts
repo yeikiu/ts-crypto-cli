@@ -1,9 +1,10 @@
-import * as WebSocket from 'ws'
+import WebSocket from 'ws'
 import { webSocket } from "rxjs/webSocket"
 import { krakenPrivateApiRequest } from './private_api_request'
 import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 import { Subject } from 'rxjs/internal/Subject'
+import { InjectedApiKeys } from '../../types/injected_api_keys'
 
 const { logError } = debugHelper(__filename)
 
@@ -17,9 +18,9 @@ export const krakenPrivateWS = webSocket({
     closeObserver: onKrakenPrivateWSClosed
 })
 
-export const gethWsAuthToken = async (): Promise<string> => {
+export const gethWsAuthToken = async (injectedApiKeys?: InjectedApiKeys): Promise<string> => {
     try {
-        const { token } = await krakenPrivateApiRequest({ url: 'GetWebSocketsToken' })
+        const { token } = await krakenPrivateApiRequest({ url: 'GetWebSocketsToken' }, injectedApiKeys)
         // debug({ token })
         return token
         
@@ -29,8 +30,8 @@ export const gethWsAuthToken = async (): Promise<string> => {
     }
 }
 
-export const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Promise<{ privateObservable$: Observable<any>; token: string; onKrakenPrivateWSOpened: Observable<any>; onKrakenPrivateWSClosed: Observable<any> }> => {
-    const token = lastToken || await gethWsAuthToken()
+export const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any, injectedApiKeys?: InjectedApiKeys): Promise<{ privateObservable$: Observable<any>; token: string; onKrakenPrivateWSOpened: Observable<any>; onKrakenPrivateWSClosed: Observable<any> }> => {
+    const token = lastToken || await gethWsAuthToken(injectedApiKeys)
 
     const subscriptionDataWithToken = subscriptionData.subscription ? {
         ...subscriptionData,
