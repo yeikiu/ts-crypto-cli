@@ -25,5 +25,6 @@ export * from './streams/binance/get_binance_ticker_stream'
 
 export * from './types/standard_ohlc'
 export * from './types/standard_ticker'
+export * from './types/injected_api_keys'
 
 export * from './util/filter_balances'
