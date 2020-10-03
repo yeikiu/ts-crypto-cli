@@ -6,6 +6,7 @@ export * from './api_clients/kraken/private_ws_handler'
 export * from './services/kraken/get_kraken_price_ticker'
 export * from './services/kraken/get_kraken_ohlc_candles'
 export * from './streams/kraken/get_kraken_ticker_stream'
+export * from './streams/kraken/get_kraken_open_orders_stream'
 
 export * from './api_clients/hitbtc/public_api_request'
 export * from './api_clients/hitbtc/private_api_request'

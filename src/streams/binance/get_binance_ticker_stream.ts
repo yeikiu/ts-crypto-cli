@@ -10,7 +10,7 @@ const getBinanceTickerStream = (pair: string): Observable<StandardTicker> => {
         map(({ data: { c: lastBinancePrice = '', E: utcTimestamp = 0 } = {} }) => ({
             exchange: 'binance',
             utcTimestamp,
-            pair: pair.toUpperCase(),
+            pair,
             price: Number(lastBinancePrice).toFixed(2),
         }))
     )

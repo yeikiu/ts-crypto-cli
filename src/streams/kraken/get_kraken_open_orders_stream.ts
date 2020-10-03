@@ -1,0 +1,30 @@
+import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { getKrakenPrivateObservableFromWS } from '../../api_clients/kraken/private_ws_handler'
+import { InjectedApiKeys } from '../../types/injected_api_keys'
+
+const getKrakenOpenOrdersStream = async (lastToken?: string, injectedApiKeys?: InjectedApiKeys): Promise<Observable<any>> => {
+    const subscriptionData = {
+        event: 'subscribe',
+        subscription: {
+            name: 'openOrders'
+        }
+    }
+    const filterStream = (response): boolean => Array.isArray(response) && response[response.length -1] === 'openOrders'
+    const { privateObservable$ } = await getKrakenPrivateObservableFromWS(lastToken, subscriptionData, filterStream, injectedApiKeys)
+    
+    return privateObservable$.pipe(
+        map(([ordersSnapshot]) => ordersSnapshot.map(krakenOrder => {
+                const [orderid] = Object.keys(krakenOrder)
+                return {
+                    orderid,
+                    ...krakenOrder[orderid]
+                }
+            })
+        )
+    )
+}
+
+export {
+    getKrakenOpenOrdersStream
+}

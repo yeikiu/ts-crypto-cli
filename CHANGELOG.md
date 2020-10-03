@@ -2,6 +2,12 @@
 
 > All major changes will be added to this file top-to-bottom
 
+- ### v0.8.8
+
+    - #### features:
+
+        - Added `getKrakenOpenOrdersStream` method
+
 - ### v0.8.7
 
     - #### features:

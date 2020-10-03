@@ -6,17 +6,17 @@ import { StandardTicker } from '../../types/standard_ticker'
 const getKrakenTickerStream = (pair: string): Observable<StandardTicker> => {
     const subscriptionData = {
         event: 'subscribe',
-        pair: [pair],
+        pair: [pair.toUpperCase()],
         subscription: {
             name: 'ticker'
         }
     }
-    const filterStream = (response): boolean => Array.isArray(response) && response.slice(-2).every(v => ['ticker', pair].includes(v))
+    const filterStream = (response): boolean => Array.isArray(response) && response.slice(-2).every(v => ['ticker', pair.toUpperCase()].includes(v))
     return getKrakenPublicObservableFromWS(subscriptionData, filterStream).pipe(
         map(([, { c: [lastKrakenPrice = '',] = [] } = {}, ]) => ({
             exchange: 'kraken',
             utcTimestamp: new Date().getTime(),
-            pair: pair.toUpperCase(),
+            pair,
             price: Number(lastKrakenPrice).toFixed(2),
         }))
     )
