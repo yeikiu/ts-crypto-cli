@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import WebSocket from 'ws'
-import { webSocket } from "rxjs/webSocket"
+import { webSocket } from 'rxjs/webSocket'
 import { baseWsURL } from './binance_axios_config'
 import { Observable } from 'rxjs/internal/Observable'
 import { Subject } from 'rxjs/internal/Subject'

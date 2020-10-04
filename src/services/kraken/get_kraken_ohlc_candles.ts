@@ -1,5 +1,5 @@
-import { krakenPublicApiRequest } from "../../api_clients/kraken/public_api_request"
-import { StandardOHLC } from "../../types/standard_ohlc"
+import { krakenPublicApiRequest } from '../../api_clients/kraken/public_api_request'
+import { StandardOHLC } from '../../types/standard_ohlc'
 
 // 
 // https://www.kraken.com/features/api#get-ohlc-data

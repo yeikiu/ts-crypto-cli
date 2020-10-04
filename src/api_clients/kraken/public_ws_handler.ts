@@ -1,5 +1,5 @@
 import WebSocket from 'ws'
-import { webSocket } from "rxjs/webSocket"
+import { webSocket } from 'rxjs/webSocket'
 import { Observable } from 'rxjs/internal/Observable'
 import { Subject } from 'rxjs/internal/Subject'
 

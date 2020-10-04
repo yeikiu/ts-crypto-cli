@@ -1,11 +1,12 @@
 import WebSocket from 'ws'
-import { webSocket } from "rxjs/webSocket"
+import { webSocket } from 'rxjs/webSocket'
 import { binancePrivateApiRequest } from './private_api_request'
 import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 import { baseWsURL } from './binance_axios_config'
 import { Subject } from 'rxjs/internal/Subject'
 import { InjectedApiKeys } from '../../types/injected_api_keys'
+import { BinanceUserDataEventType } from '../../types/binance_open_order_snapshot'
 
 const { logError, debug } = debugHelper(__filename)
 
@@ -21,12 +22,11 @@ export const gethWsListenToken = async (injectedApiKeys?: InjectedApiKeys): Prom
     }
 }
 
-type BinanceUserDataEvent = 'balanceUpdate' | 'outboundAccountPosition' | 'executionReport'
-const allBinanceUserDataEvents: BinanceUserDataEvent[] = ['balanceUpdate', 'outboundAccountPosition', 'executionReport']
+const allBinanceUserDataEvents: BinanceUserDataEventType[] = ['balanceUpdate', 'outboundAccountPosition', 'executionReport']
 
 export const getBinancePrivateObservableFromWS = async (
     lastToken?: string,
-    streamNames: BinanceUserDataEvent[] = allBinanceUserDataEvents,
+    streamNames: BinanceUserDataEventType[] = allBinanceUserDataEvents,
     filterFn: (data: unknown) => boolean = ({ e }): boolean => allBinanceUserDataEvents.includes(e),
     unsubscriptionData?: any,
     injectedApiKeys?: InjectedApiKeys,
