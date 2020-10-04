@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;services/kraken/get_kraken_ohlc_candles&quot; | ts-crypto-cli</title>
+	<title>&quot;types/kraken_trade_history_item&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_services_kraken_get_kraken_ohlc_candles_.html">&quot;services/kraken/get_kraken_ohlc_candles&quot;</a>
+					<a href="_types_kraken_trade_history_item_.html">&quot;types/kraken_trade_history_item&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;services/kraken/get_kraken_ohlc_candles&quot;</h1>
+			<h1>External module &quot;types/kraken_trade_history_item&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,41 +71,72 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_services_kraken_get_kraken_ohlc_candles_.html#getkrakenohlccandles" class="tsd-kind-icon">get<wbr>KrakenOHLCCandles</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_types_kraken_trade_history_item_.html#krakentradeshistoryitem" class="tsd-kind-icon">Kraken<wbr>Trades<wbr>History<wbr>Item</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getkrakenohlccandles" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>KrakenOHLCCandles</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>KrakenOHLCCandles<span class="tsd-signature-symbol">(</span>pair<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, interval<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_standard_ohlc_.html#standardohlc" class="tsd-signature-type">StandardOHLC</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/01eaa71/src/services/kraken/get_kraken_ohlc_candles.ts#L8">src/services/kraken/get_kraken_ohlc_candles.ts:8</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>pair: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> interval: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_standard_ohlc_.html#standardohlc" class="tsd-signature-type">StandardOHLC</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="krakentradeshistoryitem" class="tsd-anchor"></a>
+					<h3>Kraken<wbr>Trades<wbr>History<wbr>Item</h3>
+					<div class="tsd-signature tsd-kind-icon">Kraken<wbr>Trades<wbr>History<wbr>Item<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>cost<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">; </span>fee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>margin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>misc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>ordertxid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>ordertype<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>pair<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>postxid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>price<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>time<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>tradeid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"buy"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"sell"</span><span class="tsd-signature-symbol">; </span>vol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/01eaa71/src/types/kraken_trade_history_item.ts#L1">src/types/kraken_trade_history_item.ts:1</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>cost<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>fee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>margin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>misc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>ordertxid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>ordertype<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>pair<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>postxid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>price<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>time<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>tradeid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"buy"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"sell"</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>vol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -116,14 +147,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_services_kraken_get_kraken_ohlc_candles_.html">&quot;services/kraken/get_<wbr>kraken_<wbr>ohlc_<wbr>candles&quot;</a>
+						<a href="_types_kraken_trade_history_item_.html">&quot;types/kraken_<wbr>trade_<wbr>history_<wbr>item&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_services_kraken_get_kraken_ohlc_candles_.html#getkrakenohlccandles" class="tsd-kind-icon">get<wbr>KrakenOHLCCandles</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_types_kraken_trade_history_item_.html#krakentradeshistoryitem" class="tsd-kind-icon">Kraken<wbr>Trades<wbr>History<wbr>Item</a>
 					</li>
 				</ul>
 			</nav>
