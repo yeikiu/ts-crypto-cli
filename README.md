@@ -123,6 +123,14 @@ BINANCE_API_SECRET=<...>
 - [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_ws_handler_.html)
 - [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_ws_handler_.html)
 
+## WS Streams Handlers
+
+- [getKrakenTickerStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_kraken_get_kraken_ticker_stream_.html)
+- [getKrakenOpenOrdersStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_kraken_get_kraken_open_orders_stream_.html)
+---
+- [getBinanceTickerStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_binance_get_binance_ticker_stream_.html)
+- [getBinanceOpenOrdersStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_binance_get_binance_open_orders_stream_.html)
+---
 ## Handling multiple API credentials
 
 You can use different API keys/secrets against the same exchange. Generate the new API client instances with one of the following methods:

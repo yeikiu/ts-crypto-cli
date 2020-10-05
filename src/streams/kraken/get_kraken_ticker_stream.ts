@@ -3,22 +3,23 @@ import { map } from 'rxjs/operators'
 import { getKrakenPublicObservableFromWS } from '../../api_clients/kraken/public_ws_handler'
 import { StandardTicker } from '../../types/standard_ticker'
 
-const getKrakenTickerStream = (pair: string): Observable<StandardTicker> => {
+const getKrakenTickerStream = (baseAsset: string, quoteAsset: string): Observable<StandardTicker> => {
+    const pair = `${baseAsset}/${quoteAsset}`.toUpperCase()
     const subscribeData = {
         event: 'subscribe',
-        pair: [pair.toUpperCase()],
+        pair: [pair],
         subscription: {
             name: 'ticker'
         }
     }
     const unsubscribeData = {
         event: 'unsubscribe',
-        pair: [pair.toUpperCase()],
+        pair: [pair],
         subscription: {
             name: 'ticker'
         }
     }
-    const filterStream = (response): boolean => Array.isArray(response) && response.slice(-2).every(v => ['ticker', pair.toUpperCase()].includes(v))
+    const filterStream = (response): boolean => Array.isArray(response) && response.slice(-2).every(v => ['ticker', pair].includes(v))
     return getKrakenPublicObservableFromWS(subscribeData, filterStream, unsubscribeData).pipe(
         map(([, { c: [lastKrakenPrice = '',] = [] } = {}, ]) => ({
             exchange: 'kraken',
