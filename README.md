@@ -19,24 +19,23 @@
 ```typescript
 import { krakenPrivateApiRequest } from 'ts-crypto-cli'
 
-const krakenWithdrawAsset = async (asset: string, key: string, amount: number): Promise<void> => {
-
+const krakenWithdrawAsset = async (asset: string, key: string, withdrawAmount: number): Promise<unknown> => {
   const withdrawInfo = await krakenPrivateApiRequest({ url: 'WithdrawInfo', data: {
       asset,
       key,
-      amount,
+      amount: withdrawAmount
   }})
 
   const { limit } = withdrawInfo
 
-  if (Number(limit) < Number(amount)) {
-    throw new Error(`Can´t withdraw ${amount} ${asset}. Max. available ${limit}`)
+  if (Number(limit) < Number(withdrawAmount)) {
+    throw new Error(`Can´t withdraw ${withdrawAmount} ${asset}. Max. available ${limit}`)
   }
 
-  krakenPrivateApiRequest({ url: 'Withdraw', data: {
+  return krakenPrivateApiRequest({ url: 'Withdraw', data: {
     asset,
     key,
-    amount,
+    amount: withdrawAmount
   }})
 }
 

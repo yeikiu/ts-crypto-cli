@@ -1,10 +1,10 @@
 import { parse } from 'path'
-import debugLib from 'debug'
+import debugLib, { Debugger } from 'debug'
 
 /* RECOMMENED TO MATCH PROJECT'S NAME */
 const DEBUG_PREFIX = 'ts-crypto-cli'
 
-export default (fileName: string, label = DEBUG_PREFIX): { debug: Function; logError: Function; print: Function } => {
+export default (fileName: string, label = DEBUG_PREFIX): { debug: Debugger; logError: Debugger; print: Debugger } => {
   const filePath = parse(fileName).name
 
   const debug = debugLib(`${label}:${filePath}`)
