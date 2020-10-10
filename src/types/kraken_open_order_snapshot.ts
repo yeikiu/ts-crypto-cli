@@ -26,6 +26,7 @@ export type KrakenOpenOrderSnapshot = {
     cost?: number; // total cost (quote currency unless unless viqc set in oflags)
     fee?: number; // total fee (quote currency)
     avg_price?: number; // average price (cumulative; quote currency unless viqc set in oflags)
+    price?: number; // average price (quote currency unless viqc set in oflags)
     stopprice?: number; // stop price (quote currency, for trailing stops)
     limitprice?: number; // triggered limit price (quote currency, when limit based order type triggered)
     misc?: string; // comma delimited list of miscellaneous info: stopped=triggered by stop price, touched=triggered by touch price, liquidation=liquidation, partial=partial fill
