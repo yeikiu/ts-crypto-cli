@@ -21,16 +21,16 @@ if (/\s-v\s*$/.test(argsStr)) {
 
 import nodeMenu from 'node-menu'
 
-import { krakenPrivateApiRequest, updateKrakenDefaultClient } from './api_clients/kraken/private_api_request'
-import { hitbtcPrivateApiRequest, updateHitBTCDefaultClient } from './api_clients/hitbtc/private_api_request'
-import { binancePrivateApiRequest, updateBinanceDefaultClient } from './api_clients/binance/private_api_request'
+import { krakenPrivateApiRequest, updateKrakenDefaultClient } from './kraken/api_clients/private_api_request'
+import { hitbtcPrivateApiRequest, updateHitBTCDefaultClient } from './hitbtc/api_clients/private_api_request'
+import { binancePrivateApiRequest, updateBinanceDefaultClient } from './binance/api_clients/private_api_request'
 
-import { getBinancePriceTicker } from './services/binance/get_binance_price_ticker'
-import { getBinanceOHLCCandles } from './services/binance/get_binance_ohlc_candles'
-import { getKrakenPriceTicker } from './services/kraken/get_kraken_price_ticker'
-import { getKrakenOHLCCandles } from './services/kraken/get_kraken_ohlc_candles'
-import { getHitBTCPriceTicker } from './services/hitbtc/get_hitbtc_price_ticker'
-import { getHitBTCOHLCCandles } from './services/hitbtc/get_hitbtc_ohlc_candles'
+import { getBinancePriceTicker } from './binance/services/get_binance_price_ticker'
+import { getBinanceOHLCCandles } from './binance/services/get_binance_ohlc_candles'
+import { getKrakenPriceTicker } from './kraken/services/get_kraken_price_ticker'
+import { getKrakenOHLCCandles } from './kraken/services/get_kraken_ohlc_candles'
+import { getHitBTCPriceTicker } from './hitbtc/services/get_hitbtc_price_ticker'
+import { getHitBTCOHLCCandles } from './hitbtc/services/get_hitbtc_ohlc_candles'
 
 import { filterKrakenBalances, filterHitBTCBalances, filterBinanceBalances } from './util/filter_balances'
 import handleUserInput from './util/handle_user_input'

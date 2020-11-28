@@ -6,15 +6,13 @@
 
 - *NEW:* Test it online on the [npm Interactive Playground Demo](https://runkit.com/yeikiu/5f728aa574e29b001b4259d1)
 
-# TLDR;
-
-## Option 1 - Use it as a library
+# Option 1 - Use it as a library
 
 - `npm i ts-crypto-cli`
 
-#### Library usage demo
+### Library usage demo
 
-> Here is a little handler to perform a 2-steps withdrawal from Kraken in 20 lines of code using the lib.
+> Here is a little handler to perform a safe withdrawal from Kraken in <20 lines of code using the lib.
 
 ```typescript
 import { krakenPrivateApiRequest } from 'ts-crypto-cli'
@@ -44,19 +42,19 @@ export {
 }
 ```
 
-## Option 2 - Launch the REPL cli on a shell
+# Option 2 - Launch the REPL cli on a shell
 
 <img src=".github/menu_demo.png" />
 
 ---
 
-### Option 2.1 - Provide a .env file
+## Option 2.1 - Provide a .env file
 
 > Create a .env file under current working directory with your own API credentials and run
 
 - `npx ts-crypto-cli`
 
-#### Environment Variables
+### Environment Variables
 
 ```
 ##
@@ -79,62 +77,30 @@ BINANCE_API_SECRET=<...>
 #DEBUG=ts-crypto-cli:*
 ```
 
----
 
-### Option 2.2 - Inject your keys/secrets to enable private methods
+## Option 2.2 - Inject your keys/secrets to enable private methods
 
 > This method is more secure as you won't need to persist the KEYS to a file
 
-#### Powershell (windows)
+### Powershell (windows)
 
 - `$env:KRAKEN_API_KEY="<...>" ; $env:KRAKEN_API_SECRET="<...>" ; $env:HITBTC_API_KEY="<...>" ; etc... ; npx ts-crypto-cli`
 
-#### cmd (windows)
+### cmd (windows)
 
 - `set KRAKEN_API_KEY=<...> & set KRAKEN_API_SECRET=<...> & set HITBTC_API_KEY=<...> & etc... & npx ts-crypto-cli`
 
-#### Unix/OSx
+### Unix/OSx
 
 - `KRAKEN_API_KEY=<...> KRAKEN_API_SECRET=<...> HITBTC_API_KEY=<...> etc.. npx ts-crypto-cli`
 
----
 
-# Documentation
+# [Documentation](https://yeikiu.github.io/ts-crypto-cli/)
 
-## REST APIs
-
-- [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_api_request_.html)
-- [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_api_request_.html)
----
-- [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_api_request_.html)
-- [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_api_request_.html)
----
-- [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_api_request_.html)
-- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_api_request_.html)
-
-## WS APIs
-
-- [Kraken Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_public_ws_handler_.html)
-- [Kraken Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_ws_handler_.html)
----
-- [HitBTC Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_public_ws_handler_.html)
-- [HitBTC Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_ws_handler_.html)
----
-- [Binance Public](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_public_ws_handler_.html)
-- [Binance Private](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_ws_handler_.html)
-
-## WS Streams Handlers
-
-- [getKrakenTickerStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_kraken_get_kraken_ticker_stream_.html)
-- [getKrakenOpenOrdersStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_kraken_get_kraken_open_orders_stream_.html)
----
-- [getBinanceTickerStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_binance_get_binance_ticker_stream_.html)
-- [getBinanceOpenOrdersStream](https://yeikiu.github.io/ts-crypto-cli/modules/_streams_binance_get_binance_open_orders_stream_.html)
----
-## Handling multiple API credentials
+### Handling multiple API credentials
 
 You can use different API keys/secrets against the same exchange. Generate the new API client instances with one of the following methods:
 
-- [`createKrakenPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_kraken_private_api_request_.html#createkrakenprivateapiclient)
-- [`createHitBTCPrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_hitbtc_private_api_request_.html#createhitbtcprivateapiclient)
-- [`createBinancePrivateApiClient`](https://yeikiu.github.io/ts-crypto-cli/modules/_api_clients_binance_private_api_request_.html#createbinanceprivateapiclient)
+- `createKrakenPrivateApiClient`
+- `createHitBTCPrivateApiClient`
+- `createBinancePrivateApiClient`

@@ -1,6 +1,14 @@
-import { krakenPublicApiRequest, PublicEndpoint, krakenPrivateApiRequest, PrivateEndpoint, binancePublicApiRequest, binancePrivateApiRequest, hitbtcPublicApiRequest, hitbtcPrivateApiRequest } from '..'
+
 import { parse } from 'qs'
 import { Method } from 'axios'
+import { binancePrivateApiRequest } from '../binance/api_clients/private_api_request'
+import { binancePublicApiRequest } from '../binance/api_clients/public_api_request'
+import { hitbtcPrivateApiRequest } from '../hitbtc/api_clients/private_api_request'
+import { hitbtcPublicApiRequest } from '../hitbtc/api_clients/public_api_request'
+import { krakenPrivateApiRequest } from '../kraken/api_clients/private_api_request'
+import { krakenPublicApiRequest } from '../kraken/api_clients/public_api_request'
+import { PublicEndpoint, PrivateEndpoint } from '../kraken/types/kraken_api_endpoints'
+
 import debugHelper from './debug_helper'
 const { print } = debugHelper(__filename)
 

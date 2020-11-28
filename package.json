@@ -1,6 +1,6 @@
 {
   "name": "ts-crypto-cli",
-  "version": "0.8.13",
+  "version": "0.9.0",
   "description": "A handy npm cli to operate against some of the most known Crypto Exchanges",
   "keywords": [
     "kraken",
@@ -22,7 +22,9 @@
   "license": "CC0-1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "bin": "dist/cli.js",
+  "bin": {
+    "ts-crypto-cli": "dist/cli.js"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "debug": "^4.2.0",
