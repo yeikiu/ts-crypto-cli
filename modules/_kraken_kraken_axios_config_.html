@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;util/handle_user_input&quot; | ts-crypto-cli</title>
+	<title>&quot;kraken/kraken_axios_config&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_util_handle_user_input_.html">&quot;util/handle_user_input&quot;</a>
+					<a href="_kraken_kraken_axios_config_.html">&quot;kraken/kraken_axios_config&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;util/handle_user_input&quot;</h1>
+			<h1>External module &quot;kraken/kraken_axios_config&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -70,70 +70,72 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_util_handle_user_input_.html#print" class="tsd-kind-icon">print</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_kraken_kraken_axios_config_.krakenprivateaxiosrequest.html" class="tsd-kind-icon">Kraken<wbr>Private<wbr>Axios<wbr>Request</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_kraken_kraken_axios_config_.krakenpublicaxiosrequest.html" class="tsd-kind-icon">Kraken<wbr>Public<wbr>Axios<wbr>Request</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_handle_user_input_.html#handleuserinput" class="tsd-kind-icon">handle<wbr>User<wbr>Input</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_kraken_kraken_axios_config_.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-external-module"><a href="_kraken_kraken_axios_config_.html#krakenaxiosconfig" class="tsd-kind-icon">kraken<wbr>Axios<wbr>Config</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="print" class="tsd-anchor"></a>
-					<h3>print</h3>
-					<div class="tsd-signature tsd-kind-icon">print<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Debugger</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="apiversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> api<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"0"</span><span class="tsd-signature-symbol"> = &quot;0&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/9ed2baf/src/util/handle_user_input.ts#L13">src/util/handle_user_input.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/9ed2baf/src/kraken/kraken_axios_config.ts#L13">src/kraken/kraken_axios_config.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="handleuserinput" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> handle<wbr>User<wbr>Input</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>User<wbr>Input<span class="tsd-signature-symbol">(</span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Method</span>, exchange<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"kraken"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"hitbtc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"binance"</span>, pOp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"public"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"private"</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/9ed2baf/src/util/handle_user_input.ts#L15">src/util/handle_user_input.ts:15</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>endpoint: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>method: <span class="tsd-signature-type">Method</span></h5>
-								</li>
-								<li>
-									<h5>exchange: <span class="tsd-signature-type">"kraken"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"hitbtc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"binance"</span></h5>
-								</li>
-								<li>
-									<h5>pOp: <span class="tsd-signature-type">"public"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"private"</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5>
-								</li>
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
+					<a name="krakenaxiosconfig" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> kraken<wbr>Axios<wbr>Config</h3>
+					<div class="tsd-signature tsd-kind-icon">kraken<wbr>Axios<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/9ed2baf/src/kraken/kraken_axios_config.ts#L14">src/kraken/kraken_axios_config.ts:14</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="krakenaxiosconfig.baseurl" class="tsd-anchor"></a>
+						<h3>baseURL</h3>
+						<div class="tsd-signature tsd-kind-icon">baseURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x60;https://api.kraken.com/${apiVersion}&#x60;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/9ed2baf/src/kraken/kraken_axios_config.ts#L16">src/kraken/kraken_axios_config.ts:16</a></li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="krakenaxiosconfig.method" class="tsd-anchor"></a>
+						<h3>method</h3>
+						<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"POST"</span><span class="tsd-signature-symbol"> = &quot;POST&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/9ed2baf/src/kraken/kraken_axios_config.ts#L17">src/kraken/kraken_axios_config.ts:17</a></li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -144,17 +146,23 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_util_handle_user_input_.html">&quot;util/handle_<wbr>user_<wbr>input&quot;</a>
+						<a href="_kraken_kraken_axios_config_.html">&quot;kraken/kraken_<wbr>axios_<wbr>config&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_util_handle_user_input_.html#print" class="tsd-kind-icon">print</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_kraken_kraken_axios_config_.krakenprivateaxiosrequest.html" class="tsd-kind-icon">Kraken<wbr>Private<wbr>Axios<wbr>Request</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_handle_user_input_.html#handleuserinput" class="tsd-kind-icon">handle<wbr>User<wbr>Input</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_kraken_kraken_axios_config_.krakenpublicaxiosrequest.html" class="tsd-kind-icon">Kraken<wbr>Public<wbr>Axios<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_kraken_kraken_axios_config_.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
+						<a href="_kraken_kraken_axios_config_.html#krakenaxiosconfig" class="tsd-kind-icon">kraken<wbr>Axios<wbr>Config</a>
 					</li>
 				</ul>
 			</nav>
