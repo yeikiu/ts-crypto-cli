@@ -17,7 +17,7 @@ const getKrakenOpenOrdersStream = async (lastToken?: string, injectedApiKeys?: I
             name: 'openOrders'
         }
     }
-    const filterStream = (response): boolean => Array.isArray(response) && response[response.length -1] === 'openOrders'
+    const filterStream = (response): boolean => Array.isArray(response) && response.length > 1 && response[1] === 'openOrders'
     const { privateObservable$ } = await getKrakenPrivateObservableFromWS(lastToken, subscribeData, filterStream, unsubscribeData, injectedApiKeys)
     
     return privateObservable$.pipe(
