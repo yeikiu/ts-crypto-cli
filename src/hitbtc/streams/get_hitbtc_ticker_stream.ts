@@ -13,11 +13,11 @@ const getHitBTCTickerStream = (pair: string): Observable<StandardTicker> => {
     const filterStream = ({ method, params: { symbol = '' } = {} }): boolean => method === 'ticker' && symbol.toUpperCase() === pair.toUpperCase()
 
     return getHitBTCPublicObservableFromWS(subscriptionData, filterStream).pipe(
-        map(({ params: { last: lastHitBTCprice = '', timestamp } }) => ({
+        map(({ params: { last: price = '', timestamp } }) => ({
             exchange: 'hitbtc',
             utcTimestamp: new Date(timestamp).getTime(),
             pair,
-            price: Number(lastHitBTCprice).toFixed(2),
+            price,
         }))
     )
 }

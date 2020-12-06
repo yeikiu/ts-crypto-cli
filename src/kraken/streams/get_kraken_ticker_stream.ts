@@ -21,11 +21,11 @@ const getKrakenTickerStream = (baseAsset: string, quoteAsset: string): Observabl
     }
     const filterStream = (response): boolean => Array.isArray(response) && response.slice(-2).every(v => ['ticker', pair].includes(v))
     return getKrakenPublicObservableFromWS(subscribeData, filterStream, unsubscribeData).pipe(
-        map(([, { c: [lastKrakenPrice = '',] = [] } = {}, ]) => ({
+        map(([, { c: [price = '',] = [] } = {}, ]) => ({
             exchange: 'kraken',
             utcTimestamp: new Date().getTime(),
             pair,
-            price: Number(lastKrakenPrice).toFixed(2),
+            price,
         }))
     )
 }

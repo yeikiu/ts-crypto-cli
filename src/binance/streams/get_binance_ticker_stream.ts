@@ -8,11 +8,11 @@ const getBinanceTickerStream = (baseAsset: string, quoteAsset: string): Observab
     const streamName = `${pair}@miniTicker`
 
     return getBinancePublicObservableFromWS([streamName]).pipe(
-        map(({ data: { c: lastBinancePrice = '', E: utcTimestamp = 0 } = {} }) => ({
+        map(({ data: { c: price = '', E: utcTimestamp = 0 } = {} }) => ({
             exchange: 'binance',
             utcTimestamp,
             pair,
-            price: Number(lastBinancePrice).toFixed(2),
+            price,
         }))
     )
 }
