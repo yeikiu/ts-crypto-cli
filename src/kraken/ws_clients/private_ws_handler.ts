@@ -21,16 +21,15 @@ export const krakenPrivateWS = webSocket({
 export const gethWsAuthToken = async (injectedApiKeys?: InjectedApiKeys): Promise<string> => {
     try {
         const { token } = await krakenPrivateApiRequest({ url: 'GetWebSocketsToken' }, injectedApiKeys)
-        // debug({ token })
         return token
         
     } catch({ code, message }) {
-        logError({ code, message })
-        return 'tokenNetworkError'
+        logError('Kraken gethWsAuthToken error', { code, message })
+        return null
     }
 }
 
-export const getKrakenPrivateObservableFromWS = async (lastToken: string, subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any, injectedApiKeys?: InjectedApiKeys): Promise<{ privateObservable$: Observable<any>; token: string; onKrakenPrivateWSOpened: Observable<any>; onKrakenPrivateWSClosed: Observable<any> }> => {
+export const getKrakenPrivateObservableFromWS = async (lastToken: string = null, subscriptionData: any = {}, filterFn: (data: unknown) => boolean = () => true, unsubscriptionData?: any, injectedApiKeys?: InjectedApiKeys): Promise<{ privateObservable$: Observable<any>; token: string; onKrakenPrivateWSOpened: Observable<any>; onKrakenPrivateWSClosed: Observable<any> }> => {
     const token = lastToken || await gethWsAuthToken(injectedApiKeys)
 
     const subscriptionDataWithToken = subscriptionData.subscription ? {
