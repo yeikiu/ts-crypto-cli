@@ -1,6 +1,6 @@
 {
   "name": "ts-crypto-cli",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "A handy npm cli to operate against some of the most known Crypto Exchanges",
   "keywords": [
     "kraken",
@@ -70,7 +70,14 @@
       "plugin:import/typescript"
     ],
     "rules": {
-      "tsdoc/syntax": "warn"
+      "tsdoc/syntax": "warn",
+      "quotes": [
+        2,
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ]
     }
   },
   "scripts": {

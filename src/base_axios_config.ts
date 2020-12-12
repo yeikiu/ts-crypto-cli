@@ -26,8 +26,8 @@ const calculateFileName = (date: Date, index: number): string => {
 }
 
 const stream = dirPath ? createStream(calculateFileName, {
-    size: "100M", // rotate every 10 MegaBytes written
-    interval: "1M", // rotate monthly
+    size: '100M', // rotate every 10 MegaBytes written
+    interval: '1M', // rotate monthly
     path: dirPath,
     immutable: true,
     // compress: "gzip" // compress rotated files

@@ -35,7 +35,7 @@ export const getBinancePrivateObservableFromWS = async (
     const token = lastToken || await gethWsListenToken(injectedApiKeys)
 
     const subscriptionData = {
-        method: "SUBSCRIBE",
+        method: 'SUBSCRIBE',
         params: streamNames,
         id: new Date().getTime()
     }

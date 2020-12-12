@@ -16,7 +16,7 @@ const binancePublicWS = webSocket({
 
 const getBinancePublicObservableFromWS = (streamNames: string[], filterFn: (data: unknown) => boolean = ({ stream = '' }): boolean => streamNames.includes(stream), unsubscriptionData?: any): Observable<any> => {
     const subscriptionData = {
-        method: "SUBSCRIBE",
+        method: 'SUBSCRIBE',
         params: streamNames,
         id: new Date().getTime()
     }

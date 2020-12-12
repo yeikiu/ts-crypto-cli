@@ -8,10 +8,10 @@ const { logError } = debugHelper(__filename)
 
 export const getHitBTCPrivateObservableFromWS = async (subscriptionData: unknown, filterFn: (data: unknown) => boolean, unsubscriptionData?: unknown, injectedApiKeys?: InjectedApiKeys): Promise<Observable<unknown>> => {
     const defaultAuthData = {
-        method: "login",
-        id: "authRequest",
+        method: 'login',
+        id: 'authRequest',
         params: {
-            algo: "BASIC",
+            algo: 'BASIC',
             pKey: process.env.HITBTC_API_KEY,
             sKey: process.env.HITBTC_API_SECRET
         }
@@ -20,13 +20,13 @@ export const getHitBTCPrivateObservableFromWS = async (subscriptionData: unknown
     const authData = injectedApiKeys ? {
         ...defaultAuthData,
         params: {
-            algo: "BASIC",
+            algo: 'BASIC',
             pKey: injectedApiKeys.apiKey,
             sKey: injectedApiKeys.apiSecret
         }
     } : defaultAuthData
 
-    const auth$ = getHitBTCPublicObservableFromWS(authData, ({ id }) => id === "authRequest")
+    const auth$ = getHitBTCPublicObservableFromWS(authData, ({ id }) => id === 'authRequest')
     const { result, error } = await auth$.pipe(take(1)).toPromise().catch((authError) => {
         logError({ authError })
         throw new Error(authError)
