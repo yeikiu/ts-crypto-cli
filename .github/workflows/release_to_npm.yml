@@ -22,7 +22,7 @@ jobs:
 
       - uses: ad-m/github-push-action@master
         with:
-          branch: ${{ github.ref }}
+          branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@v2
