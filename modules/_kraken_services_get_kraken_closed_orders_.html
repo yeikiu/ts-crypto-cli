@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;util/handle_user_input&quot; | ts-crypto-cli</title>
+	<title>&quot;kraken/services/get_kraken_closed_orders&quot; | ts-crypto-cli</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_util_handle_user_input_.html">&quot;util/handle_user_input&quot;</a>
+					<a href="_kraken_services_get_kraken_closed_orders_.html">&quot;kraken/services/get_kraken_closed_orders&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;util/handle_user_input&quot;</h1>
+			<h1>External module &quot;kraken/services/get_kraken_closed_orders&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,67 +71,102 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
+							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_util_handle_user_input_.html#print" class="tsd-kind-icon">print</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_kraken_services_get_kraken_closed_orders_.html#apiclosedordersparams" class="tsd-kind-icon">Api<wbr>Closed<wbr>Orders<wbr>Params</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_handle_user_input_.html#handleuserinput" class="tsd-kind-icon">handle<wbr>User<wbr>Input</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_kraken_services_get_kraken_closed_orders_.html#getkrakenclosedorders" class="tsd-kind-icon">get<wbr>Kraken<wbr>Closed<wbr>Orders</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_kraken_services_get_kraken_closed_orders_.html#getkrakenlastsuccessfullyclosedorder" class="tsd-kind-icon">get<wbr>Kraken<wbr>Last<wbr>Successfully<wbr>Closed<wbr>Order</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="print" class="tsd-anchor"></a>
-					<h3>print</h3>
-					<div class="tsd-signature tsd-kind-icon">print<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Debugger</span></div>
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="apiclosedordersparams" class="tsd-anchor"></a>
+					<h3>Api<wbr>Closed<wbr>Orders<wbr>Params</h3>
+					<div class="tsd-signature tsd-kind-icon">Api<wbr>Closed<wbr>Orders<wbr>Params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>closetime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"open"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"close"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"both"</span><span class="tsd-signature-symbol">; </span>end<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>ofs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>start<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>trades<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>userref<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/17db394/src/util/handle_user_input.ts#L13">src/util/handle_user_input.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/17db394/src/kraken/services/get_kraken_closed_orders.ts#L7">src/kraken/services/get_kraken_closed_orders.ts:7</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> closetime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"open"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"close"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"both"</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> end<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ofs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> start<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> trades<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> userref<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="handleuserinput" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> handle<wbr>User<wbr>Input</h3>
+					<a name="getkrakenclosedorders" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Kraken<wbr>Closed<wbr>Orders</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>User<wbr>Input<span class="tsd-signature-symbol">(</span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, method<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Method</span>, exchange<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"kraken"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"hitbtc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"binance"</span>, pOp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"public"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"private"</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Kraken<wbr>Closed<wbr>Orders<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="_kraken_services_get_kraken_closed_orders_.html#apiclosedordersparams" class="tsd-signature-type">ApiClosedOrdersParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_kraken_types_kraken_order_snapshot_.html#krakenordersnapshot" class="tsd-signature-type">KrakenOrderSnapshot</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/17db394/src/util/handle_user_input.ts#L15">src/util/handle_user_input.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/17db394/src/kraken/services/get_kraken_closed_orders.ts#L16">src/kraken/services/get_kraken_closed_orders.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>endpoint: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>method: <span class="tsd-signature-type">Method</span></h5>
-								</li>
-								<li>
-									<h5>exchange: <span class="tsd-signature-type">"kraken"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"hitbtc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"binance"</span></h5>
-								</li>
-								<li>
-									<h5>pOp: <span class="tsd-signature-type">"public"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"private"</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="_kraken_services_get_kraken_closed_orders_.html#apiclosedordersparams" class="tsd-signature-type">ApiClosedOrdersParams</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_kraken_types_kraken_order_snapshot_.html#krakenordersnapshot" class="tsd-signature-type">KrakenOrderSnapshot</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="getkrakenlastsuccessfullyclosedorder" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Kraken<wbr>Last<wbr>Successfully<wbr>Closed<wbr>Order</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Kraken<wbr>Last<wbr>Successfully<wbr>Closed<wbr>Order<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="_kraken_services_get_kraken_closed_orders_.html#apiclosedordersparams" class="tsd-signature-type">ApiClosedOrdersParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_kraken_types_kraken_order_snapshot_.html#krakenordersnapshot" class="tsd-signature-type">KrakenOrderSnapshot</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/yeikiu/ts-crypto-cli/blob/17db394/src/kraken/services/get_kraken_closed_orders.ts#L22">src/kraken/services/get_kraken_closed_orders.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="_kraken_services_get_kraken_closed_orders_.html#apiclosedordersparams" class="tsd-signature-type">ApiClosedOrdersParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_kraken_types_kraken_order_snapshot_.html#krakenordersnapshot" class="tsd-signature-type">KrakenOrderSnapshot</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -144,17 +179,20 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_util_handle_user_input_.html">&quot;util/handle_<wbr>user_<wbr>input&quot;</a>
+						<a href="_kraken_services_get_kraken_closed_orders_.html">&quot;kraken/services/get_<wbr>kraken_<wbr>closed_<wbr>orders&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_util_handle_user_input_.html#print" class="tsd-kind-icon">print</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_kraken_services_get_kraken_closed_orders_.html#apiclosedordersparams" class="tsd-kind-icon">Api<wbr>Closed<wbr>Orders<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_handle_user_input_.html#handleuserinput" class="tsd-kind-icon">handle<wbr>User<wbr>Input</a>
+						<a href="_kraken_services_get_kraken_closed_orders_.html#getkrakenclosedorders" class="tsd-kind-icon">get<wbr>Kraken<wbr>Closed<wbr>Orders</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_kraken_services_get_kraken_closed_orders_.html#getkrakenlastsuccessfullyclosedorder" class="tsd-kind-icon">get<wbr>Kraken<wbr>Last<wbr>Successfully<wbr>Closed<wbr>Order</a>
 					</li>
 				</ul>
 			</nav>
