@@ -1,3 +1,5 @@
+// https://www.kraken.com/features/api#get-trades-history
+
 import { krakenPrivateApiRequest } from '../../kraken/api_clients/private_api_request'
 import { KrakenTradesHistoryItem } from '../types/kraken_trade_history_item'
 import { timer } from 'rxjs';

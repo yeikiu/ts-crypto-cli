@@ -2,9 +2,9 @@ import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { getKrakenPrivateObservableFromWS } from '../ws_clients/private_ws_handler'
 import { InjectedApiKeys } from '../../types/injected_api_keys'
-import { KrakenOpenOrderSnapshot } from '../types/kraken_open_order_snapshot'
+import { KrakenOrderSnapshot } from '../types/kraken_order_snapshot'
 
-const getKrakenOpenOrdersStream = async (lastToken?: string, injectedApiKeys?: InjectedApiKeys): Promise<Observable<KrakenOpenOrderSnapshot[]>> => {
+const getKrakenOpenOrdersStream = async (lastToken?: string, injectedApiKeys?: InjectedApiKeys): Promise<Observable<KrakenOrderSnapshot[]>> => {
     const subscribeData = {
         event: 'subscribe',
         subscription: {
@@ -26,7 +26,7 @@ const getKrakenOpenOrdersStream = async (lastToken?: string, injectedApiKeys?: I
                 return {
                     orderid,
                     ...krakenOrder[orderid]
-                } as KrakenOpenOrderSnapshot
+                } as KrakenOrderSnapshot
             })
         )
     )

@@ -1,3 +1,5 @@
+// https://www.kraken.com/features/api#get-trades-history
+
 export type KrakenTradesHistoryItem = {
     tradeid: string; // Injected to original payload
     ordertxid: string;
