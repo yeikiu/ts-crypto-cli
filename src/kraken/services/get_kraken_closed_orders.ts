@@ -1,3 +1,5 @@
+import { timer } from 'rxjs'
+import { take } from 'rxjs/operators'
 import { krakenPrivateApiRequest } from '../api_clients/private_api_request'
 import { KrakenOrderSnapshot } from '../types/kraken_order_snapshot'
 
@@ -26,12 +28,16 @@ export const getKrakenLastSuccessfullyClosedOrder = async (params?: ApiClosedOrd
         return null
     }
     const successfullyClosedOrders = closedOrdersIds.map(orderid => ({ orderid, ...closed[orderid] }) as KrakenOrderSnapshot).filter(({ status }) => status === 'closed')
-    if (successfullyClosedOrders.some(({ status }) => status === 'closed')) {
-        return successfullyClosedOrders[0]
+    const lastSuccessfullyClosedOrder = successfullyClosedOrders.find(({ status }) => status === 'closed')
+    if (lastSuccessfullyClosedOrder) {
+        return lastSuccessfullyClosedOrder
     } else {
+        // Delay exec. 1.5 seconds to avoid rate limits
+        await timer(1500).pipe(take(1)).toPromise()
+        const { ofs: lastOffset = 0 } = params
         return getKrakenLastSuccessfullyClosedOrder({
             ...params,
-            ofs: closedOrdersIds.length
+            ofs: closedOrdersIds.length + lastOffset
         })
     }
 }
