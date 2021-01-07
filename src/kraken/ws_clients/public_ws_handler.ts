@@ -2,10 +2,12 @@ import WebSocket from 'ws'
 import { webSocket } from 'rxjs/webSocket'
 import { Observable } from 'rxjs/internal/Observable'
 import { Subject } from 'rxjs/internal/Subject'
+import { filter } from 'rxjs/operators'
 
-const onKrakenPublicWSOpened = new Subject()
-const onKrakenPublicWSClosed = new Subject()
-const krakenPublicWS = webSocket({
+export const onKrakenPublicWSOpened = new Subject()
+export const onKrakenPublicWSClosed = new Subject()
+
+export const krakenPublicWS = webSocket({
     protocol: 'v1',
     url: 'wss://ws.kraken.com',
     WebSocketCtor: WebSocket,
@@ -13,17 +15,13 @@ const krakenPublicWS = webSocket({
     closeObserver: onKrakenPublicWSClosed
 })
 
-const getKrakenPublicObservableFromWS = (subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Observable<any> => {
+export const onKrakenPublicWSHeartbeat$ = krakenPublicWS.pipe(filter(({ event = null }) => event && event === 'heartbeat'))
+
+export const getKrakenPublicObservableFromWS = (subscriptionData: any, filterFn: (data: unknown) => boolean, unsubscriptionData?: any): Observable<any> => {
     const publicObservable$ = krakenPublicWS.multiplex(
         () => subscriptionData, 
         () => unsubscriptionData,
         filterFn
     )
     return publicObservable$
-}
-
-export {
-    getKrakenPublicObservableFromWS,
-    onKrakenPublicWSOpened,
-    onKrakenPublicWSClosed
 }

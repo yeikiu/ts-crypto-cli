@@ -2,6 +2,10 @@
 
 > All major changes will be added to this file top-to-bottom
 
+- ### v0.9.9
+    - #### refactor:
+        - Added streams: `onKrakenPublicWSHeartbeat$` and `onKrakenPrivateWSHeartbeat$`
+
 - ### v0.9.0
     - #### refactor:
         - Project files/folders restructuration

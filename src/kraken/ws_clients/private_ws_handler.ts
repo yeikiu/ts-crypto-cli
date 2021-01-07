@@ -5,11 +5,13 @@ import debugHelper from '../../util/debug_helper'
 import { Observable } from 'rxjs/internal/Observable'
 import { Subject } from 'rxjs/internal/Subject'
 import { InjectedApiKeys } from '../../types/injected_api_keys'
+import { filter } from 'rxjs/operators'
 
 const { logError } = debugHelper(__filename)
 
-const onKrakenPrivateWSOpened = new Subject()
-const onKrakenPrivateWSClosed = new Subject()
+export const onKrakenPrivateWSOpened = new Subject()
+export const onKrakenPrivateWSClosed = new Subject()
+
 export const krakenPrivateWS = webSocket({
     protocol: 'v1',
     url: 'wss://ws-auth.kraken.com/',
@@ -17,6 +19,8 @@ export const krakenPrivateWS = webSocket({
     openObserver: onKrakenPrivateWSOpened,
     closeObserver: onKrakenPrivateWSClosed
 })
+
+export const onKrakenPrivateWSHeartbeat$ = krakenPrivateWS.pipe(filter(({ event = null }) => event && event === 'heartbeat'))
 
 export const gethWsAuthToken = async (injectedApiKeys?: InjectedApiKeys): Promise<string> => {
     try {
@@ -29,7 +33,7 @@ export const gethWsAuthToken = async (injectedApiKeys?: InjectedApiKeys): Promis
     }
 }
 
-export const getKrakenPrivateObservableFromWS = async (lastToken: string = null, subscriptionData: any = {}, filterFn: (data: unknown) => boolean = () => true, unsubscriptionData?: any, injectedApiKeys?: InjectedApiKeys): Promise<{ privateObservable$: Observable<any>; token: string; onKrakenPrivateWSOpened: Observable<any>; onKrakenPrivateWSClosed: Observable<any> }> => {
+export const getKrakenPrivateObservableFromWS = async (lastToken: string = null, subscriptionData: any = {}, filterFn: (data: unknown) => boolean = () => true, unsubscriptionData?: any, injectedApiKeys?: InjectedApiKeys): Promise<{ privateObservable$: Observable<any>; token: string }> => {
     const token = lastToken || await gethWsAuthToken(injectedApiKeys)
 
     const subscriptionDataWithToken = subscriptionData.subscription ? {
@@ -48,10 +52,9 @@ export const getKrakenPrivateObservableFromWS = async (lastToken: string = null,
         () => (unsubscriptionData),
         filterFn
     )
+
     return {
         privateObservable$,
-        token,
-        onKrakenPrivateWSOpened,
-        onKrakenPrivateWSClosed
+        token
     }
 }
