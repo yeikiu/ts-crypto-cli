@@ -2,6 +2,10 @@
 
 > All major changes will be added to this file top-to-bottom
 
+- ### v0.9.10
+    - #### fix:
+        - Fallback to {} for obj deconstructions across codebase
+
 - ### v0.9.9
     - #### refactor:
         - Added streams: `onKrakenPublicWSHeartbeat$` and `onKrakenPrivateWSHeartbeat$`

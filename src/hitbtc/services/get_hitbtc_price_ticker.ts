@@ -7,7 +7,7 @@ import { StandardTicker } from '../../types/standard_ticker'
 
 export const getHitBTCPriceTicker = async (symbols: string): Promise<StandardTicker> => {
     const ticker = await hitbtcPublicApiRequest({ url: 'ticker', params: { symbols }})
-    const { last: price } = ticker.find(({ symbol }) => symbol === symbols )
+    const { last: price } = ticker.find(({ symbol }) => symbol === symbols ) || {}
     
     return {
         exchange: 'hitbtc',

@@ -9,7 +9,7 @@ export const getBinancePriceTicker = async (symbol: string): Promise<StandardTic
     const { symbol: pair, price } = await binancePublicApiRequest({ 
         url: 'api/v3/ticker/price',
         params: { symbol }
-    })
+    }) || {}
     return {
         exchange: 'binance',
         utcTimestamp: new Date().getTime(),

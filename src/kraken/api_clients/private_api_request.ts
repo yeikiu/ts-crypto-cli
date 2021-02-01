@@ -37,7 +37,7 @@ interface KrakenPrivateRequestConfig extends AxiosRequestConfig {
 let defaultClient = createKrakenPrivateApiClient()
 export const krakenPrivateApiRequest = async ({ url, data }: KrakenPrivateRequestConfig, injectedApiKeys?: InjectedApiKeys): Promise<any> => {
     const apiClient = injectedApiKeys ? createKrakenPrivateApiClient(injectedApiKeys.apiKey, injectedApiKeys.apiSecret) : defaultClient
-    const { data: { result: krakenPrivateResponse, error } } = await apiClient.request({ url, data })
+    const { data: { result: krakenPrivateResponse, error }} = await apiClient.request({ url, data }) || {}
     if (error?.length) {
         const errorStr = error.join(' | ')
         logError(errorStr)

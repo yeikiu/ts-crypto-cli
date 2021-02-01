@@ -16,13 +16,13 @@ type ApiClosedOrdersParams = {
 }
 
 export const getKrakenClosedOrders = async (params?: ApiClosedOrdersParams): Promise<KrakenOrderSnapshot[]> => {
-    const { closed } = await krakenPrivateApiRequest({ url: 'ClosedOrders', data: { ...params ? params : {} }})
+    const { closed } = await krakenPrivateApiRequest({ url: 'ClosedOrders', data: { ...params ? params : {} }}) || {}
     const closedOrdersIds = Object.keys(closed)
     return closedOrdersIds.map(orderid => ({ orderid, ...closed[orderid] }) as KrakenOrderSnapshot)
 }
 
 export const getKrakenLastSuccessfullyClosedOrder = async (params?: ApiClosedOrdersParams): Promise<KrakenOrderSnapshot> => {
-    const { closed } = await krakenPrivateApiRequest({ url: 'ClosedOrders', data: { ...params ? params : {} }})
+    const { closed } = await krakenPrivateApiRequest({ url: 'ClosedOrders', data: { ...params ? params : {} }}) || {}
     const closedOrdersIds = Object.keys(closed)
     if (closedOrdersIds.length === 0) {
         return null

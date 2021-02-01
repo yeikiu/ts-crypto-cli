@@ -46,7 +46,7 @@ export const createBinancePrivateApiClient = (apiKey = process.env.BINANCE_API_K
 let defaultClient = createBinancePrivateApiClient()
 export const binancePrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig, injectedApiKeys?: InjectedApiKeys): Promise<any> => {
     const apiClient = injectedApiKeys ? createBinancePrivateApiClient(injectedApiKeys.apiKey, injectedApiKeys.apiSecret) : defaultClient
-    const { data: binanceresponse } = await apiClient.request({ url, method, params, data })
+    const { data: binanceresponse } = await apiClient.request({ url, method, params, data }) || {}
     debug({ binanceresponse })
     return binanceresponse
 }

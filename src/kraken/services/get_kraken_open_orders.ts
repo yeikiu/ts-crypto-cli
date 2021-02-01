@@ -10,7 +10,7 @@ type ApiOpenOrdersParams = {
 }
 
 export const getKrakenOpenOrders = async (params?: ApiOpenOrdersParams): Promise<KrakenOrderSnapshot[]> => {
-    const { open } = await krakenPrivateApiRequest({ url: 'OpenOrders', data: { ...params ? params : {} }})
+    const { open } = await krakenPrivateApiRequest({ url: 'OpenOrders', data: { ...params ? params : {} }}) || {}
     const openOrdersIds = Object.keys(open)
     return openOrdersIds.map(orderid => ({ orderid, ...open[orderid] }) as KrakenOrderSnapshot)
 }

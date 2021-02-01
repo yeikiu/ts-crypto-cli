@@ -11,7 +11,7 @@ publicApiClient.interceptors.request.use(baseAxiosRequestInterceptor, baseAxiosR
 publicApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
 
 export const hitbtcPublicApiRequest = async ({ url, method, params, data }: AxiosRequestConfig): Promise<any> => {
-    const { data: hitbtcPublicResponse } = await publicApiClient.request({ url, method, params, data })
+    const { data: hitbtcPublicResponse } = await publicApiClient.request({ url, method, params, data }) || {}
     debug({ hitbtcPublicResponse })
     return hitbtcPublicResponse
 }

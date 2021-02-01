@@ -18,7 +18,7 @@ export interface KrakenPublicRequestConfig extends AxiosRequestConfig {
 }
 
 export const krakenPublicApiRequest = async ({ url, data }: KrakenPublicRequestConfig): Promise<any> => {
-    const { data: { result: krakenPublicResponse, error }} = await publicApiClient.request({ url, data })
+    const { data: { result: krakenPublicResponse, error }} = await publicApiClient.request({ url, data }) || {}
     if (error?.length) {
         const errorStr = error.join(' | ')
         logError(errorStr)

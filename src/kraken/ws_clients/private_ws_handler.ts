@@ -24,12 +24,15 @@ export const onKrakenPrivateWSHeartbeat$ = krakenPrivateWS.pipe(filter(({ event 
 
 export const gethWsAuthToken = async (injectedApiKeys?: InjectedApiKeys): Promise<string> => {
     try {
-        const { token } = await krakenPrivateApiRequest({ url: 'GetWebSocketsToken' }, injectedApiKeys)
+        const { token } = await krakenPrivateApiRequest({ url: 'GetWebSocketsToken' }, injectedApiKeys) || {}
+        if (!token) {
+            throw ({ code: 'CUSTOM_ERROR', message: 'no token received' })
+        }
         return token
         
     } catch({ code, message }) {
         logError('Kraken gethWsAuthToken error', { code, message })
-        return null
+        throw ({ code, message })
     }
 }
 

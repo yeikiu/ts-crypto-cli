@@ -11,7 +11,7 @@ const getKrakenTradesHistory = async (maxResults = Infinity): Promise<KrakenTrad
     let rawResult: KrakenTradesHistoryItem[] = []
     let keepFetching = true
     do {
-        const { trades } = await krakenPrivateApiRequest({ url: 'TradesHistory', data: { ofs } })
+        const { trades } = await krakenPrivateApiRequest({ url: 'TradesHistory', data: { ofs } }) || {}
         const tradesIds = Object.keys(trades)
         tradesBlock = tradesIds.map(tradeid => ({
             tradeid,

@@ -15,7 +15,7 @@ export const createHitBTCPrivateApiClient = (apikey = process.env.HITBTC_API_KEY
 
 let defaultClient = createHitBTCPrivateApiClient()
 export const hitbtcPrivateApiRequest = async ({ url, method, data, params }: AxiosRequestConfig): Promise<any> => {
-    const { data: hitBTCresponse } = await defaultClient.request({ url, method, params, data })
+    const { data: hitBTCresponse } = await defaultClient.request({ url, method, params, data }) || {}
     debug({ hitBTCresponse })
     return hitBTCresponse
 }

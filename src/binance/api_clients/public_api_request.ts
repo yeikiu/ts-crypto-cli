@@ -10,7 +10,7 @@ publicApiClient.interceptors.request.use(baseAxiosRequestInterceptor, baseAxiosR
 publicApiClient.interceptors.response.use(baseAxiosResponseInterceptor, baseAxiosResponseErrorInterceptor)
 
 export const binancePublicApiRequest = async ({ url, method, params, data }: AxiosRequestConfig): Promise<any> => {
-    const { data: binancePublicResponse } = await publicApiClient.request({ url, method, params, data })
+    const { data: binancePublicResponse } = await publicApiClient.request({ url, method, params, data }) || {}
     debug({ binancePublicResponse })
     return binancePublicResponse
 }

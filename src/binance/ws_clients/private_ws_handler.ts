@@ -12,7 +12,7 @@ const { logError, debug } = debugHelper(__filename)
 
 export const gethWsListenToken = async (injectedApiKeys?: InjectedApiKeys): Promise<string> => {
     try {
-        const { listenKey } = await binancePrivateApiRequest({ url: 'api/v3/userDataStream', method: 'POST' }, injectedApiKeys)
+        const { listenKey } = await binancePrivateApiRequest({ url: 'api/v3/userDataStream', method: 'POST' }, injectedApiKeys) || {}
         debug({ listenKey })
         return listenKey
         
