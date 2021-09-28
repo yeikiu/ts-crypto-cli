@@ -1,5 +1,11 @@
 <img src=".ci_badges/npm-version-badge.svg" /> <img src=".ci_badges/npm-dependencies-badge.svg" /> <img src=".ci_badges/npm-devdependencies-badge.svg" />
 
+# 🚨 This package has been deprecated
+
+> This package is no longer supported. If you are still interested in a good cli/lib to operate on Kraken we recommend you check the ts-kraken project: https://github.com/yeikiu/ts-kraken
+
+---
+
 # TS Crypto Cli
 
 > A handy npm to operate against some of the most known Crypto Exchanges
